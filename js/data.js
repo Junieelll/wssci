@@ -7,17 +7,20 @@ export const svgs = {
   hearing: `<i class="fa-solid fa-headphones text-3xl"></i>`,
   welding: `<i class="fa-solid fa-mask text-3xl"></i>`,
   fall: `<i class="fa-solid fa-link text-3xl"></i>`,
+  vest: `<i class="fa-solid fa-vest text-3xl"></i>`,
 };
 
 export const categories = [
   { id:'shoes', label:'Safety Shoes', icon:svgs.shoes, desc:'Slip-resistant, impact-proof industrial footwear equipped with advanced shock absorption and S3-rated protection.', color:'#27C291' },
   { id:'head', label:'Skull Protection', icon:svgs.head, desc:'High-density thermoplastic hard hats engineered to dissipate extreme kinetic energy from overhead impacts.', color:'#1a9e76' },
   { id:'eye', label:'Eye Protection', icon:svgs.eye, desc:'Anti-scratch, anti-fog polycarbonate eyewear and face shields providing panoramic visibility and UV resistance.', color:'#27C291' },
+  {id:"vest", label:"Safety Vest", icon:svgs.vest, desc:"High-visibility vests with reflective strips for enhanced worker safety in low-light conditions.", color : "#27C291"},
   { id:'gloves', label:'Gloves', icon:svgs.gloves, desc:'Precision tactile gloves offering Level F cut resistance, robust chemical defense, and superior ergonomic dexterity.', color:'#27C291' },
   { id:'body', label:'Body Protection', icon:svgs.body, desc:'Microporous coveralls, thermal FR gear, and chemical suits certified to shield against hazardous particulate and splash.', color:'#1a9e76' },
   { id:'hearing', label:'Hearing Protection', icon:svgs.hearing, desc:'High-attenuation ear muffs and ergonomic earplugs designed to isolate and dampen sustained industrial decibel extremes.', color:'#27C291' },
   { id:'welding', label:'Welding', icon:svgs.welding, desc:'Auto-darkening active filters, split-leather aprons, and thermal barriers for optimal arc flash and spatter defense.', color:'#1a9e76' },
-  { id:'fall', label:'Fall Protection', icon:svgs.fall, desc:'Multi-point full-body harnesses, energy-absorbing lanyards, and carabiners engineered for extreme vertical securement.', color:'#27C291' }
+  { id:'fall', label:'Fall Protection', icon:svgs.fall, desc:'Multi-point full-body harnesses, energy-absorbing lanyards, and carabiners engineered for extreme vertical securement.', color:'#27C291' },
+  
 ];
 
 export const products = [
