@@ -203,7 +203,7 @@ export const ProductsListing = {
               <div class="absolute inset-0 transition-transform duration-1000 group-hover:scale-110">
                  <img src="${p.img}" alt="${p.name}" 
                       onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect width=%22400%22 height=%22400%22 fill=%22%23f0faf6%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2214%22 fill=%22%2327C291%22%3EImage Pending%3C/text%3E%3C/svg%3E';"
-                      class="w-full h-full object-cover">
+                      class="w-full h-full object-contain absolute bottom-10  ">
                  <!-- Subtle overlay to ensure text readability -->
                  <div class="absolute inset-0 bg-ink/10 group-hover:bg-ink/30 transition-all duration-700"></div>
               </div>

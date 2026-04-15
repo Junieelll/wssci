@@ -5,7 +5,7 @@ export const Home = {
   render: () => {
     return `
       <!-- HERO -->
-      <section id="hero" class="hero-bg relative min-h-screen flex items-center overflow-hidden pt-24">
+      <section id="hero" class="hero-bg relative min-h-[100svh] flex items-center overflow-hidden pt-20 lg:pt-24">
         <!-- grid lines -->
         <div class="grid-line" style="left:20%; top:0; bottom:0; width:1px;"></div>
         <div class="grid-line" style="left:40%; top:0; bottom:0; width:1px;"></div>
@@ -15,12 +15,12 @@ export const Home = {
         <div class="hero-blob w-[600px] h-[600px] bg-brand" style="right:-120px;top:-100px;"></div>
         <div class="hero-blob w-[400px] h-[400px] bg-brand-dark" style="left:-80px;bottom:-80px;"></div>
 
-        <div class="max-w-7xl mx-auto px-6 lg:px-16 w-full py-20">
-          <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="max-w-7xl mx-auto px-6 lg:px-16 w-full pt-6 pb-12 lg:pt-12 lg:pb-20">
+          <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <!-- LEFT -->
             <div class="space-y-8">
                 Authorized DeltaPlus & Safety Jogger Partner
-              <h1 class="reveal delay-100 font-display font-800 text-5xl lg:text-7xl leading-[1.02] text-ink">
+              <h1 class="reveal delay-100 font-display font-800 text-4xl sm:text-5xl lg:text-7xl leading-[1.02] text-ink">
                 Protect What<br>
                 <span class="relative inline-block">
                   <span class="text-brand">Matters</span>
@@ -30,59 +30,52 @@ export const Home = {
                 </span>
                 <br>Most.
               </h1>
-              <p class="reveal delay-200 font-body text-ink-3 text-lg leading-relaxed max-w-md">CE &amp; OSHC Certified personal protective equipment for every industry. Founded in 2016, World Safety Supply Center, Inc. is an authorized distributor of DELTAPLUS and Safety Jogger.</p>
-              <div class="reveal delay-300 flex flex-wrap gap-4">
-                <a href="#/products" class="btn-primary">Explore Products</a>
-                <a href="https://www.facebook.com/messages/t/61554434231420/" target="_blank" class="btn-outline">Message on Messenger</a>
+              <p class="reveal delay-200 font-body text-ink-3 text-base lg:text-lg leading-relaxed max-w-md">CE &amp; OSHC Certified personal protective equipment for every industry. Founded in 2016, World Safety Supply Center, Inc. is an authorized distributor of DELTAPLUS and Safety Jogger.</p>
+              <div class="reveal delay-300 flex flex-wrap gap-3">
+                <a href="#/products" class="btn-primary"><i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>Explore Products</a>
+                <a href="https://www.facebook.com/messages/t/61554434231420/" target="_blank" class="btn-outline"><i class="fa-brands fa-facebook-messenger mr-2"></i>Message on Messenger</a>
               </div>
               <!-- stats -->
-              <div class="reveal delay-400 flex gap-10 pt-4">
+              <div class="reveal delay-400 flex gap-6 lg:gap-10 pt-2 lg:pt-4">
                 <div>
-                  <div class="font-display font-800 text-3xl text-ink stat-num" data-target="500">0+</div>
-                  <div class="text-ink-3 text-sm font-body mt-1">Products</div>
+                  <div class="font-display font-800 text-2xl lg:text-3xl text-ink stat-num" data-target="500">0+</div>
+                  <div class="text-ink-3 text-xs lg:text-sm font-body mt-1">Products</div>
                 </div>
                 <div class="w-px bg-brand-muted"></div>
                 <div>
-                  <div class="font-display font-800 text-3xl text-ink stat-num" data-target="1000">0+</div>
-                  <div class="text-ink-3 text-sm font-body mt-1">Clients Served</div>
+                  <div class="font-display font-800 text-2xl lg:text-3xl text-ink stat-num" data-target="1000">0+</div>
+                  <div class="text-ink-3 text-xs lg:text-sm font-body mt-1">Clients Served</div>
                 </div>
                 <div class="w-px bg-brand-muted"></div>
                 <div>
-                  <div class="font-display font-800 text-3xl text-ink stat-num" data-target="2016">0</div>
-                  <div class="text-ink-3 text-sm font-body mt-1">Established</div>
+                  <div class="font-display font-800 text-2xl lg:text-3xl text-ink stat-num" data-target="2016">0</div>
+                  <div class="text-ink-3 text-xs lg:text-sm font-body mt-1">Established</div>
                 </div>
               </div>
             </div>
 
             <!-- RIGHT — 3D FLOATING HERO VISUAL -->
-            <div class="reveal-right scene-3d flex items-center justify-center relative">
-              <div class="cube-wrap relative w-[380px] h-[380px]">
+            <div class="reveal-right scene-3d flex items-center justify-center relative py-6 lg:py-0">
+              <div class="cube-wrap relative w-full max-w-[280px] sm:max-w-[340px] lg:max-w-[380px]" style="aspect-ratio:1/1;">
                 <div class="absolute inset-0 rounded-full" style="background:radial-gradient(circle at 40% 40%, rgba(39,194,145,.18), transparent 70%);"></div>
                 <svg class="absolute inset-0 w-full h-full" viewBox="0 0 380 380">
                   <circle cx="190" cy="190" r="170" fill="none" stroke="rgba(39,194,145,.12)" stroke-width="1" stroke-dasharray="8 6"/>
                   <circle cx="190" cy="190" r="130" fill="none" stroke="rgba(39,194,145,.18)" stroke-width="1"/>
                 </svg>
                 <div class="absolute inset-0 flex items-center justify-center">
-                  <div class="w-48 h-48 rounded-3xl bg-white shadow-2xl flex items-center justify-center float-card" style="box-shadow:0 30px 80px rgba(39,194,145,.2), 0 0 0 1px rgba(39,194,145,.1)">
-                    <svg width="90" height="90" viewBox="0 0 64 64" fill="none">
-                      <rect x="8" y="28" width="48" height="28" rx="4" fill="#e6faf4" stroke="#27C291" stroke-width="2"/>
-                      <path d="M16 28V22a16 16 0 0 1 32 0v6" stroke="#27C291" stroke-width="2.5" stroke-linecap="round"/>
-                      <circle cx="32" cy="42" r="5" fill="#27C291"/>
-                      <path d="M32 47v5" stroke="#27C291" stroke-width="2.5" stroke-linecap="round"/>
-                    </svg>
-                  </div>
+                  <img src="assets/images/hero.png" alt="Hero PPE" class="w-4/5 h-4/5 object-contain">
                 </div>
-                <div class="absolute top-8 right-4 bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-2 float-card" style="animation:floatY 4s ease-in-out infinite .8s;">
-                  <div class="w-8 h-8 bg-brand-light rounded-xl flex items-center justify-center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#27C291" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                  <span class="font-display font-700 text-xs text-ink">SJ & DeltaPlus Partner</span>
+                <div class="absolute top-4 right-0 sm:right-4 bg-white rounded-2xl shadow-lg px-3 py-2 sm:px-4 sm:py-3 flex items-center gap-2 float-card" style="animation:floatY 4s ease-in-out infinite .8s;">
+                  <div class="w-7 h-7 sm:w-8 sm:h-8 bg-brand-light rounded-xl flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#27C291" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                  <span class="font-display font-700 text-[10px] sm:text-xs text-ink">SJ & DeltaPlus Partner</span>
                 </div>
-                <div class="absolute bottom-10 left-2 bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-2 float-card" style="animation:floatY 3.5s ease-in-out infinite 1.4s;">
-                  <div class="w-8 h-8 bg-brand-light rounded-xl flex items-center justify-center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#27C291" stroke-width="2.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-                  <span class="font-display font-700 text-xs text-ink">CE & OSHC Cert.</span>
+                <div class="absolute bottom-6 left-0 sm:left-2 bg-white rounded-2xl shadow-lg px-3 py-2 sm:px-4 sm:py-3 flex items-center gap-2 float-card" style="animation:floatY 3.5s ease-in-out infinite 1.4s;">
+                  <div class="w-7 h-7 sm:w-8 sm:h-8 bg-brand-light rounded-xl flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#27C291" stroke-width="2.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                  <span class="font-display font-700 text-[10px] sm:text-xs text-ink">CE & OSHC Cert.</span>
                 </div>
-                <div class="absolute top-1/2 -right-4 bg-brand rounded-2xl shadow-lg px-4 py-3 float-card" style="animation:floatY 4.5s ease-in-out infinite .3s;">
-                  <div class="font-display font-800 text-white text-sm">PPE</div>
-                  <div class="text-white/70 text-xs">Experts</div>
+                <div class="hidden sm:block absolute top-1/2 -right-3 lg:-right-4 bg-brand rounded-2xl shadow-lg px-3 py-2 float-card" style="animation:floatY 4.5s ease-in-out infinite .3s;">
+                  <div class="font-display font-800 text-white text-xs sm:text-sm">PPE</div>
+                  <div class="text-white/70 text-[10px]">Experts</div>
                 </div>
               </div>
             </div>
@@ -205,7 +198,7 @@ export const Home = {
         <div class="grid md:grid-cols-2 gap-8 h-full">
            <!-- Banner 1: Construction -->
            <div class="reveal group relative h-[400px] rounded-3xl overflow-hidden cursor-pointer shadow-xl">
-             <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image:url('https://images.unsplash.com/photo-1517089534706-33069c95a0ce?w=800&q=80')"></div>
+             <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image:url('assets/images/boots.jpg')"></div>
              <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent"></div>
              <div class="absolute bottom-10 left-10 right-10 z-10 space-y-4">
                 <span class="text-brand font-display font-800 tracking-widest text-xs uppercase">Heavy Duty</span>
@@ -217,7 +210,7 @@ export const Home = {
            
            <!-- Banner 2: Gloves & Chemical -->
            <div class="reveal delay-100 group relative h-[400px] rounded-3xl overflow-hidden cursor-pointer shadow-xl">
-             <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image:url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&q=80')"></div>
+             <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image:url('assets/images/gloves.jpeg')"></div>
              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent"></div>
              <div class="absolute bottom-10 left-10 right-10 z-10 space-y-4">
                 <span class="text-white font-display font-800 tracking-widest text-xs uppercase">Chemical & Heat</span>
@@ -288,10 +281,12 @@ export const Home = {
           <!-- Service 3 -->
           <div class="reveal delay-200 bg-white rounded-3xl p-8 border border-brand-muted/40 shadow-xl transition-transform hover:-translate-y-2">
             <div class="w-14 h-14 bg-brand-light rounded-2xl flex items-center justify-center mb-6">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#27C291" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#27C291" width="24" height="24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+              </svg>
             </div>
             <h3 class="font-display font-800 text-xl text-ink mb-3">Nationwide Delivery</h3>
-            <p class="font-body text-ink-3 text-sm leading-relaxed mb-6">Strategic logistics from our headquarters in Lucky Place Bldg., Marilao, Bulacan — swiftly deploying safety equipment across the Philippines.</p>
+            <p class="font-body text-ink-3 text-sm leading-relaxed mb-6">Strategic logistics from our headquarters at Lucky Place Bldg., M. Villarica Road, Sta Rosa 1, Marilao, Bulacan — swiftly deploying safety equipment across the Philippines.</p>
             <a href="#/contact" class="font-display font-700 text-brand text-sm hover:underline flex items-center gap-2">Partner With Us <i class="fa-solid fa-arrow-right text-xs"></i></a>
           </div>
         </div>
@@ -330,7 +325,7 @@ export const Home = {
     // Render Visual Categories Strip
     const strip = document.getElementById('visual-category-strip');
     if (strip) {
-        strip.innerHTML = categories.slice(0, 6).map((c, i) => `
+      strip.innerHTML = categories.slice(0, 6).map((c, i) => `
             <a href="#/products?filter=${c.id}" class="reveal group flex flex-col items-center gap-4 transition-transform hover:-translate-y-2" style="transition-delay:${i * 50}ms;">
                 <div class="w-20 h-20 rounded-full bg-white border border-brand-muted/20 shadow-lg flex items-center justify-center text-2xl text-brand group-hover:bg-brand group-hover:text-white transition-all duration-300">
                     ${c.icon.replace('text-3xl', 'text-2xl')}
@@ -343,9 +338,9 @@ export const Home = {
     // Render Top Picks Showcase
     const picks = document.getElementById('top-picks-grid');
     if (picks) {
-        const topShoes = [13, 14, 15, 16]; // Safety Jogger IDs
-        const filteredProducts = products.filter(p => topShoes.includes(p.id));
-        picks.innerHTML = filteredProducts.map((p, i) => `
+      const topShoes = [13, 14, 15, 16]; // Safety Jogger IDs
+      const filteredProducts = products.filter(p => topShoes.includes(p.id));
+      picks.innerHTML = filteredProducts.map((p, i) => `
             <a href="#/product/${p.id}" class="reveal block group bg-white rounded-3xl p-5 border border-brand-muted/10 shadow-lg transition-all hover:shadow-2xl" style="transition-delay:${i * 100}ms;">
                 <div class="aspect-square rounded-2xl overflow-hidden bg-surface mb-5 relative">
                     <img src="${p.img}" alt="${p.name}" 
@@ -374,10 +369,10 @@ export const Home = {
       document.addEventListener('mousemove', e => {
         const rect = card.getBoundingClientRect();
         if (rect.width === 0) return; // not visible
-        const cx = rect.left + rect.width/2;
-        const cy = rect.top + rect.height/2;
-        const dx = (e.clientX-cx)/rect.width*10;
-        const dy = (e.clientY-cy)/rect.height*10;
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const dx = (e.clientX - cx) / rect.width * 10;
+        const dy = (e.clientY - cy) / rect.height * 10;
         card.style.transform = `perspective(600px) rotateY(${dx}deg) rotateX(${-dy}deg) translateZ(10px)`;
       });
     });

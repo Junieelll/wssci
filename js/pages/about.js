@@ -49,12 +49,13 @@ export const About = {
                 <div class="space-y-4">
                   ${[
                     { icon: 'fa-building', label: 'Registered Name', value: 'World Safety Supply Center, Inc.' },
-                    { icon: 'fa-location-dot', label: 'Address', value: 'Lucky Place Bldg., M. Villarica Road, Sta. Rosa, Marilao, Bulacan' },
+                    { icon: 'fa-location-dot', label: 'Address', value: 'Lucky Place Bldg., M. Villarica Road, Sta. Rosa 1, Marilao, Bulacan' },
                     { icon: 'fa-briefcase', label: 'Type of Business', value: 'Trading — Personal Protective Equipment' },
                     { icon: 'fa-phone', label: 'Telephone', value: '044 305-6536' },
-                    { icon: 'fa-mobile-screen', label: 'Mobile', value: '0968-8524423 / 0968-8559162' },
+                    { icon: 'fa-mobile-screen', label: 'Mobile', value: '0968-852-4423 / 0968-855-9162' },
                     { icon: 'fa-envelope', label: 'Email', value: 'worldsafetysci@gmail.com' },
                     { icon: 'fa-certificate', label: 'SEC Reg. No.', value: 'CS20162163 (Sept. 23, 2016)' },
+                    { icon: 'fa-file-invoice', label: 'Business Permit No.', value: '2355 — OR No. 1232925 (Feb. 05, 2026)' },
                   ].map(item => `
                     <div class="flex items-start gap-4">
                       <div class="w-9 h-9 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -114,7 +115,7 @@ export const About = {
               <div class="absolute top-0 right-0 w-48 h-48 bg-brand/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
               <div class="relative z-10">
                 <div class="w-14 h-14 rounded-2xl bg-brand/20 flex items-center justify-center mb-8 group-hover:bg-brand group-hover:scale-110 transition-all duration-300">
-                  <i class="fa-solid fa-eye text-brand text-xl"></i>
+                  <i class="fa-solid fa-eye text-brand group-hover:text-white text-xl transition-colors duration-300"></i>
                 </div>
                 <h3 class="font-display font-800 text-2xl text-white mb-6">Our Vision</h3>
                 <p class="font-body text-white/70 text-lg leading-relaxed">

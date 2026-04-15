@@ -5,7 +5,7 @@ export const Contact = {
   render: () => {
     return `
       <!-- CONTACT SECTION -->
-      <section class="py-32 px-6 lg:px-16 max-w-4xl mx-auto mt-10">
+      <section class="py-32 px-6 lg:px-16 max-w-7xl mx-auto mt-10">
         <div class="text-center space-y-4 mb-14">
           <div class="reveal flex justify-center"><div class="section-pill"><span class="dot"></span>Get In Touch</div></div>
           <h2 class="reveal delay-100 font-display font-800 text-4xl lg:text-5xl text-ink">Request a Quote<br>or <span class="text-brand">Consultation</span></h2>
@@ -65,12 +65,126 @@ export const Contact = {
               <span class="w-10 h-10 rounded-xl bg-brand-light flex items-center justify-center flex-shrink-0 text-brand">
                 <i class="fa-solid fa-location-dot"></i>
               </span>
-              <p class="text-sm font-body leading-relaxed max-w-xs">2nd Floor 2J Lucky Place Bldg., M. Villarica Road, Sta Rosa 1, Marilao, Bulacan</p>
+              <p class="text-sm font-body leading-relaxed max-w-xs">Lucky Place Bldg., M. Villarica Road, Sta Rosa 1, Marilao, Bulacan</p>
             </div>
-            <button class="btn-primary w-full lg:w-auto px-10 py-4 shadow-2xl" onclick="this.innerHTML='<span class=\'flex items-center gap-2\'>✓ Request Sent Successfully</span>'">
+            <button class="btn-primary w-full lg:w-auto px-10 py-4 shadow-2xl" onclick="this.innerHTML='<span class=\\'flex items-center gap-2\\'>✓ Request Sent Successfully</span>'">
               Send Request
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPANY CONTACT DETAILS -->
+      <section class="py-20 px-6 lg:px-16 bg-surface-2">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-14">
+            <div class="reveal section-pill mx-auto mb-4 w-fit"><span class="dot"></span>Contact Details</div>
+            <h2 class="reveal delay-100 font-display font-800 text-3xl lg:text-4xl text-ink">Reach Us <span class="text-brand">Directly</span></h2>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <!-- Address -->
+            <div class="reveal group relative bg-white/60 backdrop-blur-xl rounded-[2rem] p-7 border border-brand-muted/20 shadow-sm hover:shadow-xl hover:border-brand/30 transition-all duration-500 overflow-hidden">
+              <div class="absolute top-0 left-0 w-32 h-32 bg-brand/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2 group-hover:bg-brand/10 transition-colors duration-500"></div>
+              <div class="relative z-10">
+                <div class="w-12 h-12 rounded-2xl bg-brand/10 flex items-center justify-center mb-5 group-hover:bg-brand group-hover:scale-110 transition-all duration-300">
+                  <i class="fa-solid fa-location-dot text-brand group-hover:text-white text-lg transition-colors duration-300"></i>
+                </div>
+                <h3 class="font-display font-800 text-ink text-base mb-2">Office Address</h3>
+                <p class="font-body text-ink-3 text-sm leading-relaxed">Lucky Place Bldg., M. Villarica Road, Sta Rosa 1, Marilao, Bulacan</p>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="reveal delay-100 group relative bg-white/60 backdrop-blur-xl rounded-[2rem] p-7 border border-brand-muted/20 shadow-sm hover:shadow-xl hover:border-brand/30 transition-all duration-500 overflow-hidden">
+              <div class="absolute top-0 left-0 w-32 h-32 bg-brand/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2 group-hover:bg-brand/10 transition-colors duration-500"></div>
+              <div class="relative z-10">
+                <div class="w-12 h-12 rounded-2xl bg-brand/10 flex items-center justify-center mb-5 group-hover:bg-brand group-hover:scale-110 transition-all duration-300">
+                  <i class="fa-solid fa-phone text-brand group-hover:text-white text-lg transition-colors duration-300"></i>
+                </div>
+                <h3 class="font-display font-800 text-ink text-base mb-2">Telephone</h3>
+                <a href="tel:0443056536" class="font-body text-ink-3 text-sm leading-relaxed hover:text-brand transition-colors block">044 305-6536</a>
+              </div>
+            </div>
+
+            <!-- Mobile -->
+            <div class="reveal delay-200 group relative bg-white/60 backdrop-blur-xl rounded-[2rem] p-7 border border-brand-muted/20 shadow-sm hover:shadow-xl hover:border-brand/30 transition-all duration-500 overflow-hidden">
+              <div class="absolute top-0 left-0 w-32 h-32 bg-brand/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2 group-hover:bg-brand/10 transition-colors duration-500"></div>
+              <div class="relative z-10">
+                <div class="w-12 h-12 rounded-2xl bg-brand/10 flex items-center justify-center mb-5 group-hover:bg-brand group-hover:scale-110 transition-all duration-300">
+                  <i class="fa-solid fa-mobile-screen text-brand group-hover:text-white text-lg transition-colors duration-300"></i>
+                </div>
+                <h3 class="font-display font-800 text-ink text-base mb-2">Mobile</h3>
+                <a href="tel:09688524423" class="font-body text-ink-3 text-sm leading-relaxed hover:text-brand transition-colors block">0968-852-4423</a>
+                <a href="tel:09688559162" class="font-body text-ink-3 text-sm leading-relaxed hover:text-brand transition-colors block">0968-855-9162</a>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="reveal delay-300 group relative bg-white/60 backdrop-blur-xl rounded-[2rem] p-7 border border-brand-muted/20 shadow-sm hover:shadow-xl hover:border-brand/30 transition-all duration-500 overflow-hidden">
+              <div class="absolute top-0 left-0 w-32 h-32 bg-brand/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2 group-hover:bg-brand/10 transition-colors duration-500"></div>
+              <div class="relative z-10">
+                <div class="w-12 h-12 rounded-2xl bg-brand/10 flex items-center justify-center mb-5 group-hover:bg-brand group-hover:scale-110 transition-all duration-300">
+                  <i class="fa-solid fa-envelope text-brand group-hover:text-white text-lg transition-colors duration-300"></i>
+                </div>
+                <h3 class="font-display font-800 text-ink text-base mb-2">Email</h3>
+                <a href="mailto:worldsafetysci@gmail.com" class="font-body text-ink-3 text-sm leading-relaxed hover:text-brand transition-colors block break-all">worldsafetysci@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPANY REGISTRATION DETAILS -->
+      <section class="py-20 px-6 lg:px-16">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-14">
+            <div class="reveal section-pill mx-auto mb-4 w-fit"><span class="dot"></span>Registration Details</div>
+            <h2 class="reveal delay-100 font-display font-800 text-3xl lg:text-4xl text-ink">Company <span class="text-brand">Credentials</span></h2>
+            <p class="reveal delay-200 font-body text-ink-3 mt-3 max-w-xl mx-auto text-sm">World Safety Supply Center, Inc. is a fully registered and compliant business entity.</p>
+          </div>
+          <div class="reveal bg-white/60 backdrop-blur-xl rounded-[2.5rem] p-8 lg:p-12 border border-brand-muted/20 shadow-lg max-w-4xl mx-auto">
+            <div class="grid sm:grid-cols-2 gap-6">
+              ${[
+                { icon: 'fa-building', label: 'Registered Name', value: 'World Safety Supply Center, Inc.' },
+                { icon: 'fa-briefcase', label: 'Type of Business', value: 'Trading — Personal Protective Equipment' },
+                { icon: 'fa-certificate', label: 'SEC Reg. No.', value: 'CS20162163 (Sept. 23, 2016)' },
+                { icon: 'fa-file-invoice', label: 'Business Permit No.', value: '2355 — OR No. 1232925 (Feb. 05, 2026)' },
+              ].map(item => `
+                <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-surface-2 transition-colors duration-300">
+                  <div class="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <i class="fa-solid ${item.icon} text-brand text-sm"></i>
+                  </div>
+                  <div>
+                    <div class="font-display font-700 text-ink text-sm">${item.label}</div>
+                    <div class="font-body text-ink-3 text-sm mt-0.5">${item.value}</div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MAP SECTION -->
+      <section class="py-20 px-6 lg:px-16 bg-surface-2">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-10">
+            <div class="reveal section-pill mx-auto mb-4 w-fit"><span class="dot"></span>Find Us</div>
+            <h2 class="reveal delay-100 font-display font-800 text-3xl lg:text-4xl text-ink">Visit Our <span class="text-brand">Office</span></h2>
+          </div>
+          <div class="reveal rounded-[2rem] overflow-hidden shadow-xl border border-brand-muted/20 h-[400px]">
+            <iframe 
+              src="https://maps.google.com/maps?q=World+Safety+Supply+Center+Inc.,+M.+Villarica+Rd,+Marilao,+Bulacan&t=&z=17&ie=UTF8&iwloc=&output=embed" 
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              class="w-full h-full">
+            </iframe>
+          </div>
+          <div class="mt-6 text-center">
+            <a href="https://www.google.com/maps/place/World+Safety+Supply+Center+Inc./@14.7720445,120.9611294,17z" target="_blank" class="btn-outline inline-flex items-center gap-2">
+              <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
+            </a>
           </div>
         </div>
       </section>
