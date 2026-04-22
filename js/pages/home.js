@@ -129,15 +129,15 @@ export const Home = {
       </div>
 
       <!-- VISUAL CATEGORIES STRIP -->
-      <section class="py-20 px-6 lg:px-16 max-w-7xl mx-auto overflow-hidden">
-        <div class="flex flex-col md:flex-row items-center justify-between mb-10 gap-6">
-          <div class="space-y-2 text-center md:text-left">
+      <section class="py-16 px-6 lg:px-16 max-w-7xl mx-auto overflow-hidden">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-10 gap-4">
+          <div>
             <h2 class="font-display font-800 text-3xl text-ink">Browse by <span class="text-brand">Category</span></h2>
-            <p class="font-body text-ink-3 text-sm">Industrial-grade gear for specialized work environments.</p>
+            <p class="font-body text-ink-3 text-sm mt-1">Industrial-grade gear for specialized work environments.</p>
           </div>
-          <a href="#/categories" class="btn-outline">View All Categories</a>
+          <a href="#/categories" class="btn-outline shrink-0">View All Categories</a>
         </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6" id="visual-category-strip">
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-3" id="visual-category-strip">
           <!-- Rendered via JS -->
         </div>
       </section>
@@ -233,7 +233,7 @@ export const Home = {
         <div class="grid md:grid-cols-2 gap-8 h-full">
            <!-- Banner 1: Construction -->
            <div class="reveal group relative h-[400px] rounded-3xl overflow-hidden cursor-pointer shadow-xl">
-             <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image:url('assets/images/boots.jpg')"></div>
+             <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image:url('assets/images/boots.avif')"></div>
              <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent"></div>
              <div class="absolute bottom-10 left-10 right-10 z-10 space-y-4">
                 <span class="text-brand font-display font-800 tracking-widest text-xs uppercase">Heavy Duty</span>
@@ -245,7 +245,7 @@ export const Home = {
            
            <!-- Banner 2: Gloves & Chemical -->
            <div class="reveal delay-100 group relative h-[400px] rounded-3xl overflow-hidden cursor-pointer shadow-xl">
-             <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image:url('assets/images/gloves.jpeg')"></div>
+             <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image:url('assets/images/gloves.avif')"></div>
              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent"></div>
              <div class="absolute bottom-10 left-10 right-10 z-10 space-y-4">
                 <span class="text-white font-display font-800 tracking-widest text-xs uppercase">Chemical & Heat</span>
@@ -326,7 +326,7 @@ export const Home = {
       </section>
 
       <!-- OUR SERVICES (Sales Funnel) -->
-      <section class="py-28 px-6 lg:px-16 max-w-7xl mx-auto">
+      <section class="pt-20 pb-16 px-6 lg:px-16 max-w-7xl mx-auto">
         <div class="text-center space-y-4 mb-16">
           <div class="reveal flex justify-center"><div class="section-pill"><span class="dot"></span>Our Services</div></div>
           <h2 class="reveal delay-100 font-display font-800 text-4xl lg:text-5xl text-ink">Serbisyo para sa <span class="text-brand">Kaligtasan</span> at <br>Kalusugan sa Trabaho</h2>
@@ -372,7 +372,7 @@ export const Home = {
       </section>
       
       <!-- CTA BANNER -->
-      <section class="py-20 px-6 lg:px-16 mb-20 max-w-7xl mx-auto">
+      <section class="pb-16 px-6 lg:px-16 max-w-7xl mx-auto">
         <div class="bg-ink rounded-3xl p-10 lg:p-16 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-10">
           <div class="absolute inset-0 opacity-20 bg-center bg-cover" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&q=80')"></div>
           <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/90 to-transparent"></div>
@@ -402,17 +402,57 @@ export const Home = {
     }
 
     // Render Visual Categories Strip
+    const categoryMeta = {
+      shoes:   { icon: 'footprints', iconImgUrl: 'assets/images/cat-shoes.png',         bg: '#fff7ed', border: '#fed7aa', iconBg: '#ffedd5', color: '#ea580c' },
+      head:    { icon: 'hard-hat',   iconImgUrl: 'assets/images/cat-skull.png',     bg: '#eff6ff', border: '#bfdbfe', iconBg: '#dbeafe', color: '#2563eb' },
+      eye:     { icon: 'glasses',    iconImgUrl: 'assets/images/cat-eye.png', bg: '#ecfdf5', border: '#a7f3d0', iconBg: '#d1fae5', color: '#059669' },
+      vest:    { icon: 'shirt',      iconImgUrl: 'assets/images/cat-vest.png',          bg: '#fefce8', border: '#fde68a', iconBg: '#fef9c3', color: '#b45309' },
+      gloves:  { icon: 'hand',       iconImgUrl: 'assets/images/cat-gloves.png', bg: '#faf5ff', border: '#d8b4fe', iconBg: '#f3e8ff', color: '#7c3aed' },
+      hearing: { icon: 'headphones',        iconImgUrl: 'assets/images/cat-hearing.png',           bg: '#fff1f2', border: '#fda4af', iconBg: '#ffe4e6', color: '#e11d48' },
+      body:    { icon: 'shield',     iconImgUrl: 'assets/images/cat-body.png',        bg: '#faf5ff', border: '#d8b4fe', iconBg: '#f3e8ff', color: '#7c3aed' },
+      welding: { icon: 'flame',      iconImgUrl: 'assets/images/cat-welding.png',  bg: '#fff7ed', border: '#fdba74', iconBg: '#ffedd5', color: '#c2410c' },
+      fall:    { icon: 'link-2',     iconImgUrl: 'assets/images/cat-fall.png', bg: '#f0fdfa', border: '#5eead4', iconBg: '#ccfbf1', color: '#0d9488' },
+    };
     const strip = document.getElementById('visual-category-strip');
     if (strip) {
-      strip.innerHTML = categories.slice(0, 6).map((c, i) => `
-            <a href="#/products?filter=${c.id}" class="reveal group flex flex-col items-center gap-4 transition-transform hover:-translate-y-2" style="transition-delay:${i * 50}ms;">
-                <div class="w-20 h-20 rounded-full bg-white border border-brand-muted/20 shadow-lg flex items-center justify-center text-2xl text-brand group-hover:bg-brand group-hover:text-white transition-all duration-300">
-                    ${c.icon.replace('text-3xl', 'text-2xl')}
-                </div>
-                <span class="font-display font-700 text-ink text-xs uppercase tracking-wider text-center">${c.label}</span>
-            </a>
-        `).join('');
-    }
+      strip.innerHTML = categories.slice(0, 6).map((c, i) => {
+        const m = categoryMeta[c.id] || categoryMeta.body;
+        return `
+          <a href="#/products?filter=${c.id}"
+             class="reveal group relative overflow-hidden flex flex-col gap-4 p-5 rounded-2xl border transition-all duration-200 cursor-pointer"
+             style="background:${m.bg}; border-color:${m.border}; min-height:130px; transition-delay:${i * 40}ms;">
+
+            <!-- Icon box -->
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-200"
+                 style="background:${m.iconBg}; border:1px solid ${m.border};">
+              <i data-lucide="${m.icon}"
+                 class="w-4 h-4 transition-colors duration-200"
+                 style="color:${m.color};"
+                 stroke-width="1.5"></i>
+            </div>
+
+            <!-- Text -->
+            <div class="mt-auto">
+              <div class="font-display font-700 text-[13px] leading-snug transition-colors duration-200"
+                   style="color:${m.color};">${c.label}</div>
+              <div class="font-body text-[11px] mt-0.5 flex items-center gap-1"
+                   style="color:${m.color}; opacity:0.55;">
+                Browse
+                <i data-lucide="arrow-right" class="w-3 h-3" stroke-width="2"></i>
+              </div>
+            </div>
+
+            <!-- Watermark -->
+            <div class="absolute -right-3 -bottom-3 pointer-events-none transition-all duration-300 ease-out">
+              <img src="${m.iconImgUrl}" alt="" width="96" height="96"
+                   style="opacity:0.25; filter:grayscale(20%); mix-blend-mode:multiply;"
+                   aria-hidden="true">
+            </div>
+
+          </a>`;
+      }).join('');
+      if (window.lucide) window.lucide.createIcons();
+      }
 
     // Render Top Picks Showcase
     const picks = document.getElementById('top-picks-grid');
