@@ -45,92 +45,92 @@ export const About = {
 
           <!-- Right: Bento Grid — magazine card style -->
           <div class="reveal-right">
-            <div class="grid grid-cols-3 gap-3">
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3">
 
-              <!-- Row 1+2, Col 1-2: Company hero — photo + overlay, wide tall -->
-              <div class="col-span-2 row-span-2 relative rounded-3xl overflow-hidden min-h-[260px]">
+              <!-- Company hero — photo + overlay -->
+              <div class="col-span-2 sm:col-span-2 sm:row-span-2 relative rounded-2xl sm:rounded-3xl overflow-hidden min-h-[200px] sm:min-h-[260px]">
                 <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80" class="absolute inset-0 w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/10"></div>
-                <div class="relative z-10 p-7 h-full flex flex-col justify-between">
+                <div class="relative z-10 p-5 sm:p-7 h-full flex flex-col justify-between">
                   <span class="font-body text-white/50 text-[10px] uppercase tracking-[0.18em]">Philippines · Bulacan</span>
                   <div>
-                    <div class="font-display font-900 text-2xl text-white leading-tight">World Safety Supply Center, Inc.</div>
-                    <div class="mt-1 font-body text-white/50 text-xs">Authorized DeltaPlus &amp; Safety Jogger Distributor</div>
-                    <div class="mt-4 inline-flex items-center gap-2 bg-caution rounded-full px-4 py-2">
-                      <i class="fa-solid fa-shield-halved text-ink text-xs"></i>
-                      <span class="font-body font-700 text-ink text-xs">Trusted Since 2016</span>
+                    <div class="font-display font-900 text-lg sm:text-2xl text-white leading-tight">World Safety Supply Center, Inc.</div>
+                    <div class="mt-1 font-body text-white/50 text-[10px] sm:text-xs">Authorized DeltaPlus &amp; Safety Jogger Distributor</div>
+                    <div class="mt-3 sm:mt-4 inline-flex items-center gap-2 bg-caution rounded-full px-3 sm:px-4 py-1.5 sm:py-2">
+                      <i data-lucide="shield-check" class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-ink" stroke-width="2"></i>
+                      <span class="font-body font-700 text-ink text-[10px] sm:text-xs">Trusted Since 2016</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Row 1, Col 3: CE & OSHC — brand green -->
-              <div class="relative rounded-3xl bg-brand p-6 flex flex-col justify-between min-h-[125px]">
-                <span class="font-body text-white/40 text-[10px] uppercase tracking-[0.15em]">Standards</span>
+              <!-- CE & OSHC — brand green -->
+              <div class="relative rounded-2xl sm:rounded-3xl bg-brand p-4 sm:p-6 flex flex-col justify-between min-h-[100px] sm:min-h-[125px]">
+                <span class="font-body text-white/40 text-[9px] sm:text-[10px] uppercase tracking-[0.15em]">Standards</span>
                 <div>
-                  <div class="font-display font-900 text-2xl text-white leading-none">CE &amp; OSHC</div>
-                  <div class="font-body text-white/50 text-[11px] mt-1">Certified Products</div>
+                  <div class="font-display font-900 text-xl sm:text-2xl text-white leading-none">CE &amp; OSHC</div>
+                  <div class="font-body text-white/50 text-[10px] sm:text-[11px] mt-0.5 sm:mt-1">Certified Products</div>
                 </div>
               </div>
 
-              <!-- Row 2, Col 3: 500+ Products — dark ink -->
-              <div class="relative rounded-3xl bg-ink p-6 flex flex-col justify-between min-h-[125px]">
-                <span class="font-body text-white/30 text-[10px] uppercase tracking-[0.15em]">Catalog</span>
+              <!-- 500+ Products — dark ink -->
+              <div class="relative rounded-2xl sm:rounded-3xl bg-ink p-4 sm:p-6 flex flex-col justify-between min-h-[100px] sm:min-h-[125px]">
+                <span class="font-body text-white/30 text-[9px] sm:text-[10px] uppercase tracking-[0.15em]">Catalog</span>
                 <div>
-                  <div class="font-display font-900 text-4xl text-white leading-none">500+</div>
-                  <div class="font-body text-white/30 text-xs mt-1">Products</div>
+                  <div class="font-display font-900 text-3xl sm:text-4xl text-white leading-none">500+</div>
+                  <div class="font-body text-white/30 text-[10px] sm:text-xs mt-0.5 sm:mt-1">Products</div>
                 </div>
               </div>
 
-              <!-- Row 3, Col 1: Est. 2016 — yellow -->
-              <div class="relative rounded-3xl bg-caution p-6 flex flex-col justify-between min-h-[110px]">
-                <span class="font-body text-ink/40 text-[10px] uppercase tracking-[0.15em]">Est.</span>
-                <div class="font-display font-900 text-4xl text-ink leading-none">2016</div>
+              <!-- Est. 2016 — yellow -->
+              <div class="col-span-2 sm:col-span-1 relative rounded-2xl sm:rounded-3xl bg-caution p-4 sm:p-6 flex flex-col justify-between min-h-[90px] sm:min-h-[110px]">
+                <span class="font-body text-ink/40 text-[9px] sm:text-[10px] uppercase tracking-[0.15em]">Est.</span>
+                <div class="font-display font-900 text-3xl sm:text-4xl text-ink leading-none">2016</div>
               </div>
 
-              <!-- Row 3, Col 2-3: Address — soft blue -->
-              <div class="col-span-2 relative rounded-3xl overflow-hidden min-h-[110px]" style="background:linear-gradient(135deg,#f0f9ff 0%,#dbeafe 100%)">
-                <div class="p-6 flex items-center gap-4 h-full">
-                  <div class="w-10 h-10 rounded-2xl bg-brand/15 flex items-center justify-center flex-shrink-0">
-                    <i class="fa-solid fa-location-dot text-brand"></i>
+              <!-- Address — soft blue -->
+              <div class="col-span-2 sm:col-span-2 relative rounded-2xl sm:rounded-3xl overflow-hidden min-h-[90px] sm:min-h-[110px]" style="background:linear-gradient(135deg,#f0f9ff 0%,#dbeafe 100%)">
+                <div class="p-4 sm:p-6 flex items-center gap-3 sm:gap-4 h-full">
+                  <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-brand/15 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-brand" stroke-width="1.8"></i>
                   </div>
                   <div>
-                    <div class="font-body text-brand/50 text-[10px] uppercase tracking-widest mb-1">Office</div>
-                    <div class="font-display font-700 text-ink text-sm leading-snug">Lucky Place Bldg., M. Villarica Rd,<br>Sta. Rosa 1, Marilao, Bulacan</div>
+                    <div class="font-body text-brand/50 text-[9px] sm:text-[10px] uppercase tracking-widest mb-0.5">Office</div>
+                    <div class="font-display font-700 text-ink text-xs sm:text-sm leading-snug">Lucky Place Bldg., M. Villarica Rd,<br>Sta. Rosa 1, Marilao, Bulacan</div>
                   </div>
                 </div>
               </div>
 
-              <!-- Row 4, Col 1-2: Email — white glass -->
-              <div class="col-span-2 bg-white/70 backdrop-blur-xl border border-brand-muted/20 rounded-3xl p-6 flex items-center gap-4">
-                <div class="w-10 h-10 rounded-2xl bg-brand/10 flex items-center justify-center flex-shrink-0">
-                  <i class="fa-solid fa-envelope text-brand"></i>
+              <!-- Email — white glass -->
+              <div class="col-span-2 sm:col-span-2 bg-white/70 backdrop-blur-xl border border-brand-muted/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex items-center gap-3 sm:gap-4">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-brand/10 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="mail" class="w-4 h-4 text-brand" stroke-width="1.8"></i>
                 </div>
-                <div>
-                  <div class="font-body text-ink/40 text-[10px] uppercase tracking-widest mb-1">Email</div>
-                  <a href="mailto:worldsafetysci@gmail.com" class="font-display font-700 text-ink text-sm hover:text-brand transition-colors">worldsafetysci@gmail.com</a>
-                </div>
-              </div>
-
-              <!-- Row 4, Col 3: Phone — white glass -->
-              <div class="bg-white/70 backdrop-blur-xl border border-brand-muted/20 rounded-3xl p-6 flex flex-col justify-between">
-                <span class="font-body text-ink/40 text-[10px] uppercase tracking-widest">Call</span>
-                <div>
-                  <a href="tel:0443056536" class="font-display font-700 text-ink text-sm hover:text-brand transition-colors block">044 305-6536</a>
-                  <a href="tel:09688524423" class="font-body text-ink-3 text-xs hover:text-brand transition-colors block mt-0.5">0968-852-4423</a>
+                <div class="min-w-0">
+                  <div class="font-body text-ink/40 text-[9px] sm:text-[10px] uppercase tracking-widest mb-0.5">Email</div>
+                  <a href="mailto:worldsafetysci@gmail.com" class="font-display font-700 text-ink text-xs sm:text-sm hover:text-brand transition-colors truncate block">worldsafetysci@gmail.com</a>
                 </div>
               </div>
 
-              <!-- Legal footer — full width, barely visible -->
-              <div class="col-span-3 bg-ink/[0.04] rounded-2xl px-5 py-3 flex flex-wrap items-center gap-x-5 gap-y-1">
+              <!-- Phone — white glass -->
+              <div class="bg-white/70 backdrop-blur-xl border border-brand-muted/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex flex-col justify-between min-h-[80px]">
+                <span class="font-body text-ink/40 text-[9px] sm:text-[10px] uppercase tracking-widest">Call</span>
+                <div>
+                  <a href="tel:0443056536" class="font-display font-700 text-ink text-xs sm:text-sm hover:text-brand transition-colors block">044 305-6536</a>
+                  <a href="tel:09688524423" class="font-body text-ink-3 text-[10px] sm:text-xs hover:text-brand transition-colors block mt-0.5">0968-852-4423</a>
+                </div>
+              </div>
+
+              <!-- Legal footer — full width -->
+              <div class="col-span-2 sm:col-span-3 bg-ink/[0.04] rounded-xl sm:rounded-2xl px-4 sm:px-5 py-2.5 sm:py-3 flex flex-wrap items-center gap-x-4 sm:gap-x-5 gap-y-1">
                 <div class="flex items-center gap-1.5">
-                  <i class="fa-solid fa-certificate text-ink/20 text-[10px]"></i>
-                  <span class="font-body text-ink/30 text-[11px]">SEC CS20162163 · Sept. 23, 2016</span>
+                  <i data-lucide="award" class="w-3 h-3 text-ink/20" stroke-width="1.8"></i>
+                  <span class="font-body text-ink/30 text-[10px] sm:text-[11px]">SEC CS20162163 · Sept. 23, 2016</span>
                 </div>
                 <div class="w-px h-3 bg-ink/10 hidden sm:block"></div>
                 <div class="flex items-center gap-1.5">
-                  <i class="fa-solid fa-file-invoice text-ink/20 text-[10px]"></i>
-                  <span class="font-body text-ink/30 text-[11px]">BPN 2355 · OR No. 1232925 · Feb. 05, 2026</span>
+                  <i data-lucide="file-text" class="w-3 h-3 text-ink/20" stroke-width="1.8"></i>
+                  <span class="font-body text-ink/30 text-[10px] sm:text-[11px]">BPN 2355 · OR No. 1232925 · Feb. 05, 2026</span>
                 </div>
               </div>
 
@@ -278,6 +278,7 @@ export const About = {
   },
   init: () => {
     setupScrollReveal();
+    if (window.lucide) window.lucide.createIcons();
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 };
