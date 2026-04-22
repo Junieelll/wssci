@@ -430,17 +430,17 @@ export const ProductDetail = {
             </div>
 
             <!-- Certification strip -->
-            <div class="reveal mt-5 flex items-center justify-center gap-6 bg-white rounded-2xl px-6 py-4 border border-brand-muted/15 shadow-sm">
+            <div class="reveal mt-5 flex flex-wrap items-center justify-center gap-y-3 gap-x-4 sm:gap-6 bg-white rounded-2xl px-4 sm:px-6 py-4 border border-brand-muted/15 shadow-sm">
               <div class="flex items-center gap-2 text-ink-3">
                 <i class="fa-solid fa-shield-halved text-brand text-sm"></i>
                 <span class="font-body text-xs font-600">100% Authentic</span>
               </div>
-              <div class="w-px h-4 bg-brand-muted"></div>
+              <div class="hidden sm:block w-px h-4 bg-brand-muted"></div>
               <div class="flex items-center gap-2 text-ink-3">
                 <i class="fa-solid fa-certificate text-brand text-sm"></i>
                 <span class="font-body text-xs font-600">CE & OSHC Certified</span>
               </div>
-              <div class="w-px h-4 bg-brand-muted"></div>
+              <div class="hidden sm:block w-px h-4 bg-brand-muted"></div>
               <div class="flex items-center gap-2 text-ink-3">
                 <i class="fa-solid fa-truck-fast text-brand text-sm"></i>
                 <span class="font-body text-xs font-600">Nationwide Delivery</span>
@@ -466,6 +466,26 @@ export const ProductDetail = {
               </div>
               <h1 class="font-display font-900 text-4xl md:text-5xl xl:text-6xl text-ink leading-[1.05] tracking-tight">${p.name}</h1>
               <p class="font-body text-ink-3 text-base lg:text-lg leading-relaxed">${p.desc}</p>
+            </div>
+
+            <!-- ── INLINE CTA ── -->
+            <div class="reveal-right delay-75">
+              <div class="bg-surface-2 border border-brand-muted/15 rounded-3xl p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 shadow-sm">
+                <div>
+                  <h4 class="font-display font-800 text-ink text-lg md:text-xl">Interested in this product?</h4>
+                  <p class="font-body text-sm text-ink-3 mt-1 leading-relaxed">Our team is ready to answer questions or provide an instant quote.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto shrink-0">
+                  <a href="#/contact"
+                     class="flex items-center justify-center gap-2 px-6 py-3 rounded-full font-display font-700 text-sm text-brand bg-brand/10 hover:bg-brand/20 active:scale-95 transition-all w-full sm:w-auto text-center shrink-0 border border-brand/20">
+                    <i class="fa-regular fa-paper-plane text-sm"></i> Request Quote
+                  </a>
+                  <a href="https://www.facebook.com/messages/t/61554434231420/" target="_blank"
+                     class="flex items-center justify-center gap-2 px-6 py-3 rounded-full font-display font-700 text-sm text-white bg-[#00B2FF] hover:bg-[#009EE6] active:scale-95 transition-all shadow-md hover:shadow-lg w-full sm:w-auto text-center shrink-0">
+                    <i class="fa-brands fa-facebook-messenger text-sm"></i> Chat on Messenger
+                  </a>
+                </div>
+              </div>
             </div>
 
             <!-- ── COLORS & SIZES ── -->
@@ -664,37 +684,7 @@ export const ProductDetail = {
 
     </div>
 
-    <!-- ══ STICKY CTA BAR ══ -->
-    <div id="pd-sticky-cta"
-         class="fixed bottom-0 left-0 right-0 z-50
-                bg-ink/95 backdrop-blur-md
-                border-t border-white/10
-                shadow-[0_-8px_40px_rgba(0,0,0,0.25)]
-                translate-y-full transition-transform duration-500 ease-out">
-      <div class="max-w-7xl mx-auto px-6 lg:px-16 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <!-- Product mini info -->
-        <div class="flex items-center gap-3 min-w-0">
-          <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
-            <i class="fa-solid fa-box text-white/60 text-sm"></i>
-          </div>
-          <div class="min-w-0">
-            <p class="font-display font-900 text-white text-sm truncate">${p.name}</p>
-            <p class="font-body text-white/50 text-xs">Ready to order?</p>
-          </div>
-        </div>
-        <!-- Actions -->
-        <div class="flex gap-3 shrink-0">
-          <a href="https://www.facebook.com/messages/t/61554434231420/" target="_blank"
-             class="btn-primary shadow-xl whitespace-nowrap">
-            <i class="fa-brands fa-facebook-messenger"></i> Chat on Messenger
-          </a>
-          <a href="#/products?filter=${p.cat}"
-             class="btn-outline bg-transparent border-white/20 text-white hover:bg-white/10 hover:border-white/50 whitespace-nowrap">
-            <i class="fa-solid fa-arrow-left text-xs"></i> More ${catLabel}
-          </a>
-        </div>
-      </div>
-    </div>
+    <!-- End Main Content Area -->
     `;
   },
 
@@ -791,29 +781,6 @@ export const ProductDetail = {
       });
     }
 
-    // ── Sticky CTA: slide up after scrolling past hero area ──
-    const stickyCta = document.getElementById('pd-sticky-cta');
-    if (stickyCta) {
-      let shown = false;
-      const threshold = 320; // px scrolled before bar appears
-
-      const toggleCta = () => {
-        const scrolled = window.scrollY > threshold;
-        if (scrolled && !shown) {
-          stickyCta.style.transform = 'translateY(0)';
-          shown = true;
-        } else if (!scrolled && shown) {
-          stickyCta.style.transform = 'translateY(100%)';
-          shown = false;
-        }
-      };
-
-      window.addEventListener('scroll', toggleCta, { passive: true });
-      // Cleanup on navigation (in case SPA doesn't fully teardown)
-      document.addEventListener('pd-destroy', () => {
-        window.removeEventListener('scroll', toggleCta);
-        stickyCta.remove();
-      }, { once: true });
-    }
+    // Clean initialized scripts if needed
   }
 };

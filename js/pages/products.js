@@ -2,6 +2,7 @@ import { products, categories } from '../data.js';
 import { setupScrollReveal } from '../utils.js';
 
 let activeFilter = 'all';
+let activeBrand = 'all';
 let currentPage = 1;
 let searchQuery = '';
 let searchDebounceTimer = null;
@@ -10,7 +11,7 @@ const itemsPerPage = 6;
 export const ProductsListing = {
   render: () => {
     return `
-      <section class="py-24 bg-surface-2 min-h-screen pt-32 transition-colors duration-500">
+      <section class="py-24 bg-surface-warm min-h-screen pt-32 transition-colors duration-500">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
           
           <!-- Page Header -->
@@ -18,9 +19,9 @@ export const ProductsListing = {
             <h1 class="reveal font-display font-800 text-3xl md:text-4xl lg:text-5xl text-ink leading-tight tracking-tight">Product <span class="text-brand">Catalog</span></h1>
             <p class="reveal delay-100 font-body text-ink-3 mt-4 max-w-2xl text-sm md:text-base leading-relaxed">Source industry-grade protective equipment with guaranteed compliance. Filter by category to find specialized gear for your worksite.</p>
             
-            <!-- Search Bar -->
-            <div class="reveal delay-200 mt-6 relative max-w-xl">
-              <div class="relative">
+            <!-- Search Bar & Brand Filters -->
+            <div class="reveal delay-200 mt-6 flex flex-col md:flex-row gap-4 items-start md:items-center">
+              <div class="relative w-full max-w-xl">
                 <input
                   id="product-search"
                   type="text"
@@ -32,6 +33,11 @@ export const ProductsListing = {
                 <button id="search-clear" class="absolute right-4 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-ink/5 flex items-center justify-center text-ink-3 hover:bg-brand/10 hover:text-brand transition-all duration-200 opacity-0 pointer-events-none z-10">
                   <i class="fa-solid fa-xmark text-xs"></i>
                 </button>
+              </div>
+              
+              <!-- Brand Buttons -->
+              <div class="flex items-center w-full md:w-auto gap-1.5 bg-white/80 backdrop-blur-sm p-1.5 rounded-2xl border border-brand-muted/30 shadow-sm overflow-x-auto max-w-full" id="brand-filters-container">
+                 <!-- Rendered dynamically -->
               </div>
             </div>
           </div>
@@ -91,6 +97,7 @@ export const ProductsListing = {
     const hash = window.location.hash;
     const urlParams = new URLSearchParams(hash.split('?')[1]);
     activeFilter = urlParams.get('filter') || 'all';
+    activeBrand = urlParams.get('brand') || 'all';
     currentPage = 1;
     searchQuery = '';
 
@@ -105,6 +112,21 @@ export const ProductsListing = {
         <button data-filter="${t.id}" class="filter-chip flex items-center gap-2 whitespace-nowrap px-6 py-2.5 rounded-full text-[14px] font-display font-800 transition-all duration-300 ${t.id === activeFilter ? 'bg-brand text-white scale-105' : 'bg-white text-ink-3 border border-brand/5 hover:border-brand/20'}">
           ${t.id === activeFilter ? '<i class="fa-solid fa-circle-check text-[10px]"></i>' : '<i class="fa-solid fa-circle text-[4px] opacity-30"></i>'}
           ${t.label}
+        </button>
+      `).join('');
+    };
+
+    const renderBrandFilters = () => {
+      const c = document.getElementById('brand-filters-container');
+      if (!c) return;
+      const brands = [
+        { id: 'all', label: 'All Brands' },
+        { id: 'deltaplus', label: 'Delta Plus' },
+        { id: 'safetyjogger', label: 'Safety Jogger' }
+      ];
+      c.innerHTML = brands.map(b => `
+        <button data-brand="${b.id}" class="flex-1 whitespace-nowrap px-4 py-2 rounded-xl text-sm font-display font-700 text-center transition-all ${activeBrand === b.id ? 'bg-ink text-white shadow-md' : 'text-ink-3 hover:bg-ink/5 hover:text-ink'}">
+          ${b.label}
         </button>
       `).join('');
     };
@@ -136,6 +158,17 @@ export const ProductsListing = {
         `);
       }
 
+      if (activeBrand !== 'all') {
+        const brandLabel = activeBrand === 'deltaplus' ? 'Delta Plus' : 'Safety Jogger';
+        const isDelta = activeBrand === 'deltaplus';
+        chips.push(`
+          <span class="flex items-center gap-2 px-3 py-1.5 ${isDelta ? 'bg-caution/10 text-caution border-caution/20' : 'bg-ink/10 text-ink border-ink/20'} border rounded-full text-[11px] font-display font-700">
+            <i class="fa-solid fa-flag text-[8px]"></i> ${brandLabel}
+            <button data-clear-brand class="hover:opacity-70 ml-1"><i class="fa-solid fa-xmark text-[9px]"></i></button>
+          </span>
+        `);
+      }
+
       if (searchQuery) {
         chips.push(`
           <span class="flex items-center gap-2 px-3 py-1.5 bg-ink/5 text-ink-3 border border-ink/10 rounded-full text-[11px] font-display font-700">
@@ -152,6 +185,10 @@ export const ProductsListing = {
 
     const getFiltered = () => {
       let list = activeFilter === 'all' ? products : products.filter(p => p.cat === activeFilter);
+      if (activeBrand !== 'all') {
+        const brandMatch = activeBrand === 'deltaplus' ? 'delta' : 'safety jogger';
+        list = list.filter(p => p.brand.toLowerCase().includes(brandMatch));
+      }
       if (searchQuery) {
         const q = searchQuery.toLowerCase();
         list = list.filter(p =>
@@ -373,6 +410,25 @@ export const ProductsListing = {
           return;
         }
 
+        // Brand filter buttons
+        const brandBtn = e.target.closest('[data-brand]');
+        if (brandBtn) {
+          activeBrand = brandBtn.dataset.brand;
+          currentPage = 1;
+          renderBrandFilters();
+          renderCards();
+          return;
+        }
+
+        // Clear brand chip
+        if (e.target.closest('[data-clear-brand]')) {
+          activeBrand = 'all';
+          currentPage = 1;
+          renderBrandFilters();
+          renderCards();
+          return;
+        }
+
         // Clear category chip
         if (e.target.closest('[data-clear-filter]')) {
           activeFilter = 'all';
@@ -396,10 +452,12 @@ export const ProductsListing = {
         // Clear all
         if (e.target.closest('[data-clear-all]')) {
           activeFilter = 'all';
+          activeBrand = 'all';
           searchQuery = '';
           currentPage = 1;
           if (searchInput) searchInput.value = '';
           toggleClearBtn('');
+          renderBrandFilters();
           renderSidebar();
           renderCarousel();
           renderCards();
@@ -408,6 +466,7 @@ export const ProductsListing = {
       });
     }
 
+    renderBrandFilters();
     renderSidebar();
     renderCarousel();
     renderCards();

@@ -23,6 +23,9 @@ tailwind.config = {
         'ink-3': '#3a5248',
         surface: '#f7fdfb',
         'surface-2': '#eef9f5',
+        'surface-warm': '#faf9f2',
+        'caution': '#FFCC00',
+        'caution-light': '#fff9e6',
       },
       fontFamily: {
         display: ['Syne', 'sans-serif'],
@@ -35,7 +38,7 @@ tailwind.config = {
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: #e4eae8; color: #0a1a14; overflow-x: hidden; }
+  body { font-family: 'DM Sans', sans-serif; background: #f9fffd; color: #0a1a14; overflow-x: hidden; }
 
 
 
@@ -145,6 +148,46 @@ tailwind.config = {
   .scrollbar-hide::-webkit-scrollbar { display: none; }
   /* Hide scrollbar for IE, Edge and Firefox */
   .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* ---------- MASONRY HERO ANIMATIONS ---------- */
+  .masonry-wrapper {
+    -webkit-mask-image: linear-gradient(to bottom,
+      transparent 0%,
+      black 18%,
+      black 82%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(to bottom,
+      transparent 0%,
+      black 18%,
+      black 82%,
+      transparent 100%
+    );
+  }
+  .masonry-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    will-change: transform;
+  }
+  .masonry-col img {
+    display: block;
+    flex-shrink: 0;
+  }
+  @keyframes masonryUp {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+  }
+  @keyframes masonryDown {
+    0%   { transform: translateY(-50%); }
+    100% { transform: translateY(0%); }
+  }
+  .animate-masonry-up {
+    animation: masonryUp 40s linear infinite;
+  }
+  .animate-masonry-down {
+    animation: masonryDown 48s linear infinite;
+  }
 </style>
 <script type="module" src="js/app.js"></script>
 </head>

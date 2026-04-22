@@ -14,8 +14,9 @@ export const Home = {
         <!-- blobs -->
         <div class="hero-blob w-[600px] h-[600px] bg-brand" style="right:-120px;top:-100px;"></div>
         <div class="hero-blob w-[400px] h-[400px] bg-brand-dark" style="left:-80px;bottom:-80px;"></div>
+        <div class="hero-blob w-[300px] h-[300px] bg-caution opacity-10" style="left:20%;top:10%;"></div>
 
-        <div class="max-w-7xl mx-auto px-6 lg:px-16 w-full pt-6 pb-12 lg:pt-12 lg:pb-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-16 w-full pt-6 pb-12 lg:pt-2 lg:pb-20">
           <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <!-- LEFT -->
             <div class="space-y-8">
@@ -54,38 +55,72 @@ export const Home = {
               </div>
             </div>
 
-            <!-- RIGHT — 3D FLOATING HERO VISUAL -->
-            <div class="reveal-right scene-3d flex items-center justify-center relative py-6 lg:py-0">
-              <div class="cube-wrap relative w-full max-w-[280px] sm:max-w-[340px] lg:max-w-[380px]" style="aspect-ratio:1/1;">
-                <div class="absolute inset-0 rounded-full" style="background:radial-gradient(circle at 40% 40%, rgba(39,194,145,.18), transparent 70%);"></div>
-                <svg class="absolute inset-0 w-full h-full" viewBox="0 0 380 380">
-                  <circle cx="190" cy="190" r="170" fill="none" stroke="rgba(39,194,145,.12)" stroke-width="1" stroke-dasharray="8 6"/>
-                  <circle cx="190" cy="190" r="130" fill="none" stroke="rgba(39,194,145,.18)" stroke-width="1"/>
-                </svg>
-                <div class="absolute inset-0 flex items-center justify-center">
-                  <img src="assets/images/hero.png" alt="Hero PPE" class="w-4/5 h-4/5 object-contain">
-                </div>
-                <div class="absolute top-4 right-0 sm:right-4 bg-white rounded-2xl shadow-lg px-3 py-2 sm:px-4 sm:py-3 flex items-center gap-2 float-card" style="animation:floatY 4s ease-in-out infinite .8s;">
-                  <div class="w-7 h-7 sm:w-8 sm:h-8 bg-brand-light rounded-xl flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#27C291" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                  <span class="font-display font-700 text-[10px] sm:text-xs text-ink">SJ & DeltaPlus Partner</span>
-                </div>
-                <div class="absolute bottom-6 left-0 sm:left-2 bg-white rounded-2xl shadow-lg px-3 py-2 sm:px-4 sm:py-3 flex items-center gap-2 float-card" style="animation:floatY 3.5s ease-in-out infinite 1.4s;">
-                  <div class="w-7 h-7 sm:w-8 sm:h-8 bg-brand-light rounded-xl flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#27C291" stroke-width="2.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-                  <span class="font-display font-700 text-[10px] sm:text-xs text-ink">CE & OSHC Cert.</span>
-                </div>
-                <div class="hidden sm:block absolute top-1/2 -right-3 lg:-right-4 bg-brand rounded-2xl shadow-lg px-3 py-2 float-card" style="animation:floatY 4.5s ease-in-out infinite .3s;">
-                  <div class="font-display font-800 text-white text-xs sm:text-sm">PPE</div>
-                  <div class="text-white/70 text-[10px]">Experts</div>
+            <!-- RIGHT — DYNAMIC MASONRY SCROLL HERO VISUAL -->
+            <div class="reveal-right flex items-stretch">
+
+              <!-- mask-image fades edges to transparent — no color-matching needed -->
+              <div class="masonry-wrapper relative w-full h-[480px] lg:h-[580px] overflow-hidden">
+
+                <!-- Three scrolling columns -->
+                <div class="flex gap-2 w-full h-full">
+
+                  <!-- Column 1 — scrolls UP (your images) -->
+                  <div class="flex-1 overflow-hidden">
+                    <div class="masonry-col animate-masonry-up w-full">
+                      <img src="assets/hero-img/img-1.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
+                      <img src="assets/hero-img/img-2.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
+                      <img src="assets/hero-img/img-3.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
+                      <img src="assets/hero-img/img-4.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
+                      <img src="assets/hero-img/img-5.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
+                      <!-- Duplicate for seamless loop -->
+                      <img src="assets/hero-img/img-1.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
+                      <img src="assets/hero-img/img-2.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
+                      <img src="assets/hero-img/img-3.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
+                      <img src="assets/hero-img/img-4.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
+                      <img src="assets/hero-img/img-5.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
+                    </div>
+                  </div>
+
+                  <!-- Column 2 — scrolls DOWN -->
+                  <div class="flex-1 overflow-hidden">
+                    <div class="masonry-col animate-masonry-down w-full" style="animation-duration:48s;">
+                      <img src="assets/hero-img/img-6.avif" class="w-full object-cover rounded-xl h-64" alt="Industrial worker gloves">
+                      <img src="assets/hero-img/img-7.avif" class="w-full object-cover rounded-xl h-64" alt="Construction scaffolding">
+                      <img src="assets/hero-img/img-8.avif" class="w-full object-cover rounded-xl h-64" alt="Safety goggles worker">
+                      <img src="assets/hero-img/img-9.jpg" class="w-full object-cover rounded-xl h-64" alt="Manufacturing factory">
+                      <!-- Duplicate for seamless loop -->
+                      <img src="assets/hero-img/img-6.avif" class="w-full object-cover rounded-xl h-64" alt="Industrial worker gloves">
+                      <img src="assets/hero-img/img-7.avif" class="w-full object-cover rounded-xl h-64" alt="Construction scaffolding">
+                      <img src="assets/hero-img/img-8.avif" class="w-full object-cover rounded-xl h-64" alt="Safety goggles worker">
+                      <img src="assets/hero-img/img-9.jpg" class="w-full object-cover rounded-xl h-64" alt="Manufacturing factory">
+                    </div>
+                  </div>
+
+                  <!-- Column 3 — scrolls UP (different speed) -->
+                  <div class="flex-1 overflow-hidden hidden sm:block">
+                    <div class="masonry-col animate-masonry-up w-full" style="animation-duration:36s;">
+                      <img src="assets/hero-img/img-10.avif" class="w-full object-cover rounded-xl h-64" alt="Electrical engineering">
+                      <img src="assets/hero-img/img-11.avif" class="w-full object-cover rounded-xl h-64" alt="Factory worker">
+                      <img src="assets/hero-img/img-12.avif" class="w-full object-cover rounded-xl h-64" alt="Protective workwear">
+                      <img src="assets/hero-img/img-13.avif" class="w-full object-cover rounded-xl h-64" alt="Hardhat construction">
+                      <!-- Duplicate for seamless loop -->
+                      <img src="assets/hero-img/img-10.avif" class="w-full object-cover rounded-xl h-64" alt="Electrical engineering">
+                      <img src="assets/hero-img/img-11.avif" class="w-full object-cover rounded-xl h-64" alt="Factory worker">
+                      <img src="assets/hero-img/img-12.avif" class="w-full object-cover rounded-xl h-64" alt="Protective workwear">
+                      <img src="assets/hero-img/img-13.avif" class="w-full object-cover rounded-xl h-64" alt="Hardhat construction">
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-ink-3">
+        <!-- <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-ink-3">
           <span class="text-xs font-body tracking-widest uppercase">Scroll</span>
           <div class="w-px h-12 bg-gradient-to-b from-brand to-transparent"></div>
-        </div>
+        </div> -->
       </section>
 
       <!-- MARQUEE -->
@@ -108,7 +143,7 @@ export const Home = {
       </section>
 
       <!-- FOUNDER & COMPANY STORY -->
-      <section class="py-28 px-6 lg:px-16 bg-surface-2 overflow-hidden">
+      <section class="py-28 px-6 lg:px-16 bg-surface-warm overflow-hidden">
         <div class="max-w-7xl mx-auto">
           <div class="grid lg:grid-cols-2 gap-16 items-center">
             
@@ -246,6 +281,50 @@ export const Home = {
         </div>
       </section>
 
+      <!-- DELTA PLUS PARTNERSHIP SPOTLIGHT -->
+      <section class="py-24 px-6 lg:px-16 bg-caution relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M0 0h20v20H0z\" fill=\"none\"/%3E%3Cpath d=\"M10 0l10 10-10 10L0 10z\" fill=\"%23000\"/%3E%3C/svg%3E');"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+              <div class="inline-flex items-center gap-2 bg-ink text-white px-4 py-1.5 rounded-full text-xs font-display font-800 tracking-widest uppercase">
+                Official Distributor
+              </div>
+              <h2 class="font-display font-900 text-4xl lg:text-6xl text-ink leading-none uppercase italic">
+                Delta<span class="text-white">Plus</span><br>
+                <span class="text-3xl lg:text-5xl">Global Partner</span>
+              </h2>
+              <p class="font-body text-ink text-lg leading-relaxed max-w-lg">
+                As an authorized partner of Delta Plus, World Safety Supply Center, Inc. brings you world-class PPE solutions that meet the highest international safety standards. From head to toe, we've got you covered.
+              </p>
+              <div class="flex flex-wrap gap-4 pt-4">
+                <a href="#/products" class="btn-primary bg-ink text-white hover:bg-ink-2 shadow-xl border-ink">Browse Delta Plus Gear</a>
+                <div class="flex items-center gap-2 text-ink font-display font-800 text-sm">
+                  <i class="fa-solid fa-check-circle"></i> CE Certified
+                </div>
+                <div class="flex items-center gap-2 text-ink font-display font-800 text-sm">
+                  <i class="fa-solid fa-check-circle"></i> OSHC Compliant
+                </div>
+              </div>
+            </div>
+            <div class="relative group">
+               <!-- Glassmorphism Wrapper -->
+               <div class="reveal-right relative z-10 bg-white backdrop-blur-3xl border border-white/40 rounded-[3rem] p-12 lg:p-16 overflow-hidden transition-all duration-700 hover:scale-[1.02]">
+                  <div class="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                  <img src="black-logo.svg" 
+                       alt="Delta Plus Logo" 
+                       class="w-full max-w-[300px] mx-auto relative z-10"
+                  >
+                  <!-- Overlay to ensure the yellow triangle pops -->
+                  <div class="absolute inset-0 bg-ink/5 pointer-events-none"></div>
+               </div>
+               <!-- Background Shadow Depth -->
+               <div class="absolute inset-0 bg-ink/10 blur-3xl rounded-full translate-y-12 scale-75 opacity-50"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- OUR SERVICES (Sales Funnel) -->
       <section class="py-28 px-6 lg:px-16 max-w-7xl mx-auto">
         <div class="text-center space-y-4 mb-16">
@@ -340,16 +419,21 @@ export const Home = {
     if (picks) {
       const topShoes = [13, 14, 15, 16]; // Safety Jogger IDs
       const filteredProducts = products.filter(p => topShoes.includes(p.id));
-      picks.innerHTML = filteredProducts.map((p, i) => `
+      picks.innerHTML = filteredProducts.map((p, i) => {
+        const isDelta = p.brand.toLowerCase().includes('delta');
+        const accentClass = isDelta ? 'text-caution' : 'text-brand';
+        const bgAccentClass = isDelta ? 'bg-caution/90' : 'bg-brand/90';
+        
+        return `
             <a href="#/product/${p.id}" class="reveal block group bg-white rounded-3xl p-5 border border-brand-muted/10 shadow-lg transition-all hover:shadow-2xl" style="transition-delay:${i * 100}ms;">
                 <div class="aspect-square rounded-2xl overflow-hidden bg-surface mb-5 relative">
                     <img src="${p.img}" alt="${p.name}" 
                          onerror="this.src='https://images.unsplash.com/photo-1588612143468-b359929235bd?w=600&q=80'; this.classList.add('opacity-40')"
                          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute top-3 left-3 bg-brand/90 backdrop-blur text-white text-[10px] font-display font-900 px-2 py-1 rounded-md uppercase tracking-widest">Featured</div>
+                    <div class="absolute top-3 left-3 ${bgAccentClass} backdrop-blur text-white text-[10px] font-display font-900 px-2 py-1 rounded-md uppercase tracking-widest">Featured</div>
                 </div>
                 <div class="space-y-1">
-                    <div class="text-[10px] font-display font-800 text-brand uppercase tracking-tighter">${p.brand}</div>
+                    <div class="text-[10px] font-display font-800 ${accentClass} uppercase tracking-tighter">${p.brand}</div>
                     <h4 class="font-display font-800 text-ink text-lg group-hover:text-brand transition-colors">${p.name}</h4>
                     <div class="flex items-center gap-2 pt-2">
                             <span class="text-[10px] px-2 py-0.5 rounded-full bg-surface-2 text-ink-3 font-600">S3 Rated</span>
@@ -357,7 +441,8 @@ export const Home = {
                     </div>
                 </div>
             </a>
-        `).join('');
+        `;
+      }).join('');
     }
 
     // Init Interactions

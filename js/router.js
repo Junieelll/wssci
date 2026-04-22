@@ -52,14 +52,30 @@ export function router() {
 }
 
 function updateNavActiveState(hash) {
+    const baseHash = hash.split('?')[0];
+    
+    // Desktop Nav
     const links = document.querySelectorAll('.nav-link');
     links.forEach(link => {
-        const href = link.getAttribute('href').slice(1) || '/';
+        const href = link.getAttribute('href').slice(1).split('?')[0] || '/';
         // Simple matching logic
-        if (hash === href || (hash === '/' && href === '/')) {
+        if (baseHash === href || (baseHash === '/' && href === '/')) {
             link.classList.add('nav-link-active');
         } else {
             link.classList.remove('nav-link-active');
+        }
+    });
+
+    // Mobile Nav
+    const mobileLinks = document.querySelectorAll('.menu-item');
+    mobileLinks.forEach(link => {
+        const href = link.getAttribute('href').slice(1).split('?')[0] || '/';
+        if (baseHash === href || (baseHash === '/' && href === '/')) {
+            link.classList.remove('text-white/50', 'font-600', 'hover:text-white', 'hover:bg-white/5');
+            link.classList.add('text-brand', 'font-700');
+        } else {
+            link.classList.remove('text-brand', 'font-700');
+            link.classList.add('text-white/50', 'font-600', 'hover:text-white', 'hover:bg-white/5');
         }
     });
 }

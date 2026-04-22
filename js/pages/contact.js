@@ -11,7 +11,7 @@ export const Contact = {
           <h2 class="reveal delay-100 font-display font-800 text-4xl lg:text-5xl text-ink">Request a Quote<br>or <span class="text-brand">Consultation</span></h2>
           <p class="reveal delay-200 font-body text-ink-3">Our safety experts will respond within 24 hours with the right PPE solution for your needs.</p>
         </div>
-        <div class="reveal bg-white border border-brand-muted/40 rounded-3xl p-8 lg:p-12 shadow-xl" style="box-shadow:0 20px 80px rgba(39,194,145,.08);">
+        <div class="reveal bg-white border border-caution/40 rounded-3xl p-8 lg:p-12 shadow-xl" style="box-shadow:0 20px 80px rgba(255,204,0,0.18);">
           <div class="grid lg:grid-cols-2 gap-8">
             <div class="space-y-5">
               <div>
@@ -76,60 +76,60 @@ export const Contact = {
       </section>
 
       <!-- COMPANY CONTACT DETAILS -->
-      <section class="py-20 px-6 lg:px-16 bg-surface-2">
+      <section class="py-20 px-6 lg:px-16 bg-caution">
         <div class="max-w-7xl mx-auto">
           <div class="text-center mb-14">
-            <div class="reveal section-pill mx-auto mb-4 w-fit"><span class="dot"></span>Contact Details</div>
-            <h2 class="reveal delay-100 font-display font-800 text-3xl lg:text-4xl text-ink">Reach Us <span class="text-brand">Directly</span></h2>
+            <div class="reveal section-pill mx-auto mb-4 w-fit" style="background:rgba(0,0,0,0.08);border-color:rgba(0,0,0,0.12);"><span class="dot" style="background:#1a1a1a;"></span><span class="text-ink">Contact Details</span></div>
+            <h2 class="reveal delay-100 font-display font-800 text-3xl lg:text-4xl text-ink">Reach Us <span class="text-ink/60">Directly</span></h2>
           </div>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
             <!-- Address -->
-            <div class="reveal group relative bg-white/60 backdrop-blur-xl rounded-[2rem] p-7 border border-brand-muted/20 shadow-sm hover:shadow-xl hover:border-brand/30 transition-all duration-500 overflow-hidden">
-              <div class="absolute top-0 left-0 w-32 h-32 bg-brand/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2 group-hover:bg-brand/10 transition-colors duration-500"></div>
+            <div class="reveal group relative bg-white/80 backdrop-blur-xl rounded-[2rem] p-7 border border-black/10 shadow-sm hover:shadow-xl hover:border-black/20 transition-all duration-500 overflow-hidden">
+              <div class="absolute top-0 left-0 w-32 h-32 bg-black/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
               <div class="relative z-10">
-                <div class="w-12 h-12 rounded-2xl bg-brand/10 flex items-center justify-center mb-5 group-hover:bg-brand group-hover:scale-110 transition-all duration-300">
-                  <i class="fa-solid fa-location-dot text-brand group-hover:text-white text-lg transition-colors duration-300"></i>
+                <div class="w-12 h-12 rounded-2xl bg-ink/10 flex items-center justify-center mb-5 group-hover:bg-ink group-hover:scale-110 transition-all duration-300">
+                  <i class="fa-solid fa-location-dot text-ink group-hover:text-caution text-lg transition-colors duration-300"></i>
                 </div>
                 <h3 class="font-display font-800 text-ink text-base mb-2">Office Address</h3>
-                <p class="font-body text-ink-3 text-sm leading-relaxed">Lucky Place Bldg., M. Villarica Road, Sta Rosa 1, Marilao, Bulacan</p>
+                <p class="font-body text-ink/60 text-sm leading-relaxed">Lucky Place Bldg., M. Villarica Road, Sta Rosa 1, Marilao, Bulacan</p>
               </div>
             </div>
 
             <!-- Phone -->
-            <div class="reveal delay-100 group relative bg-white/60 backdrop-blur-xl rounded-[2rem] p-7 border border-brand-muted/20 shadow-sm hover:shadow-xl hover:border-brand/30 transition-all duration-500 overflow-hidden">
-              <div class="absolute top-0 left-0 w-32 h-32 bg-brand/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2 group-hover:bg-brand/10 transition-colors duration-500"></div>
+            <div class="reveal delay-100 group relative bg-white/80 backdrop-blur-xl rounded-[2rem] p-7 border border-black/10 shadow-sm hover:shadow-xl hover:border-black/20 transition-all duration-500 overflow-hidden">
+              <div class="absolute top-0 left-0 w-32 h-32 bg-black/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
               <div class="relative z-10">
-                <div class="w-12 h-12 rounded-2xl bg-brand/10 flex items-center justify-center mb-5 group-hover:bg-brand group-hover:scale-110 transition-all duration-300">
-                  <i class="fa-solid fa-phone text-brand group-hover:text-white text-lg transition-colors duration-300"></i>
+                <div class="w-12 h-12 rounded-2xl bg-ink/10 flex items-center justify-center mb-5 group-hover:bg-ink group-hover:scale-110 transition-all duration-300">
+                  <i class="fa-solid fa-phone text-ink group-hover:text-caution text-lg transition-colors duration-300"></i>
                 </div>
                 <h3 class="font-display font-800 text-ink text-base mb-2">Telephone</h3>
-                <a href="tel:0443056536" class="font-body text-ink-3 text-sm leading-relaxed hover:text-brand transition-colors block">044 305-6536</a>
+                <a href="tel:0443056536" class="font-body text-ink/60 text-sm leading-relaxed hover:text-ink transition-colors block">044 305-6536</a>
               </div>
             </div>
 
             <!-- Mobile -->
-            <div class="reveal delay-200 group relative bg-white/60 backdrop-blur-xl rounded-[2rem] p-7 border border-brand-muted/20 shadow-sm hover:shadow-xl hover:border-brand/30 transition-all duration-500 overflow-hidden">
-              <div class="absolute top-0 left-0 w-32 h-32 bg-brand/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2 group-hover:bg-brand/10 transition-colors duration-500"></div>
+            <div class="reveal delay-200 group relative bg-white/80 backdrop-blur-xl rounded-[2rem] p-7 border border-black/10 shadow-sm hover:shadow-xl hover:border-black/20 transition-all duration-500 overflow-hidden">
+              <div class="absolute top-0 left-0 w-32 h-32 bg-black/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
               <div class="relative z-10">
-                <div class="w-12 h-12 rounded-2xl bg-brand/10 flex items-center justify-center mb-5 group-hover:bg-brand group-hover:scale-110 transition-all duration-300">
-                  <i class="fa-solid fa-mobile-screen text-brand group-hover:text-white text-lg transition-colors duration-300"></i>
+                <div class="w-12 h-12 rounded-2xl bg-ink/10 flex items-center justify-center mb-5 group-hover:bg-ink group-hover:scale-110 transition-all duration-300">
+                  <i class="fa-solid fa-mobile-screen text-ink group-hover:text-caution text-lg transition-colors duration-300"></i>
                 </div>
                 <h3 class="font-display font-800 text-ink text-base mb-2">Mobile</h3>
-                <a href="tel:09688524423" class="font-body text-ink-3 text-sm leading-relaxed hover:text-brand transition-colors block">0968-852-4423</a>
-                <a href="tel:09688559162" class="font-body text-ink-3 text-sm leading-relaxed hover:text-brand transition-colors block">0968-855-9162</a>
+                <a href="tel:09688524423" class="font-body text-ink/60 text-sm leading-relaxed hover:text-ink transition-colors block">0968-852-4423</a>
+                <a href="tel:09688559162" class="font-body text-ink/60 text-sm leading-relaxed hover:text-ink transition-colors block">0968-855-9162</a>
               </div>
             </div>
 
             <!-- Email -->
-            <div class="reveal delay-300 group relative bg-white/60 backdrop-blur-xl rounded-[2rem] p-7 border border-brand-muted/20 shadow-sm hover:shadow-xl hover:border-brand/30 transition-all duration-500 overflow-hidden">
-              <div class="absolute top-0 left-0 w-32 h-32 bg-brand/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2 group-hover:bg-brand/10 transition-colors duration-500"></div>
+            <div class="reveal delay-300 group relative bg-white/80 backdrop-blur-xl rounded-[2rem] p-7 border border-black/10 shadow-sm hover:shadow-xl hover:border-black/20 transition-all duration-500 overflow-hidden">
+              <div class="absolute top-0 left-0 w-32 h-32 bg-black/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
               <div class="relative z-10">
-                <div class="w-12 h-12 rounded-2xl bg-brand/10 flex items-center justify-center mb-5 group-hover:bg-brand group-hover:scale-110 transition-all duration-300">
-                  <i class="fa-solid fa-envelope text-brand group-hover:text-white text-lg transition-colors duration-300"></i>
+                <div class="w-12 h-12 rounded-2xl bg-ink/10 flex items-center justify-center mb-5 group-hover:bg-ink group-hover:scale-110 transition-all duration-300">
+                  <i class="fa-solid fa-envelope text-ink group-hover:text-caution text-lg transition-colors duration-300"></i>
                 </div>
                 <h3 class="font-display font-800 text-ink text-base mb-2">Email</h3>
-                <a href="mailto:worldsafetysci@gmail.com" class="font-body text-ink-3 text-sm leading-relaxed hover:text-brand transition-colors block break-all">worldsafetysci@gmail.com</a>
+                <a href="mailto:worldsafetysci@gmail.com" class="font-body text-ink/60 text-sm leading-relaxed hover:text-ink transition-colors block break-all">worldsafetysci@gmail.com</a>
               </div>
             </div>
           </div>
@@ -168,7 +168,7 @@ export const Contact = {
       </section>
 
       <!-- MAP SECTION -->
-      <section class="py-20 px-6 lg:px-16 bg-surface-2">
+      <section class="py-20 px-6 lg:px-16 bg-surface-warm">
         <div class="max-w-7xl mx-auto">
           <div class="text-center mb-10">
             <div class="reveal section-pill mx-auto mb-4 w-fit"><span class="dot"></span>Find Us</div>

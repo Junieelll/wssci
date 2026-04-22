@@ -4,19 +4,19 @@ import { setupScrollReveal } from '../utils.js';
 export const Categories = {
   render: () => {
     const categoryImages = {
-      shoes: 'assets/images/safety-shoes.png',
-      head: 'assets/images/head-protection.jpg',
-      eye: 'assets/images/eye-protection.jpg',
-      vest: 'assets/images/safety-vest.png',
-      gloves: 'assets/images/gloves.jpeg',
-      body: 'assets/images/body-protection.jpg',
-      hearing: 'assets/images/hearing-protection.jpg',
-      welding: 'assets/images/welding.jfif',
-      fall: 'assets/images/fall-protection.jpg'
+      shoes: 'assets/images/safety-shoes.avif',
+      head: 'assets/images/head-protection.avif',
+      eye: 'assets/images/eye-protection.avif',
+      vest: 'assets/images/safety-vest.avif',
+      gloves: 'assets/images/gloves.avif',
+      body: 'assets/images/body-protection.avif',
+      hearing: 'assets/images/hearing-protection.avif',
+      welding: 'assets/images/welding.avif',
+      fall: 'assets/images/fall-protection.avif'
     };
 
     return `
-      <section class="py-24 bg-surface-2 min-h-screen pt-32">
+      <section class="py-24 bg-surface-warm min-h-screen pt-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
           
           <!-- Header -->

@@ -4,7 +4,7 @@ export const About = {
   render: () => {
     return `
       <!-- HERO BANNER -->
-      <section class="relative pt-40 pb-24 px-6 lg:px-16 overflow-hidden bg-surface-2">
+      <section class="relative pt-40 pb-24 px-6 lg:px-16 overflow-hidden bg-surface-warm">
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(39,194,145,0.07),transparent_60%)]"></div>
         <div class="max-w-7xl mx-auto relative z-10">
           <div class="reveal section-pill mb-6"><span class="dot"></span>About WSSCI</div>
@@ -34,48 +34,114 @@ export const About = {
               <p class="reveal delay-300">
                 His outstanding performance led <strong class="text-ink font-700">DELTAPLUS</strong>, one of the world's leading PPE manufacturers, to personally urge him to establish World Safety Supply Center, Inc. with their full operational support.
               </p>
+              <div class="reveal delay-350 p-6 bg-caution/10 border-l-4 border-caution rounded-r-2xl">
+                 <p class="font-body text-ink text-base italic">"The partnership with Delta Plus isn't just about distribution; it's about a shared vision for worker safety."</p>
+              </div>
               <p class="reveal delay-400">
                 Barely a year after founding, the company was already servicing some of the Philippines' largest corporations. Today, WSSCI stands as a premier distributor of high-quality PPE — all CE and OSHC Certified — offered at truly reasonable prices.
               </p>
             </div>
           </div>
 
-          <!-- Right: Info Card -->
+          <!-- Right: Bento Grid — magazine card style -->
           <div class="reveal-right">
-            <div class="relative bg-white/50 backdrop-blur-xl rounded-[2.5rem] p-10 border border-brand-muted/20 shadow-[0_30px_80px_rgba(0,0,0,0.08)] overflow-hidden">
-              <div class="absolute top-0 right-0 w-64 h-64 bg-brand/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-              <div class="relative z-10 space-y-7">
-                <h3 class="font-display font-800 text-2xl text-ink">Company Details</h3>
-                <div class="space-y-4">
-                  ${[
-                    { icon: 'fa-building', label: 'Registered Name', value: 'World Safety Supply Center, Inc.' },
-                    { icon: 'fa-location-dot', label: 'Address', value: 'Lucky Place Bldg., M. Villarica Road, Sta. Rosa 1, Marilao, Bulacan' },
-                    { icon: 'fa-briefcase', label: 'Type of Business', value: 'Trading — Personal Protective Equipment' },
-                    { icon: 'fa-phone', label: 'Telephone', value: '044 305-6536' },
-                    { icon: 'fa-mobile-screen', label: 'Mobile', value: '0968-852-4423 / 0968-855-9162' },
-                    { icon: 'fa-envelope', label: 'Email', value: 'worldsafetysci@gmail.com' },
-                    { icon: 'fa-certificate', label: 'SEC Reg. No.', value: 'CS20162163 (Sept. 23, 2016)' },
-                    { icon: 'fa-file-invoice', label: 'Business Permit No.', value: '2355 — OR No. 1232925 (Feb. 05, 2026)' },
-                  ].map(item => `
-                    <div class="flex items-start gap-4">
-                      <div class="w-9 h-9 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <i class="fa-solid ${item.icon} text-brand text-sm"></i>
-                      </div>
-                      <div>
-                        <div class="font-display font-700 text-ink text-sm">${item.label}</div>
-                        <div class="font-body text-ink-3 text-sm mt-0.5">${item.value}</div>
-                      </div>
+            <div class="grid grid-cols-3 gap-3">
+
+              <!-- Row 1+2, Col 1-2: Company hero — photo + overlay, wide tall -->
+              <div class="col-span-2 row-span-2 relative rounded-3xl overflow-hidden min-h-[260px]">
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/10"></div>
+                <div class="relative z-10 p-7 h-full flex flex-col justify-between">
+                  <span class="font-body text-white/50 text-[10px] uppercase tracking-[0.18em]">Philippines · Bulacan</span>
+                  <div>
+                    <div class="font-display font-900 text-2xl text-white leading-tight">World Safety Supply Center, Inc.</div>
+                    <div class="mt-1 font-body text-white/50 text-xs">Authorized DeltaPlus &amp; Safety Jogger Distributor</div>
+                    <div class="mt-4 inline-flex items-center gap-2 bg-caution rounded-full px-4 py-2">
+                      <i class="fa-solid fa-shield-halved text-ink text-xs"></i>
+                      <span class="font-body font-700 text-ink text-xs">Trusted Since 2016</span>
                     </div>
-                  `).join('')}
+                  </div>
                 </div>
               </div>
+
+              <!-- Row 1, Col 3: CE & OSHC — brand green -->
+              <div class="relative rounded-3xl bg-brand p-6 flex flex-col justify-between min-h-[125px]">
+                <span class="font-body text-white/40 text-[10px] uppercase tracking-[0.15em]">Standards</span>
+                <div>
+                  <div class="font-display font-900 text-2xl text-white leading-none">CE &amp; OSHC</div>
+                  <div class="font-body text-white/50 text-[11px] mt-1">Certified Products</div>
+                </div>
+              </div>
+
+              <!-- Row 2, Col 3: 500+ Products — dark ink -->
+              <div class="relative rounded-3xl bg-ink p-6 flex flex-col justify-between min-h-[125px]">
+                <span class="font-body text-white/30 text-[10px] uppercase tracking-[0.15em]">Catalog</span>
+                <div>
+                  <div class="font-display font-900 text-4xl text-white leading-none">500+</div>
+                  <div class="font-body text-white/30 text-xs mt-1">Products</div>
+                </div>
+              </div>
+
+              <!-- Row 3, Col 1: Est. 2016 — yellow -->
+              <div class="relative rounded-3xl bg-caution p-6 flex flex-col justify-between min-h-[110px]">
+                <span class="font-body text-ink/40 text-[10px] uppercase tracking-[0.15em]">Est.</span>
+                <div class="font-display font-900 text-4xl text-ink leading-none">2016</div>
+              </div>
+
+              <!-- Row 3, Col 2-3: Address — soft blue -->
+              <div class="col-span-2 relative rounded-3xl overflow-hidden min-h-[110px]" style="background:linear-gradient(135deg,#f0f9ff 0%,#dbeafe 100%)">
+                <div class="p-6 flex items-center gap-4 h-full">
+                  <div class="w-10 h-10 rounded-2xl bg-brand/15 flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-location-dot text-brand"></i>
+                  </div>
+                  <div>
+                    <div class="font-body text-brand/50 text-[10px] uppercase tracking-widest mb-1">Office</div>
+                    <div class="font-display font-700 text-ink text-sm leading-snug">Lucky Place Bldg., M. Villarica Rd,<br>Sta. Rosa 1, Marilao, Bulacan</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 4, Col 1-2: Email — white glass -->
+              <div class="col-span-2 bg-white/70 backdrop-blur-xl border border-brand-muted/20 rounded-3xl p-6 flex items-center gap-4">
+                <div class="w-10 h-10 rounded-2xl bg-brand/10 flex items-center justify-center flex-shrink-0">
+                  <i class="fa-solid fa-envelope text-brand"></i>
+                </div>
+                <div>
+                  <div class="font-body text-ink/40 text-[10px] uppercase tracking-widest mb-1">Email</div>
+                  <a href="mailto:worldsafetysci@gmail.com" class="font-display font-700 text-ink text-sm hover:text-brand transition-colors">worldsafetysci@gmail.com</a>
+                </div>
+              </div>
+
+              <!-- Row 4, Col 3: Phone — white glass -->
+              <div class="bg-white/70 backdrop-blur-xl border border-brand-muted/20 rounded-3xl p-6 flex flex-col justify-between">
+                <span class="font-body text-ink/40 text-[10px] uppercase tracking-widest">Call</span>
+                <div>
+                  <a href="tel:0443056536" class="font-display font-700 text-ink text-sm hover:text-brand transition-colors block">044 305-6536</a>
+                  <a href="tel:09688524423" class="font-body text-ink-3 text-xs hover:text-brand transition-colors block mt-0.5">0968-852-4423</a>
+                </div>
+              </div>
+
+              <!-- Legal footer — full width, barely visible -->
+              <div class="col-span-3 bg-ink/[0.04] rounded-2xl px-5 py-3 flex flex-wrap items-center gap-x-5 gap-y-1">
+                <div class="flex items-center gap-1.5">
+                  <i class="fa-solid fa-certificate text-ink/20 text-[10px]"></i>
+                  <span class="font-body text-ink/30 text-[11px]">SEC CS20162163 · Sept. 23, 2016</span>
+                </div>
+                <div class="w-px h-3 bg-ink/10 hidden sm:block"></div>
+                <div class="flex items-center gap-1.5">
+                  <i class="fa-solid fa-file-invoice text-ink/20 text-[10px]"></i>
+                  <span class="font-body text-ink/30 text-[11px]">BPN 2355 · OR No. 1232925 · Feb. 05, 2026</span>
+                </div>
+              </div>
+
             </div>
           </div>
+
         </div>
       </section>
 
       <!-- MISSION & VISION -->
-      <section class="py-24 px-6 lg:px-16 bg-surface-2">
+      <section class="py-24 px-6 lg:px-16 bg-surface-warm">
         <div class="max-w-7xl mx-auto">
           <div class="text-center mb-16">
             <div class="reveal section-pill mx-auto mb-4 w-fit"><span class="dot"></span>Mission & Vision</div>
@@ -112,16 +178,16 @@ export const About = {
 
             <!-- Vision -->
             <div class="reveal delay-100 group relative bg-ink rounded-[2.5rem] p-10 border border-white/5 shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden">
-              <div class="absolute top-0 right-0 w-48 h-48 bg-brand/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+              <div class="absolute top-0 right-0 w-48 h-48 bg-caution/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
               <div class="relative z-10">
-                <div class="w-14 h-14 rounded-2xl bg-brand/20 flex items-center justify-center mb-8 group-hover:bg-brand group-hover:scale-110 transition-all duration-300">
-                  <i class="fa-solid fa-eye text-brand group-hover:text-white text-xl transition-colors duration-300"></i>
+                <div class="w-14 h-14 rounded-2xl bg-caution/20 flex items-center justify-center mb-8 group-hover:bg-caution group-hover:scale-110 transition-all duration-300">
+                  <i class="fa-solid fa-eye text-caution group-hover:text-ink text-xl transition-colors duration-300"></i>
                 </div>
                 <h3 class="font-display font-800 text-2xl text-white mb-6">Our Vision</h3>
                 <p class="font-body text-white/70 text-lg leading-relaxed">
                   To be recognized and known as an <strong class="text-white">effective, reliable, and dependable supplier</strong> of Personal Protective Equipment to all our customers.
                 </p>
-                <div class="mt-8 pt-6 border-t border-white/10">
+                <div class="mt-8 pt-6 border-t border-caution/20">
                   <p class="font-body text-white/40 text-sm italic">"Excellence in every piece of equipment we supply."</p>
                 </div>
               </div>
@@ -131,23 +197,23 @@ export const About = {
       </section>
 
       <!-- TRUST STATS STRIP -->
-      <div class="bg-brand py-16 px-6 lg:px-16 overflow-hidden">
-        <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-white text-center">
+      <div class="bg-caution py-16 px-6 lg:px-16 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-ink text-center">
           <div class="reveal">
-            <div class="font-display font-800 text-5xl mb-2">2016<span class="text-white/60 text-2xl ml-1"></span></div>
-            <div class="font-body text-white/80">Year Established</div>
+            <div class="font-display font-800 text-5xl mb-2">2016<span class="text-ink/50 text-2xl ml-1"></span></div>
+            <div class="font-body text-ink/70">Year Established</div>
           </div>
           <div class="reveal delay-100">
-            <div class="font-display font-800 text-5xl mb-2">CE<span class="text-white/60 text-2xl ml-1"> &</span></div>
-            <div class="font-body text-white/80">OSHC Certified Products</div>
+            <div class="font-display font-800 text-5xl mb-2">CE<span class="text-ink/50 text-2xl ml-1"> &</span></div>
+            <div class="font-body text-ink/70">OSHC Certified Products</div>
           </div>
           <div class="reveal delay-200">
-            <div class="font-display font-800 text-5xl mb-2">100<span class="text-white/60">%</span></div>
-            <div class="font-body text-white/80">Compliance Guaranteed</div>
+            <div class="font-display font-800 text-5xl mb-2">100<span class="text-ink/50">%</span></div>
+            <div class="font-body text-ink/70">Compliance Guaranteed</div>
           </div>
           <div class="reveal delay-300">
             <div class="font-display font-800 text-4xl mb-2">Bulacan</div>
-            <div class="font-body text-white/80">Marilao, Bulacan HQ</div>
+            <div class="font-body text-ink/70">Marilao, Bulacan HQ</div>
           </div>
         </div>
       </div>
@@ -186,10 +252,10 @@ export const About = {
           <!-- CTA Card -->
           <div class="reveal-right">
             <div class="relative bg-ink rounded-[2.5rem] p-12 overflow-hidden text-center shadow-2xl">
-              <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(39,194,145,0.15),transparent_70%)]"></div>
+              <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,204,0,0.18),transparent_70%)]"></div>
               <div class="relative z-10 space-y-7">
-                <div class="w-20 h-20 rounded-3xl bg-brand/20 flex items-center justify-center mx-auto">
-                  <i class="fa-solid fa-handshake text-brand text-4xl"></i>
+                <div class="w-20 h-20 rounded-3xl bg-caution/20 flex items-center justify-center mx-auto">
+                  <i class="fa-solid fa-handshake text-caution text-4xl"></i>
                 </div>
                 <h3 class="font-display font-800 text-3xl text-white leading-tight">Ready to Partner with WSSCI?</h3>
                 <p class="font-body text-white/60 leading-relaxed">
