@@ -403,15 +403,15 @@ export const Home = {
 
     // Render Visual Categories Strip
     const categoryMeta = {
-      shoes:   { icon: 'footprints', iconImgUrl: 'assets/images/cat-shoes.png',         bg: '#fff7ed', border: '#fed7aa', iconBg: '#ffedd5', color: '#ea580c' },
-      head:    { icon: 'hard-hat',   iconImgUrl: 'assets/images/cat-skull.png',     bg: '#eff6ff', border: '#bfdbfe', iconBg: '#dbeafe', color: '#2563eb' },
-      eye:     { icon: 'glasses',    iconImgUrl: 'assets/images/cat-eye.png', bg: '#ecfdf5', border: '#a7f3d0', iconBg: '#d1fae5', color: '#059669' },
-      vest:    { icon: 'shirt',      iconImgUrl: 'assets/images/cat-vest.png',          bg: '#fefce8', border: '#fde68a', iconBg: '#fef9c3', color: '#b45309' },
-      gloves:  { icon: 'hand',       iconImgUrl: 'assets/images/cat-gloves.png', bg: '#faf5ff', border: '#d8b4fe', iconBg: '#f3e8ff', color: '#7c3aed' },
-      hearing: { icon: 'headphones',        iconImgUrl: 'assets/images/cat-hearing.png',           bg: '#fff1f2', border: '#fda4af', iconBg: '#ffe4e6', color: '#e11d48' },
-      body:    { icon: 'shield',     iconImgUrl: 'assets/images/cat-body.png',        bg: '#faf5ff', border: '#d8b4fe', iconBg: '#f3e8ff', color: '#7c3aed' },
-      welding: { icon: 'flame',      iconImgUrl: 'assets/images/cat-welding.png',  bg: '#fff7ed', border: '#fdba74', iconBg: '#ffedd5', color: '#c2410c' },
-      fall:    { icon: 'link-2',     iconImgUrl: 'assets/images/cat-fall.png', bg: '#f0fdfa', border: '#5eead4', iconBg: '#ccfbf1', color: '#0d9488' },
+      shoes:   { icon: 'footprints', bgImage: 'assets/images/cat-shoes.jpg' },
+      head:    { icon: 'hard-hat',   bgImage: 'assets/images/cat-skull.jpg' },
+      eye:     { icon: 'glasses',    bgImage: 'assets/images/cat-eye.jpg' },
+      vest:    { icon: 'shirt',      bgImage: 'assets/images/cat-vest.jpg' },
+      gloves:  { icon: 'hand',       bgImage: 'assets/images/cat-gloves.jpg' },
+      hearing: { icon: 'headphones', bgImage: 'assets/images/cat-hearing.jpg' },
+      body:    { icon: 'shield',     bgImage: 'assets/images/cat-body.jpg' },
+      welding: { icon: 'flame',      bgImage: 'assets/images/cat-welding.jpg' },
+      fall:    { icon: 'link-2',     bgImage: 'assets/images/cat-fall.jpg' },
     };
     const strip = document.getElementById('visual-category-strip');
     if (strip) {
@@ -419,36 +419,33 @@ export const Home = {
         const m = categoryMeta[c.id] || categoryMeta.body;
         return `
           <a href="#/products?filter=${c.id}"
-             class="reveal group relative overflow-hidden flex flex-col gap-4 p-5 rounded-2xl border transition-all duration-200 cursor-pointer"
-             style="background:${m.bg}; border-color:${m.border}; min-height:130px; transition-delay:${i * 40}ms;">
+             class="reveal group relative overflow-hidden flex flex-col gap-4 p-5 rounded-2xl border border-white/5 hover:border-brand/40 transition-all duration-500 cursor-pointer bg-ink shadow-lg hover:shadow-2xl hover:-translate-y-1"
+             style="min-height:130px; transition-delay:${i * 40}ms;">
+
+            <!-- Background Image with Cinematic Gradient Fade -->
+            <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden rounded-2xl">
+               <!-- Image covering the whole card -->
+               <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-75 group-hover:opacity-90 transition-all duration-700 ease-in-out group-hover:scale-110" style="background-image: url('${m.bgImage}')"></div>
+               <!-- Gradient overlays for text readability -->
+               <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-transparent"></div>
+               <div class="absolute inset-0 bg-gradient-to-r from-ink/70 via-transparent to-transparent"></div>
+            </div>
 
             <!-- Icon box -->
-            <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-200"
-                 style="background:${m.iconBg}; border:1px solid ${m.border};">
+            <div class="relative z-10 w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 bg-white/5 border border-white/10 backdrop-blur-md group-hover:bg-brand transition-colors duration-500">
               <i data-lucide="${m.icon}"
-                 class="w-4 h-4 transition-colors duration-200"
-                 style="color:${m.color};"
+                 class="w-5 h-5 text-white/90 group-hover:text-white transition-colors duration-500"
                  stroke-width="1.5"></i>
             </div>
 
-            <!-- Text -->
-            <div class="mt-auto">
-              <div class="font-display font-700 text-[13px] leading-snug transition-colors duration-200"
-                   style="color:${m.color};">${c.label}</div>
-              <div class="font-body text-[11px] mt-0.5 flex items-center gap-1"
-                   style="color:${m.color}; opacity:0.55;">
-                Browse
-                <i data-lucide="arrow-right" class="w-3 h-3" stroke-width="2"></i>
+            <!-- Text Content -->
+            <div class="relative z-10 mt-auto">
+              <div class="font-display font-700 text-[14px] text-white leading-snug tracking-wide transition-colors duration-300">${c.label}</div>
+              <div class="font-body text-[11px] mt-1 flex items-center gap-1 text-white/50 group-hover:text-white/90 transition-colors duration-300">
+                Explore Gear
+                <i data-lucide="arrow-right" class="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" stroke-width="2"></i>
               </div>
             </div>
-
-            <!-- Watermark -->
-            <div class="absolute -right-3 -bottom-3 pointer-events-none transition-all duration-300 ease-out">
-              <img src="${m.iconImgUrl}" alt="" width="96" height="96"
-                   style="opacity:0.25; filter:grayscale(20%); mix-blend-mode:multiply;"
-                   aria-hidden="true">
-            </div>
-
           </a>`;
       }).join('');
       if (window.lucide) window.lucide.createIcons();
