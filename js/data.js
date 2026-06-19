@@ -10,17 +10,104 @@ export const svgs = {
   vest: `<i class="fa-solid fa-vest text-3xl"></i>`,
 };
 
+export const benefitDict = {
+  headComfort: { icon: 'fa-cloud', label: 'Comfort', desc: 'ABS to keep helmet lightweight and comfortable. Features 3 textile straps with 8 attachment points for optimal weight distribution. Adjustable headband can be positioned high or low for better fit and comfort. Adjustable from 53cm to 63cm for optimized comfort.' },
+  headHygiene: { icon: 'fa-hands-bubbles', label: 'Hygiene', desc: 'Replaceable headband for a better hygiene. Removable brow pad washable and replaceable for a perfect hygiene solution.' },
+  headPerformance: { icon: 'fa-chart-line', label: 'Performance', desc: 'Adjustable headband can be positioned high or low for a secure fit that keeps helmet in place during movement.' },
+  headDurability: { icon: 'fa-hourglass-half', label: 'Durability', desc: 'Replacement basane.' },
+  headEaseOfUse: { icon: 'fa-hand-pointer', label: 'Ease of Use', desc: 'Reverse wearing for a maximum field of vision without visor.' },
+  hygiene: { icon: 'fa-hands-bubbles', label: 'Hygiene', desc: 'Reduces perspiration thanks to its excellent breathability. Nitrile means no risk of allergies for users' },
+  performance: { icon: 'fa-chart-line', label: 'Performance', desc: 'Lightweight for optimal dexterity. Nitrile coating gives excellent grip in oily/greasy environments. SOFTnocut fiber provides excellent cut resistance' },
+  durability: { icon: 'fa-shield-halved', label: 'Durability', desc: 'High-quality coating extends the life of the glove and provides excellent protection for the hand' },
+  performance1: { icon: 'fa-chart-line', label: 'Performance', desc: 'Lightweight for optimal dexterity' },
+  radiantHeatShield: { icon: 'fa-fire-flame-curved', label: 'Radiant Heat Shield', desc: 'Aluminised back and cuff reflect extreme radiant heat for maximum protection during welding' },
+  highDurability: { icon: 'fa-shield-halved', label: 'High Durability', desc: 'Premium split leather construction with para-aramid stitching ensures long-lasting mechanical resistance' },
+  chemicalProtection: { icon: 'fa-shield-halved', label: 'Chemical Protection', desc: 'Type 5B/6B rated protection against dry particles and limited liquid splash' },
+  antiStatic: { icon: 'fa-bolt', label: 'Anti-Static', desc: 'EN 1149-5 certified anti-static properties for hazardous environments' },
+  waterproof: { icon: 'fa-droplet', label: 'Waterproof', desc: 'Type 3B rated total waterproofing with taped seams for maximum liquid protection' },
+  antiStatic1: { icon: 'fa-bolt', label: 'Anti-Static', desc: 'EN 1149-5 certified anti-static for explosive atmosphere environments' },
+  sustainability: { icon: 'fa-recycle', label: 'Sustainability', desc: 'Replacement cushions available to extend life of the product' },
+  hygiene1: { icon: 'fa-hands-bubbles', label: 'Hygiene', desc: 'Washable reusable for weeks without losing attenuation' },
+  comfort: { icon: 'fa-cloud', label: 'Comfort', desc: 'Double headband for greater flexibility and comfort' },
+  performance2: { icon: 'fa-chart-line', label: 'Performance', desc: 'High-performance multi-hull attenuation technology' },
+  compact: { icon: 'fa-compress', label: 'Compact', desc: 'Foldable headband for less space and easier storage' },
+  hygiene2: { icon: 'fa-hands-bubbles', label: 'Hygiene', desc: 'Replaceable cushions — perfect hygiene kit solution' },
+  easyToUse: { icon: 'fa-hand-pointer', label: 'Easy to Use', desc: 'Built-in firm handle directs insertion angle for better fit' },
+  comfort1: { icon: 'fa-cloud', label: 'Comfort', desc: 'Contoured 3 flange polymer design provides all-day comfort' },
+  performance3: { icon: 'fa-chart-line', label: 'Performance', desc: 'Ultra-soft polymer for superior SNR 34dB attenuation' },
+  hygiene3: { icon: 'fa-hands-bubbles', label: 'Hygiene', desc: 'Firm handle allows hygienic insertion without touching the plug body' },
+  comfort2: { icon: 'fa-cloud', label: 'Comfort', desc: 'Low pressure pads minimize clamping force for all-day wear' },
+  adjustability: { icon: 'fa-sliders', label: 'Adjustability', desc: 'Adjustable headband ensures a secure personalized fit' },
+  easyToUse1: { icon: 'fa-hand-pointer', label: 'Easy to Use', desc: 'Built-in firm handle for correct angle of insertion' },
+  performance4: { icon: 'fa-chart-line', label: 'Performance', desc: 'Ultra-soft polymer for superior attenuation' },
+  zirconComfort: { icon: 'fa-cloud', label: 'Comfort', desc: 'Adjustable from 53cm to 63cm for optimized comfort' },
+  zirconHygiene: { icon: 'fa-hands-bubbles', label: 'Hygiene', desc: 'Replaceable headband for a better hygiene. Replaceable suspension for a better hygiene. Removable brow pad washable and replaceable for a perfect hygiene solution.' },
+  graniteComfort: { icon: 'fa-cloud', label: 'Comfort', desc: 'Breathability of vented helmet makes extended wear comfortable. ABS to keep helmet lightweight and comfortable. Features 3 textile straps with 8 attachment points for optimal weight distribution. Adjustable headband can be positioned high or low for better fit and comfort. Adjustable from 53cm to 63cm for optimized comfort. Lack of visor improves field of vision.' },
+  graniteHygiene: { icon: 'fa-hands-bubbles', label: 'Hygiene', desc: 'Replaceable suspension for a better hygiene. Removable brow pad washable and replaceable for a perfect hygiene solution.' },
+  forestierComfort: { icon: 'fa-cloud', label: 'Comfort', desc: 'Features 3 textile straps with 8 attachment points for optimal weight distribution. Adjustable headband can be positioned high or low for better fit and comfort. Adjustable from 53cm to 63cm for optimized comfort.' },
+  forestierCompatibility: { icon: 'fa-puzzle-piece', label: 'Compatibility', desc: 'Compatible with safety glasses. Compatible with noise-canceling headphones.' },
+  forestierHygiene: { icon: 'fa-hands-bubbles', label: 'Hygiene', desc: 'Replaceable headband for a better hygiene. Replaceable suspension for a better hygiene. Removable brow pad washable and replaceable for a perfect hygiene solution.' },
+};
+
+export const certDict = {
+  en388: { name: 'EN 388', details: 'Mechanical Risks Protection' },
+  ansiIsea1052024: { name: 'ANSI/ISEA 105-2024', details: 'Hand Protection Standard' },
+  en3881: { name: 'EN 388', details: '1 0 1 0 X' },
+  enIso3741: { name: 'EN ISO 374-1', details: 'Type A AKLMNPT' },
+  enIso3745: { name: 'EN ISO 374-5', details: 'Micro-organisms Protection' },
+  foodContact: { name: 'Food Contact', details: 'Suitable for food handling' },
+  en407: { name: 'EN 407', details: 'Thermal Risks Protection' },
+  en3882: { name: 'EN 388', details: '3 2 3 4 X' },
+  en4071: { name: 'EN 407', details: '4 1 2 4 4 4' },
+  en12477: { name: 'EN 12477', details: 'Type A Welder Protective' },
+  en374: { name: 'EN 374', details: 'Chemical Protection' },
+  enIso139821: { name: 'EN ISO 13982-1', details: 'Type 5 Dry Particle Protection' },
+  en13034: { name: 'EN 13034', details: 'Type 6 Limited Liquid Splash' },
+  en14126: { name: 'EN 14126', details: 'Biological Hazards Protection' },
+  en11495: { name: 'EN 1149-5', details: 'Anti-Static Properties' },
+  en10732: { name: 'EN 1073-2', details: 'Radioactive Contamination' },
+  en14605: { name: 'EN 14605', details: 'Type 3B/4B Liquid Tight' },
+  en130341: { name: 'EN 13034', details: 'Type 6 Limited Splash' },
+  en141261: { name: 'EN 14126', details: 'Biological Hazards' },
+  enIso13688: { name: 'EN ISO 13688', details: 'General Requirements' },
+  ce: { name: 'CE', details: 'European Conformity' },
+  en3521: { name: 'EN 352-1', details: 'Ear Muffs Standard' },
+  ansiS319: { name: 'ANSI S3.19', details: 'NRR 26 dB' },
+  ulArEn3521: { name: 'UL-AR EN352-1', details: 'Underwriters Laboratories Certified' },
+  en3523: { name: 'EN 352-3', details: 'SNR 30 dB · Helmet Mounted Ear Muffs' },
+  ansiS3191: { name: 'ANSI S3.19', details: 'Hearing Protection Standard' },
+  en35211: { name: 'EN 352-1', details: 'SNR 30 dB · Ear Muffs Standard' },
+  ansiS3192: { name: 'ANSI S3.19', details: 'NRR 25 dB' },
+  en35231: { name: 'EN 352-3', details: 'Helmet Mounted Ear Muffs' },
+  ansiS3193: { name: 'ANSI S3.19', details: 'NRR 21 dB' },
+  en3522: { name: 'EN 352-2', details: 'SNR 34 dB · H 33 · M 32 · L 31 · ø 8-12 mm' },
+  en35212: { name: 'EN 352-1', details: 'SNR 23 dB · Ear Muffs Standard' },
+  en35221: { name: 'EN 352-2', details: 'Ear Plugs Standard' },
+  en397: { name: 'EN397:2012', details: 'Protective helmets for industry' },
+  en50365: { name: 'EN 50365', details: 'Electrically insulating helmets for use on low voltage installations' },
+  ulArIram3620: { name: 'UL-AR IRAM 3620', details: 'Safety helmets' },
+  en397Forestier: { name: 'EN397:2012', details: '-10°C +50°C · 440VAC' },
+  en50365Forestier: { name: 'EN 50365', details: 'Class 0' },
+  en3523Forestier: { name: 'EN 352-3', details: 'SNR: 24 dB · H: 27 · M: 21 · L: 14 (S/M/L)' },
+  en1731: { name: 'EN 1731', details: 'F (Mesh face shield standard)' },
+  en166: { name: 'EN 166', details: 'F (Eye protection)' },
+};
+
+
+export const getBenefits = (...keys) => keys.map(k => benefitDict[k]).filter(Boolean);
+export const getCerts = (...keys) => keys.map(k => certDict[k]).filter(Boolean);
+
 export const categories = [
-  { id:'shoes', label:'Safety Shoes', icon:svgs.shoes, desc:'Slip-resistant, impact-proof industrial footwear equipped with advanced shock absorption and S3-rated protection.', color:'#27C291' },
-  { id:'head', label:'Skull Protection', icon:svgs.head, desc:'High-density thermoplastic hard hats engineered to dissipate extreme kinetic energy from overhead impacts.', color:'#FFCC00' },
-  { id:'eye', label:'Eye Protection', icon:svgs.eye, desc:'Anti-scratch, anti-fog polycarbonate eyewear and face shields providing panoramic visibility and UV resistance.', color:'#27C291' },
-  { id:"vest", label:"Safety Vest", icon:svgs.vest, desc:"High-visibility vests with reflective strips for enhanced worker safety in low-light conditions.", color : "#FFCC00"},
-  { id:'gloves', label:'Gloves', icon:svgs.gloves, desc:'Precision tactile gloves offering Level F cut resistance, robust chemical defense, and superior ergonomic dexterity.', color:'#27C291' },
-  { id:'hearing', label:'Hearing Protection', icon:svgs.hearing, desc:'High-attenuation ear muffs and ergonomic earplugs designed to isolate and dampen sustained industrial decibel extremes.', color:'#27C291' },
-  { id:'body', label:'Body Protection', icon:svgs.body, desc:'Microporous coveralls, thermal FR gear, and chemical suits certified to shield against hazardous particulate and splash.', color:'#1a9e76' },
-  { id:'welding', label:'Welding', icon:svgs.welding, desc:'Auto-darkening active filters, split-leather aprons, and thermal barriers for optimal arc flash and spatter defense.', color:'#1a9e76' },
-  { id:'fall', label:'Fall Protection', icon:svgs.fall, desc:'Multi-point full-body harnesses, energy-absorbing lanyards, and carabiners engineered for extreme vertical securement.', color:'#FFCC00' },
-  
+  { id: 'shoes', label: 'Safety Shoes', icon: svgs.shoes, desc: 'Slip-resistant, impact-proof industrial footwear equipped with advanced shock absorption and S3-rated protection.', color: '#27C291' },
+  { id: 'head', label: 'Skull Protection', icon: svgs.head, desc: 'High-density thermoplastic hard hats engineered to dissipate extreme kinetic energy from overhead impacts.', color: '#FFCC00' },
+  { id: 'eye', label: 'Eye Protection', icon: svgs.eye, desc: 'Anti-scratch, anti-fog polycarbonate eyewear and face shields providing panoramic visibility and UV resistance.', color: '#27C291' },
+  { id: "vest", label: "Safety Vest", icon: svgs.vest, desc: "High-visibility vests with reflective strips for enhanced worker safety in low-light conditions.", color: "#FFCC00" },
+  { id: 'gloves', label: 'Gloves', icon: svgs.gloves, desc: 'Precision tactile gloves offering Level F cut resistance, robust chemical defense, and superior ergonomic dexterity.', color: '#27C291' },
+  { id: 'hearing', label: 'Hearing Protection', icon: svgs.hearing, desc: 'High-attenuation ear muffs and ergonomic earplugs designed to isolate and dampen sustained industrial decibel extremes.', color: '#27C291' },
+  { id: 'body', label: 'Body Protection', icon: svgs.body, desc: 'Microporous coveralls, thermal FR gear, and chemical suits certified to shield against hazardous particulate and splash.', color: '#1a9e76' },
+  { id: 'welding', label: 'Welding', icon: svgs.welding, desc: 'Auto-darkening active filters, split-leather aprons, and thermal barriers for optimal arc flash and spatter defense.', color: '#1a9e76' },
+  { id: 'fall', label: 'Fall Protection', icon: svgs.fall, desc: 'Multi-point full-body harnesses, energy-absorbing lanyards, and carabiners engineered for extreme vertical securement.', color: '#FFCC00' },
+
 ];
 
 export const products = [
@@ -224,10 +311,18 @@ export const products = [
     cat: 'head',
     name: 'AIR COLTAN',
     brand: 'DeltaPlus',
-    tags: ['Bump Cap', 'Ventilated', 'Polyester'],
-    desc: 'Ventilated bump cap in polyester. Designed for environments with low overhead hazards where a full safety helmet is impractical. Offers lightweight head protection with maximum comfort.',
-    features: ['Ventilated polyester shell', 'Bump cap for low-risk environments', 'Lightweight and breathable', 'Baseball cap style', 'Washable fabric cover', 'Internal ABS protective insert'],
-    img: 'assets/products/head/air_coltan.png'
+    tags: ['Bump Cap', 'Ventilated', 'Textile'],
+    desc: 'Ventilated protective cap for maximum comfort, available in 3 visor lengths',
+    features: ['Cap Material : Textile', 'Head Measurement : 55-62', 'Shell Material : Polyethylene', 'Shell Liner : EVA', 'Adjustment : Clamp Bracket', 'Weight : 176 g'],
+    img: 'assets/products/skull/air-coltan/thumbnail.png',
+    images: ['assets/products/skull/air-coltan/gray-yellow/1.png', 'assets/products/skull/air-coltan/gray-yellow/2.png', 'assets/products/skull/air-coltan/gray-yellow/3.png', 'assets/products/skull/air-coltan/gray-yellow/4.png'],
+    sizes: ['Adjustable- long peak'],
+    colors: [
+      { name: 'Gray-Yellow', hex: 'linear-gradient(225deg, #4b5563 50%, #eab308 50%)', img: 'assets/products/skull/air-coltan/gray-yellow/11.png', images: ['assets/products/skull/air-coltan/gray-yellow/1.png', 'assets/products/skull/air-coltan/gray-yellow/2.png', 'assets/products/skull/air-coltan/gray-yellow/3.png', 'assets/products/skull/air-coltan/gray-yellow/4.png'], sizes: ['Adjustable- long peak', 'Adjustable- micro peak'] },
+      { name: 'Black-Red', hex: 'linear-gradient(225deg, #1a1a1a 50%, #dc2626 50%)', img: 'assets/products/skull/air-coltan/black-red/1.png', images: ['assets/products/skull/air-coltan/black-red/1.png', 'assets/products/skull/air-coltan/black-red/2.png', 'assets/products/skull/air-coltan/black-red/3.png'], sizes: ['Adjustable- long peak', 'Adjustable- micro peak', 'Adjustable- short peak'] },
+      { name: 'Navy Blue-Orange', hex: 'linear-gradient(225deg, #0d276eff 50%, #f97316 50%)', img: 'assets/products/skull/air-coltan/navy blue-orange/1.png', images: ['assets/products/skull/air-coltan/navy blue-orange/1.png', 'assets/products/skull/air-coltan/navy blue-orange/2.png'], sizes: ['Adjustable- long peak', 'Adjustable- short peak'] },
+      { name: 'Fluorescent Yellow-Gray', hex: 'linear-gradient(225deg, #fef08a 50%, #9ca3af 50%)', img: 'assets/products/skull/air-coltan/fluorescent yellow-gray/1.png', images: ['assets/products/skull/air-coltan/fluorescent yellow-gray/1.png',], sizes: ['Adjustable- long peak'] }
+    ]
   },
   {
     id: 201,
@@ -235,19 +330,45 @@ export const products = [
     name: 'DIAMOND V',
     brand: 'DeltaPlus',
     tags: ['ABS', 'EN397', 'Baseball Cap Style'],
-    desc: 'ABS safety helmet with "baseball cap" shape. Combines the familiar profile of a baseball cap with certified industrial head protection. Ideal for construction, public works, and maintenance.',
+    desc: 'Safety helmet featuring a sporty design for upright and inverted wear for maximum versatility',
     features: ['ABS thermoplastic shell', '"Baseball cap" silhouette', 'EN 397 certified', 'Adjustable internal harness', 'Lightweight construction', 'Available in multiple colors'],
-    img: 'assets/products/head/diamond_v.png'
+    benefits: getBenefits('headComfort', 'headHygiene', 'headPerformance', 'headDurability', 'headEaseOfUse'),
+    img: 'assets/products/skull/diamond-v/thumbnail.png',
+    images: ['assets/products/skull/diamond-v/gray-yellow/1.png'],
+    sizes: ['Adjustable'],
+    colors: [
+      { name: 'Gray-Yellow', hex: 'linear-gradient(225deg, #4b5563 50%, #eab308 50%)', img: 'assets/products/skull/diamond-v/gray-yellow/1.png', images: ['assets/products/skull/diamond-v/gray-yellow/1.png'], sizes: ['Adjustable'] },
+      { name: 'Green', hex: '#198754', img: 'assets/products/skull/diamond-v/green/1.png', images: ['assets/products/skull/diamond-v/green/1.png'], sizes: ['Adjustable'] },
+      { name: 'Red', hex: '#dc3545', img: 'assets/products/skull/diamond-v/red/1.png', images: ['assets/products/skull/diamond-v/red/1.png'], sizes: ['Adjustable'] },
+      { name: 'Yellow', hex: '#ffc107', img: 'assets/products/skull/diamond-v/yellow/1.png', images: ['assets/products/skull/diamond-v/yellow/1.png'], sizes: ['Adjustable'] },
+      { name: 'Black', hex: '#1a1a1a', img: 'assets/products/skull/diamond-v/black/1.png', images: ['assets/products/skull/diamond-v/black/1.png'], sizes: ['Adjustable'] },
+      { name: 'Blue', hex: '#0d6efd', img: 'assets/products/skull/diamond-v/blue/1.png', images: ['assets/products/skull/diamond-v/blue/1.png'], sizes: ['Adjustable'] },
+      { name: 'Orange', hex: '#fd7e14', img: 'assets/products/skull/diamond-v/orange/1.png', images: ['assets/products/skull/diamond-v/orange/1.png'], sizes: ['Adjustable'] },
+      { name: 'White', hex: '#ffffff', img: 'assets/products/skull/diamond-v/white/1.png', images: ['assets/products/skull/diamond-v/white/1.png'], sizes: ['Adjustable'] }
+    ]
   },
   {
     id: 202,
     cat: 'head',
     name: 'ZIRCON 1',
     brand: 'DeltaPlus',
-    tags: ['Polyethylene', 'EN397', 'Classic'],
-    desc: 'Polyethylene safety helmet providing reliable impact protection for standard industrial environments. Classic design with adjustable ratchet suspension for a secure, comfortable fit.',
-    features: ['High-density polyethylene (HDPE) shell', 'EN 397 certified', 'Ratchet adjustment system', 'Six-point textile suspension', 'Integrated sweatband', 'Brim for sun and rain deflection'],
-    img: 'assets/products/head/zircon1.png'
+    tags: ['HDPE', 'EN397', 'Manual Adjustment'],
+    desc: 'Safety helmet with manual adjustment. Electrically insulated safety helmet with adjustable strap, providing reliable impact protection for standard industrial environments.',
+    features: ['High-density polyethylene (HDPE) / Polypropylene shell', 'PE (Polyethylene) polymer harness with 8 suspension points', 'Slide-Lock adjustment system', 'Electrical insulation (EN 50365)', 'Head measurement: 53-63 cm', 'Lightweight construction (330g)'],
+    benefits: getBenefits('zirconComfort', 'zirconHygiene', 'headPerformance', 'headDurability'),
+    certifications: getCerts('en397', 'en50365', 'ulArIram3620'),
+    img: 'assets/products/skull/zircon-1/thumbnail.png',
+    images: ['assets/products/skull/zircon-1/green/1.png'],
+    sizes: ['Adjustable'],
+    colors: [
+      { name: 'Green', hex: '#198754', img: 'assets/products/skull/zircon-1/green/1.png', images: ['assets/products/skull/zircon-1/green/1.png'], sizes: ['Adjustable'] },
+      { name: 'Orange', hex: '#fd7e14', img: 'assets/products/skull/zircon-1/orange/1.png', images: ['assets/products/skull/zircon-1/orange/1.png'], sizes: ['Adjustable'] },
+      { name: 'Blue', hex: '#0d6efd', img: 'assets/products/skull/zircon-1/blue/1.png', images: ['assets/products/skull/zircon-1/blue/1.png'], sizes: ['Adjustable'] },
+      { name: 'Gray', hex: '#6c757d', img: 'assets/products/skull/zircon-1/gray/1.png', images: ['assets/products/skull/zircon-1/gray/1.png'], sizes: ['Adjustable'] },
+      { name: 'Yellow', hex: '#ffc107', img: 'assets/products/skull/zircon-1/yellow/1.png', images: ['assets/products/skull/zircon-1/yellow/1.png'], sizes: ['Adjustable'] },
+      { name: 'White', hex: '#ffffff', img: 'assets/products/skull/zircon-1/white/1.png', images: ['assets/products/skull/zircon-1/white/1.png'], sizes: ['Adjustable'] },
+      { name: 'Red', hex: '#dc3545', img: 'assets/products/skull/zircon-1/red/1.png', images: ['assets/products/skull/zircon-1/red/1.png'], sizes: ['Adjustable'] }
+    ]
   },
   {
     id: 203,
@@ -255,9 +376,19 @@ export const products = [
     name: 'GRANITE WIND',
     brand: 'DeltaPlus',
     tags: ['ABS', 'Ventilated', 'Mountain Style'],
-    desc: 'Ventilated ABS safety helmet in mountain helmet style. Designed for forestry, rope access, and outdoor industrial work requiring certified head protection with enhanced ventilation and chin strap.',
-    features: ['ABS shell — mountain helmet profile', 'Large ventilation ports', 'Four-point chin strap', 'Compatible with hearing and eye protection accessories', 'Ratchet adjustment system', 'EN 397 certified'],
-    img: 'assets/products/head/granite_wind.png'
+    desc: 'Safety helmet for work at height, ventilated, made from ABS, equipped with a 3-point chinstrap',
+    features: ['Shell material : ABS - Vented', 'Head Measurement : 53-63 cm', 'D Rotor Ratchet - Rotor adjustment', 'Textile : PA (Polyamide) - 8 points', 'Chin Strap Material : Textile - 3 Point Chin Strap', 'Comfort Headband : EVA Foam', 'Weight : 368 g', 'Face shield - Accessory added to order'],
+    benefits: getBenefits('graniteComfort', 'graniteHygiene', 'headPerformance', 'headDurability'),
+    img: 'assets/products/skull/granite-wind/thumbnail.png',
+    images: ['assets/products/skull/granite-wind/white/1.png', 'assets/products/skull/granite-wind/white/2.png', 'assets/products/skull/granite-wind/white/3.png'],
+    sizes: ['Adjustable'],
+    colors: [
+      { name: 'White', hex: '#ffffff', img: 'assets/products/skull/granite-wind/white/1.png', images: ['assets/products/skull/granite-wind/white/1.png', 'assets/products/skull/granite-wind/white/2.png', 'assets/products/skull/granite-wind/white/3.png'], sizes: ['Adjustable'] },
+      { name: 'Orange', hex: '#fd7e14', img: 'assets/products/skull/granite-wind/orange/1.png', images: ['assets/products/skull/granite-wind/orange/1.png'], sizes: ['Adjustable'] },
+      { name: 'Blue', hex: '#0d6efd', img: 'assets/products/skull/granite-wind/blue/1.png', images: ['assets/products/skull/granite-wind/blue/1.png'], sizes: ['Adjustable'] },
+      { name: 'Red', hex: '#dc3545', img: 'assets/products/skull/granite-wind/red/1.png', images: ['assets/products/skull/granite-wind/red/1.png'], sizes: ['Adjustable'] },
+      { name: 'Yellow', hex: '#ffc107', img: 'assets/products/skull/granite-wind/yellow/1.png', images: ['assets/products/skull/granite-wind/yellow/1.png'], sizes: ['Adjustable'] }
+    ]
   },
   {
     id: 204,
@@ -265,9 +396,28 @@ export const products = [
     name: 'FORESTIER 3',
     brand: 'DeltaPlus',
     tags: ['Forestry', 'Integrated Visor', 'Zircon Based'],
-    desc: 'Foresters type safety helmet consisting of Zircon safety helmet. Features an integrated mesh face shield and ear defender attachment points for full head and face protection in forestry operations.',
-    features: ['Based on Zircon polyethylene shell', 'Integrated mesh face visor', 'Ear defender attachment slots', 'EN 397 certified', 'Adjustable harness system', 'Designed for chainsaw and forestry work'],
-    img: 'assets/products/head/forestier_3.png'
+    desc: 'Safety helmet ideal for clearing applications due to its protective gauze visor and soundproof shells.',
+    features: [
+      'Type of product : Forest helmet kit',
+      'Kit includes : 1x Zircon 1 helmet, 1x Suzuka 2 earmuffs, 1x Visorholder, 1x Visorg mesh visor',
+      'Shell material : HDPE - Polypropylene / Non vented',
+      'Suspension points : 8 points textile harness',
+      'Adjustment : Slide-Lock system',
+      'Head measurement : 53-63 cm',
+      'Comfort headband : Polyester',
+      'Weight : 762 g',
+      'Mounting notch : Yes (for earmuffs fixation)',
+      'Integrated option : Integrated mesh visor',
+      'Temperature resistance : -10°C to +50°C',
+      'Lifespan : 60 months from manufacturing / 36 months from first use'
+    ],
+    benefits: getBenefits('forestierComfort', 'forestierCompatibility', 'forestierHygiene', 'headPerformance', 'headDurability'),
+    certifications: getCerts('ce', 'en397Forestier', 'en50365Forestier', 'en3523Forestier', 'en1731', 'en166'),
+    img: 'assets/products/skull/forestier-3/thumbnail.png',
+    sizes: ['Adjustable'],
+    colors: [
+      { name: 'Orange', hex: '#fd7e14', img: 'assets/products/skull/forestier-3/orange/1.png' }
+    ]
   },
   {
     id: 205,
@@ -277,7 +427,12 @@ export const products = [
     tags: ['ABS', 'Retractable Visor', 'Dual Shell'],
     desc: 'Dual-shell ABS safety helmet with retractable visor. The integrated polycarbonate visor retracts when not needed, providing versatile protection on construction and industrial sites.',
     features: ['Dual ABS shell construction', 'Retractable polycarbonate visor', 'EN 397 and EN 166 certified', 'Ratchet adjustment harness', 'Ventilation system'],
-    img: 'assets/products/head/onyx2_blanc.png'
+    img: 'assets/products/skull/onyx2-blanc/thumbnail.png',
+    images: ['assets/products/skull/onyx2-blanc/white/1.png', 'assets/products/skull/onyx2-blanc/white/2.png', 'assets/products/skull/onyx2-blanc/white/3.png', 'assets/products/skull/onyx2-blanc/white/4.png', 'assets/products/skull/onyx2-blanc/white/5.png'],
+    sizes: ['Adjustable'],
+    colors: [
+      { name: 'White', hex: '#ffffff', img: 'assets/products/skull/onyx2-blanc/1.png', images: ['assets/products/skull/onyx2-blanc/white/1.png', 'assets/products/skull/onyx2-blanc/white/2.png', 'assets/products/skull/onyx2-blanc/white/3.png', 'assets/products/skull/onyx2-blanc/white/4.png', 'assets/products/skull/onyx2-blanc/white/5.png'] },
+    ]
   },
   {
     id: 206,
@@ -287,7 +442,12 @@ export const products = [
     tags: ['Polyester Lining', 'Cold Protection', 'Helmet Liner'],
     desc: 'Polyester lining for safety helmets. Provides thermal insulation inside the helmet during cold weather operations without compromising the helmet\'s protective performance.',
     features: ['Polyester fleece material', 'Fits inside standard safety helmets', 'Ear coverage panels', 'Thermal insulation for cold environments', 'Washable construction', 'Universal fit design'],
-    img: 'assets/products/head/winter_cap.png'
+    img: 'assets/products/skull/winter-cap/thumbnail.png',
+    images: ['assets/products/skull/winter-cap/black/1.png', 'assets/products/skull/winter-cap/black/2.png'],
+    sizes: ['Adjustable'],
+    colors: [
+      { name: 'Black', hex: '#000', img: 'assets/products/skull/winter-cap/black/1.png', images: ['assets/products/skull/winter-cap/black/1.png', 'assets/products/skull/winter-cap/black/2.png'], sizes: ['Adjustable'] }
+    ]
   },
   {
     id: 207,
@@ -297,7 +457,14 @@ export const products = [
     tags: ['Polypropylene', 'EN397', 'Lightweight'],
     desc: 'Polypropylene safety helmet offering lightweight certified head protection for general industrial, construction, and maintenance applications.',
     features: ['Polypropylene thermoplastic shell', 'EN 397 certified', 'Lightweight design for all-day comfort', 'Adjustable textile suspension', 'Integrated sweatband', 'Available in multiple colors including blue'],
-    img: 'assets/products/head/quartz_i.png'
+    img: 'assets/products/skull/quartz-1/thumbnail.png',
+    images: ['assets/products/skull/quartz-1/white/1.png',],
+    sizes: ['Adjustable'],
+    colors: [
+      { name: 'White', hex: '#ffffff', img: 'assets/products/skull/quartz-1/white/1.png', sizes: ['Adjustable'] },
+      { name: 'Blue', hex: '#0d6efd', img: 'assets/products/skull/quartz-1/blue/1.png', sizes: ['Adjustable'] },
+      { name: 'Yellow', hex: '#ffc107', img: 'assets/products/skull/quartz-1/yellow/1.png', sizes: ['Adjustable'] }
+    ]
   },
 
   // ── EYE PROTECTION (DeltaPlus) ──
@@ -309,7 +476,11 @@ export const products = [
     tags: ['AS', 'UV400', 'EN166'],
     desc: 'Polycarbonate safety glasses with AS (anti-scratch) coating and UV400 filter. Classic clear lens design with adjustable nylon temples for a secure, comfortable fit in general industrial tasks.',
     features: ['Polycarbonate single lens', 'Anti-scratch (AS) coating', 'UV400 protection', 'Length-adjustable temple arms', 'Integrated side shielding', 'EN 166 certified'],
-    img: 'assets/products/eye/brava2_clear.png'
+    img: 'assets/products/eye/brava2-clear/thumbnail.png',
+    images: ['assets/products/eye/brava2-clear/1.png'],
+    colors: [
+      { name: 'Clear', hex: ' linear-gradient(225deg, rgba(114, 114, 114, 0.32) 0%, rgba(197, 197, 197, 0.32) 100%)', images: ['assets/products/eye/brava2-clear/1.png'] }
+    ]
   },
   {
     id: 301,
@@ -319,7 +490,11 @@ export const products = [
     tags: ['AB', 'AR', 'Polycarbonate'],
     desc: 'Polycarbonate safety glasses with AB (anti-scratch) and AR (anti-reflection) coatings. Sporty wraparound design with soft flexible TPE nose piece and panoramic lens for maximum field of vision.',
     features: ['Polycarbonate panoramic lens', 'Anti-scratch (AB) coating', 'Anti-reflection (AR) coating', 'Soft flexible TPE nose piece', 'Curved wraparound design', 'EN 166 certified'],
-    img: 'assets/products/eye/aso2_clear.png'
+    img: 'assets/products/eye/aso2-clear/thumbnail.png',
+    images: ['assets/products/eye/aso2-clear/1.png'],
+    colors: [
+      { name: 'Clear', hex: ' linear-gradient(225deg, rgba(114, 114, 114, 0.32) 0%, rgba(197, 197, 197, 0.32) 100%)', images: ['assets/products/eye/aso2-clear/1.png'] }
+    ]
   },
   {
     id: 302,
@@ -329,7 +504,11 @@ export const products = [
     tags: ['AS', 'UV400', 'Wrap-Around'],
     desc: 'Polycarbonate safety glasses with AS (anti-scratch) coating and UV400 filter. Classic wrap-around design providing comprehensive frontal and lateral protection. Featherweight frame (~25g).',
     features: ['Polycarbonate lens with AS coating', 'UV400 total protection', 'Wrap-around lateral shielding', 'Lightweight frame (~25g)', 'Adjustable tilt temples', 'EN 166 certified'],
-    img: 'assets/products/eye/kilimandjaro_clear.png'
+    img: 'assets/products/eye/kilimandjaro-clear/thumbnail.png',
+    images: ['assets/products/eye/kilimandjaro-clear/1.png'],
+    colors: [
+      { name: 'Clear', hex: ' linear-gradient(225deg, rgba(114, 114, 114, 0.32) 0%, rgba(197, 197, 197, 0.32) 100%)', images: ['assets/products/eye/kilimandjaro-clear/1.png'] }
+    ]
   },
   {
     id: 303,
@@ -339,7 +518,11 @@ export const products = [
     tags: ['AM', 'AS', 'UV400'],
     desc: 'Polycarbonate safety glasses with AM (anti-scratch), AS coatings, and UV400 protection. Multi-length adjustable temples and tiltable lens for a fully customized secure fit.',
     features: ['Polycarbonate lens', 'AM and AS dual coatings', 'UV400 filter', 'Multi-length temple adjustment', 'Tilt-adjustable lens', 'EN 166 certified'],
-    img: 'assets/products/eye/vulcano2_clear.png'
+    img: 'assets/products/eye/vulcano2-clear/thumbnail.png',
+    images: ['assets/products/eye/vulcano2-clear/1.png'],
+    colors: [
+      { name: 'Clear', hex: ' linear-gradient(225deg, rgba(114, 114, 114, 0.32) 0%, rgba(197, 197, 197, 0.32) 100%)', images: ['assets/products/eye/vulcano2-clear/1.png'] }
+    ]
   },
   {
     id: 304,
@@ -349,7 +532,11 @@ export const products = [
     tags: ['PVC Goggles', 'Chemical Splash', 'Indirect Ventilation'],
     desc: 'PVC safety goggles with polycarbonate lenses and indirect ventilation. Protects against liquid splashes, dust, and large particles. Soft PVC frame provides a comfortable face seal.',
     features: ['Soft PVC frame for face conformity', 'Polycarbonate high-impact lens', 'Indirect ventilation ports', 'Wide elasticated headband', 'Protects against chemical splash and dust', 'EN 166 certified'],
-    img: 'assets/products/eye/galeras_clear.png'
+    img: 'assets/products/eye/galeras-clear/thumbnail.png',
+    images: ['assets/products/eye/galeras-clear/1.png'],
+    colors: [
+      { name: 'Clear', hex: ' linear-gradient(225deg, rgba(114, 114, 114, 0.32) 0%, rgba(197, 197, 197, 0.32) 100%)', images: ['assets/products/eye/galeras-clear/1.png'] }
+    ]
   },
   {
     id: 305,
@@ -359,7 +546,9 @@ export const products = [
     tags: ['AS', 'UV400', 'Gradient Tint'],
     desc: 'Polycarbonate safety glasses with AS coating and gradient lens tint. Suitable for transitioning between indoor and outdoor environments with integrated ventilation bridge.',
     features: ['Polycarbonate gradient lens', 'Anti-scratch (AS) coating', 'UV400 filter', 'Integrated ventilation bridge', 'Soft flat-profile temples', 'EN 166 certified'],
-    img: 'assets/products/eye/fuji2_gradient.png'
+    img: 'assets/products/eye/fuji2-gradient/thumbnail.png',
+    images: ['assets/products/eye/fuji2-gradient/1.png'],
+    colors: []
   },
   {
     id: 306,
@@ -369,7 +558,11 @@ export const products = [
     tags: ['Rimless', 'Ultralight', 'Over-Glasses'],
     desc: 'Rimless safety glasses (surlunettes HEKLA2) for an unobstructed field of vision. Can be worn over prescription eyeglasses. Ultralight design eliminates pressure points on nose and temples.',
     features: ['Minimalist rimless construction', 'Can be worn over corrective glasses', 'Wide peripheral field of view', 'Featherweight ~22g chassis', 'Anti-slip comfort tips', 'EN 166 certified'],
-    img: 'assets/products/eye/hekla2.png'
+    img: 'assets/products/eye/hekla2/thumbnail.png',
+    images: ['assets/products/eye/hekla2/1.png'],
+    colors: [
+      { name: 'Clear', hex: ' linear-gradient(225deg, rgba(114, 114, 114, 0.32) 0%, rgba(197, 197, 197, 0.32) 100%)', images: ['assets/products/eye/hekla2/1.png'] }
+    ]
   },
   {
     id: 307,
@@ -379,17 +572,12 @@ export const products = [
     tags: ['Smoke Tint', 'UV400', 'Matt Finish'],
     desc: 'Polycarbonate frame safety glasses with smoke tint lens and matt finish. Optimized for outdoor use in bright sunlight, providing glare reduction and UV400 protection.',
     features: ['Polycarbonate smoke tint lens', 'Matt finish frame', 'UV400 sun protection', 'High-comfort TPE nose bridge', 'Aerodynamic temple design', 'EN 166 certified'],
-    img: 'assets/products/eye/iraya_smoke.png'
-  },
-  {
-    id: 308,
-    cat: 'eye',
-    name: 'TOBA 3 T5',
-    brand: 'DeltaPlus',
-    tags: ['Shade 5', 'Flip-Up', 'Welding Goggles'],
-    desc: 'Flip-up welder\'s goggles with shade 5 filter lenses. The lift-up front design allows the user to inspect work without removing the goggles. Suitable for gas welding and brazing.',
-    features: ['Shade 5 dark filter lenses', 'Flip-up lift-front for visual checks', 'Indirect ventilation system', 'Soft face-forming seal', 'Adjustable elasticated headband', 'EN 166 / EN 175 certified'],
-    img: 'assets/products/eye/toba_3_t5.png'
+    img: 'assets/products/eye/iraya-smoke/thumbnail.png',
+    images: ['assets/products/eye/iraya-smoke/1.png'],
+    colors: [
+      { name: 'Smoke', hex: '#0000008b', images: ['assets/products/eye/iraya-smoke/1.png'] }
+    ]
+
   },
 
   // ── GLOVES (DeltaPlus) ──
@@ -400,16 +588,14 @@ export const products = [
     brand: 'DeltaPlus',
     tags: ['Cut Resistant', 'Nitrile Coated', 'Gauge 15'],
     desc: 'SOFTnocut knitted glove with nitrile-coating palm and reinforcement, gauge 15. SOFTnocut fiber provides excellent cut resistance with lightweight dexterity for oily and greasy environments.',
-    benefits: [
-      { icon: 'fa-hands-bubbles', label: 'Hygiene', desc: 'Reduces perspiration thanks to its excellent breathability. Nitrile means no risk of allergies for users' },
-      { icon: 'fa-chart-line', label: 'Performance', desc: 'Lightweight for optimal dexterity. Nitrile coating gives excellent grip in oily/greasy environments. SOFTnocut fiber provides excellent cut resistance' }
-    ],
-    certifications: [
-      { name: 'EN 388', details: 'Mechanical Risks Protection' },
-      { name: 'ANSI/ISEA 105-2024', details: 'Hand Protection Standard' }
-    ],
+    benefits: getBenefits('hygiene', 'performance'),
+    certifications: getCerts('en388', 'ansiIsea1052024'),
     features: ['SOFTnocut fiber for cut resistance', 'Nitrile foam-coated palm for grip', 'Gauge 15 knitted construction', 'Long cuff (100mm) for wrist protection', 'Available in sizes 7-11', 'Suitable for construction, automotive, and mining'],
-    img: 'assets/products/gloves/venicut41gn.png'
+    img: 'assets/products/gloves/venicut-41gn/thumbnail.png',
+    images: ['assets/products/gloves/venicut-41gn/gray/1.png', 'assets/products/gloves/venicut-41gn/gray/2.png', 'assets/products/gloves/venicut-41gn/gray/3.png'],
+    colors: [
+      { name: 'Gray', hex: '#4b5563', images: ['assets/products/gloves/venicut-41gn/gray/1.png', 'assets/products/gloves/venicut-41gn/gray/2.png', 'assets/products/gloves/venicut-41gn/gray/3.png'] }
+    ]
   },
   {
     id: 401,
@@ -418,18 +604,14 @@ export const products = [
     brand: 'DeltaPlus',
     tags: ['Latex', 'Household', 'Flocked Dipped'],
     desc: 'Tight, powder-free latex glove with a double-coated, grip-textured finish and internal flocking for superior comfort. This 300mm forearm-length, dual-color glove features a 0.60mm thickness, providing robust yet flexible protection for cleaning, food handling, and industrial tasks.',
-    benefits: [
-      { icon: 'fa-shield-halved', label: 'Durability', desc: 'High-quality coating extends the life of the glove and provides excellent protection for the hand' },
-      { icon: 'fa-chart-line', label: 'Performance', desc: 'Lightweight for optimal dexterity' }
-    ],
-    certifications: [
-      { name: 'EN 388', details: '1 0 1 0 X' },
-      { name: 'EN ISO 374-1', details: 'Type A AKLMNPT' },
-      { name: 'EN ISO 374-5', details: 'Micro-organisms Protection' },
-      { name: 'Food Contact', details: 'Suitable for food handling' }
-    ],
+    benefits: getBenefits('durability', 'performance1'),
+    certifications: getCerts('en3881', 'enIso3741', 'enIso3745', 'foodContact'),
     features: ['Double-coated natural latex construction', 'Grip-textured pattern for superior grip', 'Inner flocked finish for comfort', '0.60mm thickness and 300mm length', 'Blue-Yellow dual-color design', 'Powder-free unsupported design'],
-    img: 'assets/products/gloves/duocolor_ve330.png'
+    img: 'assets/products/gloves/duocolor-ve330/thumbnail.png',
+    images: ['assets/products/gloves/duocolor-ve330/blue-yellow/1.png', 'assets/products/gloves/duocolor-ve330/blue-yellow/1.png'],
+    colors: [
+      { name: 'Blue-Yellow', hex: 'linear-gradient(225deg, #0d6efd 50%, #eab308 50%)', images: ['assets/products/gloves/duocolor-ve330/blue-yellow/1.png', 'assets/products/gloves/duocolor-ve330/blue-yellow/1.png'], sizes: ['Adjustable'] }
+    ]
   },
   {
     id: 402,
@@ -438,11 +620,13 @@ export const products = [
     brand: 'DeltaPlus',
     tags: ['Cut Resistant', 'Nitrile Coated', 'Gauge 13'],
     desc: 'Knitted ECONOCUT® glove with nitrile coated palm, gauge 13 — x3 pairs pack. Budget-friendly cut-resistant glove for general industrial handling and construction work.',
-    certifications: [
-      { name: 'EN 388', details: 'Mechanical Risks Protection' }
-    ],
+    certifications: getCerts('en388'),
     features: ['ECONOCUT® fiber for cut protection', 'Nitrile-coated palm for grip', 'Gauge 13 knitted construction', 'Sold in packs of 3 pairs', 'Lightweight and breathable', 'Suitable for light industry and maintenance'],
-    img: 'assets/products/gloves/venicutb03.png'
+    img: 'assets/products/gloves/venicutb03/thumbnail.png',
+    images: ['assets/products/gloves/venicutb03/gray-black/1.png', 'assets/products/gloves/venicutb03/gray-black/2.png'],
+    colors: [
+      { name: 'Gray-Black', hex: 'linear-gradient(225deg, #4b5563 50%, #000 50%)', images: ['assets/products/gloves/venicutb03/gray-black/1.png', 'assets/products/gloves/venicutb03/gray-black/2.png'] }
+    ]
   },
   {
     id: 403,
@@ -451,12 +635,13 @@ export const products = [
     brand: 'DeltaPlus',
     tags: ['Cowhide Leather', 'Kevlar® Sewn', 'Welder\'s Glove'],
     desc: 'Cowhide split leather welder\'s glove with Kevlar® sewn seams. Premium split leather construction for welding, grinding, and high-heat industrial applications with extended gauntlet cuff.',
-    certifications: [
-      { name: 'EN 388', details: 'Mechanical Risks Protection' },
-      { name: 'EN 407', details: 'Thermal Risks Protection' }
-    ],
+    certifications: getCerts('en388', 'en407'),
     features: ['Premium cowhide split leather', 'Kevlar® sewn seams for durability', 'Heat-resistant construction', 'Extended gauntlet cuff', 'Full leather palm and back protection', 'Suitable for welding, grinding, and foundry work'],
-    img: 'assets/products/gloves/ca615k.png'
+    img: 'assets/products/gloves/ca615k/thumbnail.png',
+    images: ['assets/products/gloves/ca615k/red/1.png', 'assets/products/gloves/ca615k/red/2.png'],
+    colors: [
+      { name: 'Red', hex: '#dc3545', images: ['assets/products/gloves/ca615k/red/1.png', 'assets/products/gloves/ca615k/red/2.png'] }
+    ]
   },
   {
     id: 404,
@@ -465,17 +650,14 @@ export const products = [
     brand: 'DeltaPlus',
     tags: ['Kevlar® Preox', 'Extreme Heat', 'Welder\'s Glove'],
     desc: 'High-performance cow split leather welding glove featuring an aluminised back and a 200mm aluminised cuff for maximum radiant heat protection. Designed for heavy-duty welding, this 400mm long glove is reinforced with para-aramid stitching and a heat-resistant aramid-polyester lining, providing superior elbow-level coverage for extreme industrial environments.',
-    benefits: [
-      { icon: 'fa-fire-flame-curved', label: 'Radiant Heat Shield', desc: 'Aluminised back and cuff reflect extreme radiant heat for maximum protection during welding' },
-      { icon: 'fa-shield-halved', label: 'High Durability', desc: 'Premium split leather construction with para-aramid stitching ensures long-lasting mechanical resistance' }
-    ],
-    certifications: [
-      { name: 'EN 388', details: '3 2 3 4 X' },
-      { name: 'EN 407', details: '4 1 2 4 4 4' },
-      { name: 'EN 12477', details: 'Type A Welder Protective' }
-    ],
+    benefits: getBenefits('radiantHeatShield', 'highDurability'),
+    certifications: getCerts('en3882', 'en4071', 'en12477'),
     features: ['Premium cow split leather construction', 'Aluminised back for radiant heat reflection', 'Heat-resistant aramid-polyester lining', 'Para-aramid stitching for enhanced durability', '400mm total length with 200mm aluminised cuff', 'Elbow-level arm protection'],
-    img: 'assets/products/gloves/terk400.png'
+    img: 'assets/products/gloves/ter400/thumbnail.png',
+    images: ['assets/products/gloves/ter400/gray-orange/1.png', 'assets/products/gloves/ter400/gray-orange/2.png', 'assets/products/gloves/ter400/gray-orange/3.png'],
+    colors: [
+      { name: 'Gray-Orange', hex: 'linear-gradient(225deg, #4b5563 50%, #fd7e14 50%)', images: ['assets/products/gloves/ter400/gray-orange/1.png', 'assets/products/gloves/ter400/gray-orange/2.png', 'assets/products/gloves/ter400/gray-orange/3.png'], }
+    ]
   },
   {
     id: 405,
@@ -484,12 +666,13 @@ export const products = [
     brand: 'DeltaPlus',
     tags: ['Heat Resistant', '40cm', 'Cowhide'],
     desc: 'Heat-resistant cowhide welder\'s glove, 40cm length. Provides thermal protection and abrasion resistance for welding, handling hot materials, and furnace operations.',
-    certifications: [
-      { name: 'EN 407', details: 'Thermal Risks Protection' },
-      { name: 'EN 388', details: 'Mechanical Risks Protection' }
-    ],
+    certifications: getCerts('en407', 'en388'),
     features: ['Cowhide leather construction', '40cm length for forearm coverage', 'Thermal protection rating', 'Abrasion and tear resistant', 'Extended gauntlet cuff design', 'Suitable for welding and hot material handling'],
-    img: 'assets/products/gloves/ter300.png'
+    img: 'assets/products/gloves/ter300/thumbnail.png',
+    images: ['assets/products/gloves/ter300/blue-orange/1.png', 'assets/products/gloves/ter300/blue-orange/2.png'],
+    colors: [
+      { name: 'Blue-Orange', hex: 'linear-gradient(225deg, #0d6efd 50%, #fd7e14 50%)', images: ['assets/products/gloves/ter300/blue-orange/1.png', 'assets/products/gloves/ter300/blue-orange/2.png'] }
+    ]
   },
   {
     id: 406,
@@ -498,12 +681,13 @@ export const products = [
     brand: 'DeltaPlus',
     tags: ['Nitrile', 'Chemical Resistant', '33cm'],
     desc: 'Cotton flock nitrile glove, 33cm length. Heavy-duty chemical-resistant glove with cotton flock lining for comfort during extended use in chemical handling and industrial cleaning.',
-    certifications: [
-      { name: 'EN 388', details: 'Mechanical Risks Protection' },
-      { name: 'EN 374', details: 'Chemical Protection' }
-    ],
+    certifications: getCerts('en388', 'en374'),
     features: ['Full nitrile construction', 'Cotton flock lining for comfort', '33cm length for forearm protection', 'Chemical and solvent resistant', 'Textured grip surface', 'Suitable for chemical industry and cleaning'],
-    img: 'assets/products/gloves/nitrex_ve801.png'
+    img: 'assets/products/gloves/nitrex-ve801/thumbnail.png',
+    images: ['assets/products/gloves/nitrex-ve801/green/1.png', 'assets/products/gloves/nitrex-ve801/green/2.png', 'assets/products/gloves/nitrex-ve801/green/3.png'],
+    colors: [
+      { name: 'Green', hex: '#198754', images: ['assets/products/gloves/nitrex-ve801/green/1.png', 'assets/products/gloves/nitrex-ve801/green/2.png', 'assets/products/gloves/nitrex-ve801/green/3.png'], }
+    ]
   },
   {
     id: 407,
@@ -512,12 +696,10 @@ export const products = [
     brand: 'DeltaPlus',
     tags: ['Double PVC/Nitrile', 'Chemical', 'Acrylic Lining'],
     desc: 'Double PVC/nitrile coating on acrylic lining glove, gauge 10. Extended-length chemical protection glove for petrochemical, oil & gas, and heavy chemical handling applications.',
-    certifications: [
-      { name: 'EN 388', details: 'Mechanical Risks Protection' },
-      { name: 'EN 374', details: 'Chemical Protection' }
-    ],
+    certifications: getCerts('en388', 'en374'),
     features: ['Double PVC/nitrile coating', 'Acrylic lining — gauge 10', 'Chemical and oil resistant', 'Textured finish for grip in wet conditions', 'Suitable for petrochemical and oil & gas', 'Resistant to acids, alkalis, and solvents'],
-    img: 'assets/products/gloves/petro_ve766.png'
+    img: 'assets/products/gloves/petro-ve766/thumbnail.png',
+    images: ['assets/products/gloves/petro-ve766/blue/1.png', 'assets/products/gloves/petro-ve766/blue/2.png', 'assets/products/gloves/petro-ve766/blue/3.png']
   },
   {
     id: 408,
@@ -527,7 +709,11 @@ export const products = [
     tags: ['Polyamide', 'PU Coating', 'Precision'],
     desc: 'Knitted polyamide glove with PU coating on palm. Excellent tactile sensitivity and dexterity for precision assembly, electronics, and light manufacturing tasks.',
     features: ['Knitted polyamide shell', 'PU coating on palm for grip', 'Excellent tactile sensitivity', 'Lightweight and breathable construction', 'Seamless knit design', 'Suitable for precision assembly and electronics'],
-    img: 'assets/products/gloves/ve702gr.png'
+    img: 'assets/products/gloves/ve702gr/thumbnail.png',
+    images: ['assets/products/gloves/ve702gr/gray/1.png', 'assets/products/gloves/ve702gr/gray/2.png'],
+    colors: [
+      { name: 'Gray', hex: '#4b5563', images: ['assets/products/gloves/ve702gr/gray/1.png', 'assets/products/gloves/ve702gr/gray/2.png'] }
+    ]
   },
   {
     id: 409,
@@ -537,7 +723,11 @@ export const products = [
     tags: ['Polyester', 'Latex Coating', 'General Purpose'],
     desc: 'Polyester glove with latex coating. Versatile general-purpose work glove offering good grip and abrasion resistance for construction, gardening, and general handling tasks.',
     features: ['Polyester knitted shell', 'Latex palm coating for grip', 'Good abrasion resistance', 'Breathable back of hand', 'Comfortable snug fit', 'General purpose industrial and construction use'],
-    img: 'assets/products/gloves/ve730.png'
+    img: 'assets/products/gloves/ve730/thumbnail.png',
+    images: ['assets/products/gloves/ve730/yellow-orange/1.png', 'assets/products/gloves/ve730/yellow-orange/2.png'],
+    colors: [
+      { name: 'Yellow- Orange', hex: 'linear-gradient(225deg, #eab308 50%, #fd7e14 50%)', images: ['assets/products/gloves/ve730/yellow-orange/1.png', 'assets/products/gloves/ve730/yellow-orange/2.png'] }
+    ]
   },
 
   // ── BODY PROTECTION (DeltaPlus) ──
@@ -547,29 +737,92 @@ export const products = [
     name: 'EN400LV',
     brand: 'DeltaPlus',
     tags: ['Rain Suit', 'PVC Coated', 'Hi-Vis'],
-    desc: 'PVC coated polyester high visibility rain suit. Full-body waterproof protection with high-visibility fluorescent fabric and reflective bands for workers in foul weather and low-light conditions.',
-    features: ['Polyester with PVC coating', 'High-visibility fluorescent yellow fabric', 'Reflective bands on jacket and trousers', 'Sealed seams for leak prevention', 'Zip fastening with storm flap', 'Jacket and trousers set'],
-    img: 'assets/products/body/en400lv.png'
+    desc: 'PVC coated 100% polyester high visibility rain suit. Full-body waterproof protection with fluorescent fabric and reflective bands for workers in foul weather and low-light conditions. Unisex waterproof set with fixed hood, elasticated waist, and 4 exterior pockets.',
+    features: [
+      'Canvas — 100% polyester with PVC coating',
+      'Fixed hood with shirt collar style',
+      'Zipper closure with snap fastener cuffs',
+      'Elastic inner wrist and bottom drawstring',
+      'Snap fastener trouser bottoms',
+      'Waterproof sealed seams',
+      '4 exterior pockets (2 flap + 2 hand)',
+      'Aeration at back',
+      'Unisex waterproof jacket and trousers set',
+    ],
+    img: 'assets/products/body/en400lv/thumbnail.png',
+    images: ['assets/products/body/en400lv/hi-viz-yellow/1.png'],
+    colors: [
+      { name: 'Hi-Viz Yellow', hex: '#f5c800', images: ['assets/products/body/en400lv/hi-viz-yellow/1.png'] },
+      { name: 'Navy Blue', hex: '#1e3a5f', images: ['assets/products/body/en400lv/navy-blue/1.png'] },
+      { name: 'Orange', hex: '#f97316', images: ['assets/products/body/en400lv/orange/1.png'] },
+    ],
+    certifications: [
+      { name: 'EN343 (Class 3 / 1* / X)', details: 'Protection against rain — water penetration and moisture resistance' },
+      { name: 'EN ISO 13688', details: 'General requirements for protective clothing' },
+      { name: 'CE Category 1', details: 'Self-certified protection for minimal risks' },
+    ]
   },
   {
     id: 501,
     cat: 'body',
     name: 'EASYVIEW',
     brand: 'DeltaPlus',
-    tags: ['Hi-Vis', 'PU Coated', 'Oxford Polyester Parka'],
-    desc: 'HV PU coated Oxford polyester high-visibility parka. Class 3 certified for outdoor workers requiring waterproof protection combined with high-visibility reflective strips.',
-    features: ['HV PU-coated Oxford polyester construction', 'Class 3 EN ISO 20471 high-visibility', 'Retro-reflective tape strips', 'Waterproof seams', 'Multiple pockets for tool storage', 'Concealed fixed hood with drawstring'],
-    img: 'assets/products/body/easyview.png'
+    tags: ['Hi-Vis', 'PU Coated', 'Waterproof Parka'],
+    desc: 'High-visibility waterproof parka made from Oxford canvas with 100% polyester and polyurethane coating. Class 3 EN ISO 20471 certified even after 25 washes, with taffeta polyester lining and 160 g/m² fibre filling. Designed for outdoor workers in foul weather and low-light conditions.',
+    features: [
+      'Canvas oxford — 100% polyester with PU coating',
+      'Taffeta 100% polyester lining with 160 g/m² fibre filling',
+      'Fixed retractable hood with low blas collar',
+      'Zipper and flap closure with velcro wrist cuffs',
+      '2 exterior flap pockets + 1 interior phone pocket',
+      'Waterproof sealed seams',
+      'High-visibility fluorescent fabric with reflective bands',
+      'Unisex high-viz waterproof parka',
+    ],
+    img: 'assets/products/body/easyview/thumbnail.png',
+    images: ['assets/products/body/easyview/fluorescent-yellow/1.png'],
+    colors: [
+      { name: 'Fluorescent Yellow', hex: '#f5c800', images: ['assets/products/body/easyview/fluorescent-yellow/1.png'], sizes: ['SM', 'MD', 'LG', 'XL', '2XL', '3XL'] },
+      { name: 'Fluorescent Orange', hex: '#f97316', images: ['assets/products/body/easyview/fluorescent-orange/1.png'], sizes: ['SM', 'MD', 'LG', 'XL', '2XL', '3XL'] },
+    ],
+    sizes: ['SM', 'MD', 'LG', 'XL', '2XL', '3XL'],
+    benefits: getBenefits('sustainability', 'performance'),
+    certifications: [
+      { name: 'EN ISO 20471 (Class 3 / x25)', details: 'High-visibility clothing — certified after 25 washes' },
+      { name: 'EN343 (Class 3 / 1* / X)', details: 'Protection against rain — water penetration and moisture resistance' },
+      { name: 'EN ISO 13688', details: 'General requirements for protective clothing' },
+      { name: 'CE Category 2', details: 'Intermediate risk protection — third-party certified' },
+    ],
   },
   {
     id: 502,
     cat: 'body',
     name: 'MA400',
     brand: 'DeltaPlus',
-    tags: ['Raincoat', 'PVC Coated', 'Long Style'],
-    desc: 'PVC coated polyester rain coat in long style. Extended coverage and waterproof defense. Lightweight and flexible for comfort during active industrial duties in wet conditions.',
-    features: ['PVC-coated polyester material', 'Full-length rain protection', 'Integrated hood design', 'Ventilated back flap', 'Elasticated inner cuffs', 'Sealed waterproof seams'],
-    img: 'assets/products/body/ma400.png'
+    tags: ['Rain Jacket', 'PVC Coated', 'Waterproof'],
+    desc: 'PVC coated 100% polyester waterproof raincoat with fixed hood. Unisex raincoat designed for workers exposed to heavy rain, featuring elastic inner wrists, back aeration, and zipper with flap closure for reliable all-weather protection.',
+    features: [
+      'Canvas — 100% polyester with PVC coating',
+      'Fixed hood with back aeration',
+      'Zipper and flap closure',
+      'Elastic inner wrist',
+      'Waterproof sealed seams',
+      '2 exterior flap pockets',
+      'Unisex raincoat',
+    ],
+    img: 'assets/products/body/ma400/thumbnail.png',
+    images: ['assets/products/body/ma400/yellow/1.png'],
+    colors: [
+      { name: 'Yellow', hex: '#f5c800', images: ['assets/products/body/ma400/yellow/1.png', 'assets/products/body/ma400/yellow/2.png'], sizes: ['MD', 'LG', 'XL', '2XL'] },
+      { name: 'Army Green', hex: '#315320ff', images: ['assets/products/body/ma400/army-green/1.png'], sizes: ['MD', 'LG', 'XL', '2XL'] },
+    ],
+    sizes: ['MD', 'LG', 'XL', '2XL'],
+    benefits: getBenefits('easyviewPerformance'),
+    certifications: [
+      { name: 'EN343 (Class 3 / 1* / X)', details: 'Protection against rain — water penetration and moisture resistance' },
+      { name: 'EN ISO 13688', details: 'General requirements for protective clothing' },
+      { name: 'CE Category 1', details: 'Self-certified protection for minimal risks' },
+    ],
   },
   {
     id: 503,
@@ -598,51 +851,10 @@ export const products = [
     brand: 'DeltaPlus',
     tags: ['Type 5B/6B', 'Disposable', 'Anti-Static'],
     desc: 'DELTATEK 5000 disposable overalls with hood. Type 5B/6B, anti-static, dry particle resistant chemical protective coveralls. Silicone free and latex free.',
-    benefits: [
-      { icon: 'fa-shield-halved', label: 'Chemical Protection', desc: 'Type 5B/6B rated protection against dry particles and limited liquid splash' },
-      { icon: 'fa-bolt', label: 'Anti-Static', desc: 'EN 1149-5 certified anti-static properties for hazardous environments' }
-    ],
-    certifications: [
-      { name: 'EN ISO 13982-1', details: 'Type 5 Dry Particle Protection' },
-      { name: 'EN 13034', details: 'Type 6 Limited Liquid Splash' },
-      { name: 'EN 14126', details: 'Biological Hazards Protection' },
-      { name: 'EN 1149-5', details: 'Anti-Static Properties' },
-      { name: 'EN 1073-2', details: 'Radioactive Contamination' }
-    ],
+    benefits: getBenefits('chemicalProtection', 'antiStatic'),
+    certifications: getCerts('enIso139821', 'en13034', 'en14126', 'en11495', 'en10732'),
     features: ['Fixed hood with elasticated face opening', 'Double zipper with flap and hook & loop closure', 'Waterproof zipper construction', 'Ribbed cuffs for secure fit', '63 g/m² — lightweight and breathable', 'Silicone free and latex free'],
     img: 'assets/products/body/dt117.png'
-  },
-  {
-    id: 506,
-    cat: 'body',
-    name: 'DT300 DELTACHEM',
-    brand: 'DeltaPlus',
-    tags: ['Type 3B/4B', 'Chemical', 'Taped Seams'],
-    desc: 'DELTACHEM disposable overalls with hood. Type 3B/4B, anti-static, waterproof, chemical protective coveralls with taped seams. Silicone free, latex free, with total waterproofing.',
-    benefits: [
-      { icon: 'fa-droplet', label: 'Waterproof', desc: 'Type 3B rated total waterproofing with taped seams for maximum liquid protection' },
-      { icon: 'fa-bolt', label: 'Anti-Static', desc: 'EN 1149-5 certified anti-static for explosive atmosphere environments' }
-    ],
-    certifications: [
-      { name: 'EN 14605', details: 'Type 3B/4B Liquid Tight' },
-      { name: 'EN ISO 13982-1', details: 'Type 5 Dry Particle Protection' },
-      { name: 'EN 13034', details: 'Type 6 Limited Splash' },
-      { name: 'EN 14126', details: 'Biological Hazards' },
-      { name: 'EN 1149-5', details: 'Anti-Static Properties' },
-      { name: 'EN ISO 13688', details: 'General Requirements' }
-    ],
-    features: ['Taped seams for waterproof integrity', 'Fixed hood with zipper, double flap, and hook & loop', 'Double elastane thumb inner wrist', '82 g/m² total weight', 'Silicone free, latex free, total waterproofing', 'Suitable for chemical industry, mining, and petrochemical sectors'],
-    img: 'assets/products/body/dt300_deltachem.png'
-  },
-  {
-    id: 507,
-    cat: 'body',
-    name: 'TABALPV',
-    brand: 'DeltaPlus',
-    tags: ['100% PVC', 'Apron', 'Waterproof'],
-    desc: '100% PVC apron for chemical and liquid splash protection. Designed for food industry, chemical processing, and cleaning applications where upper body protection from splashes is required.',
-    features: ['Heavy-duty 100% PVC construction', 'Adjustable neck and waist ties', 'Easy-clean wipeable surface', 'Resistance to grease, oils, and mild chemicals', 'Standard length for torso and leg protection', 'Suitable for food industry and chemical processing'],
-    img: 'assets/products/body/tabalpv.png'
   },
 
   // ── HEARING PROTECTION (DeltaPlus) ──
@@ -653,18 +865,14 @@ export const products = [
     brand: 'DeltaPlus',
     tags: ['NRR 26dB', 'Lightweight', 'Tiltable'],
     desc: 'Ear defenders with ABS and synthetic foam cups. Lightweight tiltable headband design for prolonged use in moderate noise environments including public works, light industry, maintenance, and automotive sectors.',
-    benefits: [
-      { icon: 'fa-recycle', label: 'Sustainability', desc: 'Replacement cushions available to extend life of the product' },
-      { icon: 'fa-hands-bubbles', label: 'Hygiene', desc: 'Washable reusable for weeks without losing attenuation' }
-    ],
-    certifications: [
-      { name: 'CE', details: 'European Conformity' },
-      { name: 'EN 352-1', details: 'Ear Muffs Standard' },
-      { name: 'ANSI S3.19', details: 'NRR 26 dB' },
-      { name: 'UL-AR EN352-1', details: 'Underwriters Laboratories Certified' }
-    ],
+    benefits: getBenefits('sustainability', 'hygiene1'),
+    certifications: getCerts('ce', 'en3521', 'ansiS319', 'ulArEn3521'),
     features: ['Lightweight tiltable headband', 'NRR 26dB noise reduction rating', 'ABS cup construction with synthetic foam cushions', 'Replacement cushions available', 'Compliant with EN 352-1, ANSI S3.19 & UL-AR EN352-1'],
-    img: 'assets/products/hearing/interlagos_light.png'
+    img: 'assets/products/hearing/interlagos-light/thumbnail.png',
+    images: ['assets/products/hearing/interlagos-light/gray/1.png'],
+    colors: [
+      { name: 'Gray', hex: '#4b5563', images: ['assets/products/hearing/interlagos-light/gray/1.png'], }
+    ]
   },
   {
     id: 601,
@@ -673,18 +881,14 @@ export const products = [
     brand: 'DeltaPlus',
     tags: ['SNR 30dB', 'Helmet Mounted', 'Quartz'],
     desc: 'Ear defenders suitable for safety helmet Quartz. Mounts directly onto the Quartz helmet series, providing SNR 30dB protection without a separate headband for construction and industrial use.',
-    benefits: [
-      { icon: 'fa-cloud', label: 'Comfort', desc: 'Double headband for greater flexibility and comfort' },
-      { icon: 'fa-chart-line', label: 'Performance', desc: 'High-performance multi-hull attenuation technology' },
-      { icon: 'fa-hands-bubbles', label: 'Hygiene', desc: 'Washable reusable for weeks without losing attenuation' }
-    ],
-    certifications: [
-      { name: 'CE', details: 'European Conformity' },
-      { name: 'EN 352-3', details: 'SNR 30 dB · Helmet Mounted Ear Muffs' },
-      { name: 'ANSI S3.19', details: 'Hearing Protection Standard' }
-    ],
+    benefits: getBenefits('comfort', 'performance2', 'hygiene1'),
+    certifications: getCerts('ce', 'en3523', 'ansiS3191'),
     features: ['Designed for Quartz safety helmet series', 'SNR 30dB sound attenuation', 'Double headband for flexibility', 'High-performance multi-hull attenuation', 'Washable and reusable cushions', 'Compliant with EN 352-3 & ANSI S3.19'],
-    img: 'assets/products/hearing/magny_helmet_2.png'
+    img: 'assets/products/hearing/magny-helmet-2/thumbnail.png',
+    images: ['assets/products/hearing/magny-helmet-2/black/1.png', 'assets/products/hearing/magny-helmet-2/black/2.png'],
+    colors: [
+      { name: 'Black', hex: '#000', images: ['assets/products/hearing/magny-helmet-2/black/1.png', 'assets/products/hearing/magny-helmet-2/black/2.png'], }
+    ]
   },
   {
     id: 602,
@@ -693,18 +897,14 @@ export const products = [
     brand: 'DeltaPlus',
     tags: ['SNR 30dB', 'Foldable', 'ABS'],
     desc: 'Foldable ear defender with double plastic headband. Folds for compact storage. Ideal for public works, building, light industry, maintenance, automotive, and petrochemical sectors.',
-    benefits: [
-      { icon: 'fa-compress', label: 'Compact', desc: 'Foldable headband for less space and easier storage' },
-      { icon: 'fa-recycle', label: 'Sustainability', desc: 'Replacement cushions available to extend life of the product' },
-      { icon: 'fa-hands-bubbles', label: 'Hygiene', desc: 'Replaceable cushions — perfect hygiene kit solution' }
-    ],
-    certifications: [
-      { name: 'CE', details: 'European Conformity' },
-      { name: 'EN 352-1', details: 'SNR 30 dB · Ear Muffs Standard' },
-      { name: 'ANSI S3.19', details: 'NRR 25 dB' }
-    ],
+    benefits: getBenefits('compact', 'sustainability', 'hygiene2'),
+    certifications: getCerts('ce', 'en35211', 'ansiS3192'),
     features: ['Foldable headband for compact storage', 'SNR 30dB noise attenuation', 'ABS cup construction', 'Soft PU foam cushion pads', 'Double plastic (POM) adjustable headband', 'Replaceable hygiene kit cushions', 'Compliant with EN 352-1 & ANSI S3.19'],
-    img: 'assets/products/hearing/interlagos_foldable.png'
+    img: 'assets/products/hearing/interlagos-foldable/thumbnail.png',
+    images: ['assets/products/hearing/interlagos-foldable/gray/1.png', 'assets/products/hearing/interlagos-foldable/gray/2.png', 'assets/products/hearing/interlagos-foldable/gray/3.png'],
+    colors: [
+      { name: 'Gray', hex: '#4b5563', images: ['assets/products/hearing/interlagos-foldable/gray/1.png', 'assets/products/hearing/interlagos-foldable/gray/2.png', 'assets/products/hearing/interlagos-foldable/gray/3.png'], }
+    ]
   },
   {
     id: 603,
@@ -713,13 +913,14 @@ export const products = [
     brand: 'DeltaPlus',
     tags: ['NRR 21dB', 'Helmet Mounted', 'Hi-Vis'],
     desc: 'Ear defenders suitable for safety helmet Quartz. Available in black and fluorescent yellow. Suitable for agriculture, public works, building, mining, petrochemical, forestry, and power energy sectors.',
-    certifications: [
-      { name: 'CE', details: 'European Conformity' },
-      { name: 'EN 352-3', details: 'Helmet Mounted Ear Muffs' },
-      { name: 'ANSI S3.19', details: 'NRR 21 dB' }
-    ],
+    certifications: getCerts('ce', 'en35231', 'ansiS3193'),
     features: ['Designed for Quartz safety helmet family', 'NRR 21dB noise reduction', 'Available in black and fluorescent yellow', 'Suitable for agriculture, mining, forestry, and construction', 'Compliant with EN 352-3 & ANSI S3.19'],
-    img: 'assets/products/hearing/suzuka_2.png'
+    img: 'assets/products/hearing/suzuka-2/thumbnail.png',
+    images: ['assets/products/hearing/suzuka-2/hivis-yellow/1.png'],
+    colors: [
+      { name: 'Hi Vis Yellow', hex: '#d7ea08ff', images: ['assets/products/hearing/suzuka-2/hivis-yellow/1.png'] },
+      { name: 'Black', hex: '#000', images: ['assets/products/hearing/suzuka-2/black/1.png'], }
+    ]
   },
   {
     id: 604,
@@ -728,19 +929,14 @@ export const products = [
     brand: 'DeltaPlus',
     tags: ['SNR 34dB', 'Corded', 'Thermoplastic'],
     desc: 'Thermoplastic reusable earplugs with cord, box of 50 pairs. Built-in firm handle for correct insertion. For daily industrial use in manufacturing, food services, automotive, transportation, and storage sectors.',
-    benefits: [
-      { icon: 'fa-hand-pointer', label: 'Easy to Use', desc: 'Built-in firm handle directs insertion angle for better fit' },
-      { icon: 'fa-cloud', label: 'Comfort', desc: 'Contoured 3 flange polymer design provides all-day comfort' },
-      { icon: 'fa-chart-line', label: 'Performance', desc: 'Ultra-soft polymer for superior SNR 34dB attenuation' },
-      { icon: 'fa-hands-bubbles', label: 'Hygiene', desc: 'Firm handle allows hygienic insertion without touching the plug body' }
-    ],
-    certifications: [
-      { name: 'CE', details: 'European Conformity' },
-      { name: 'EN 352-2', details: 'SNR 34 dB · H 33 · M 32 · L 31 · ø 8-12 mm' },
-      { name: 'ANSI S3.19', details: 'NRR 26 dB' }
-    ],
+    benefits: getBenefits('easyToUse', 'comfort1', 'performance3', 'hygiene3'),
+    certifications: getCerts('ce', 'en3522', 'ansiS319'),
     features: ['Thermoplastic with built-in firm handle', 'SNR 34dB attenuation', 'Contoured 3 flange polymer design', 'PVC cord to prevent loss', 'Box of 50 pairs', 'Compliant with EN 352-2 & ANSI S3.19'],
-    img: 'assets/products/hearing/conicfir050.png'
+    img: 'assets/products/hearing/conicfir050/thumbnail.png',
+    images: ['assets/products/hearing/conicfir050/gray/1.png'],
+    colors: [
+      { name: 'Gray', hex: '#4b5563', images: ['assets/products/hearing/conicfir050/gray/1.png'] }
+    ]
   },
   {
     id: 605,
@@ -749,17 +945,14 @@ export const products = [
     brand: 'DeltaPlus',
     tags: ['SNR 23dB', 'Low Pressure', 'Ergonomic'],
     desc: 'Ear defenders with low pressure pads. Minimal clamping force design for all-day comfort. Suitable for public works, building, light industry, maintenance, automotive, and petrochemical sectors.',
-    benefits: [
-      { icon: 'fa-cloud', label: 'Comfort', desc: 'Low pressure pads minimize clamping force for all-day wear' },
-      { icon: 'fa-sliders', label: 'Adjustability', desc: 'Adjustable headband ensures a secure personalized fit' }
-    ],
-    certifications: [
-      { name: 'CE', details: 'European Conformity' },
-      { name: 'EN 352-1', details: 'SNR 23 dB · Ear Muffs Standard' },
-      { name: 'UL-AR EN352-1', details: 'Underwriters Laboratories Certified' }
-    ],
+    benefits: getBenefits('comfort2', 'adjustability'),
+    certifications: getCerts('ce', 'en35212', 'ulArEn3521'),
     features: ['SNR 23dB noise attenuation', 'Low pressure pad design', 'Adjustable headband', 'Suitable for prolonged industrial wear', 'Compliant with EN 352-1 & UL-AR EN352-1'],
-    img: 'assets/products/hearing/spa_3.png'
+    img: 'assets/products/hearing/spa-3/thumbnail.png',
+    images: ['assets/products/hearing/spa-3/blue-black/1.png'],
+    colors: [
+      { name: 'Blue-Black', hex: 'linear-gradient(225deg, #1051b3ff 50%, #000 50%)', images: ['assets/products/hearing/spa-3/blue-black/1.png'], }
+    ]
   },
   {
     id: 606,
@@ -768,18 +961,14 @@ export const products = [
     brand: 'DeltaPlus',
     tags: ['Reusable', 'Silicone', 'PVC Cord'],
     desc: 'Reusable silicone earplugs with PVC cord, box of 100 pairs. For daily use in public works, events, light industry, maintenance, automotive, public services, transportation, and storage.',
-    benefits: [
-      { icon: 'fa-hand-pointer', label: 'Easy to Use', desc: 'Built-in firm handle for correct angle of insertion' },
-      { icon: 'fa-cloud', label: 'Comfort', desc: 'Contoured 3 flange polymer design provides all-day comfort' },
-      { icon: 'fa-chart-line', label: 'Performance', desc: 'Ultra-soft polymer for superior attenuation' }
-    ],
-    certifications: [
-      { name: 'CE', details: 'European Conformity' },
-      { name: 'EN 352-2', details: 'Ear Plugs Standard' },
-      { name: 'ANSI S3.19', details: 'Hearing Protection Standard' }
-    ],
+    benefits: getBenefits('easyToUse1', 'comfort1', 'performance4'),
+    certifications: getCerts('ce', 'en35221', 'ansiS3191'),
     features: ['Reusable soft silicone construction', 'Contoured 3 flange design', 'PVC cord to prevent misplacement', 'Box of 100 pairs', 'Compliant with EN 352-2 & ANSI S3.19'],
-    img: 'assets/products/hearing/conicfit100.png'
+    img: 'assets/products/hearing/conicfit100/thumbnail.png',
+    images: ['assets/products/hearing/conicfit100/orange/1.png'],
+    colors: [
+      { name: 'Orange', hex: '#da6709ff', images: ['assets/products/hearing/conicfit100/orange/1.png'], }
+    ]
   },
   {
     id: 607,
@@ -788,25 +977,27 @@ export const products = [
     brand: 'DeltaPlus',
     tags: ['Dispenser', '500 Pairs', 'CONIC500'],
     desc: 'Earplugs dispenser with 500 pairs of CONIC500 disposable earplugs. For high-traffic workplaces where multiple workers need quick access to hearing protection.',
-    certifications: [
-      { name: 'CE', details: 'European Conformity' },
-      { name: 'EN 352-2', details: 'Ear Plugs Standard' },
-      { name: 'ANSI S3.19', details: 'Hearing Protection Standard' }
-    ],
+    certifications: getCerts('ce', 'en35221', 'ansiS3191'),
     features: ['Wall-mountable dispenser unit', '500 pairs of CONIC500 disposable earplugs', 'Smooth surface foam for comfort', 'Low pressure design', 'Ideal for transportation and storage sectors', 'Compliant with EN 352-2 & ANSI S3.19'],
-    img: 'assets/products/hearing/conic_display.png'
+    img: 'assets/products/hearing/conic-display/thumbnail.png',
+    images: ['assets/products/hearing/conic-display/1.png']
   },
 
   // ── WELDING (DeltaPlus) ──
   {
     id: 700,
     cat: 'welding',
-    name: 'BARRIER 2',
+    name: 'BARRIER 3',
     brand: 'DeltaPlus',
     tags: ['Auto-Darkening', 'Electric Arc', 'Shade 9-13'],
     desc: 'Helmet for electric arc welding with auto-darkening filter. Rapid sensor-based switching protects against intense arc flashes. Adjustable shade 9-13 with sensitivity and delay controls.',
     features: ['Auto-darkening active filter', 'Adjustable shade 9-13', 'Solar-powered with battery backup', 'Sensitivity and delay control knobs', 'Suitable for MIG, MAG, TIG, MMA welding', 'EN 175 certified'],
-    img: 'assets/products/welding/barrier_2.png'
+    img: 'assets/products/welding/barrier-3/thumbnail.png',
+    images: ['assets/products/welding/barrier-3/black-gray/1.png', 'assets/products/welding/barrier-3/black-gray/2.png', 'assets/products/welding/barrier-3/black-gray/3.png', 'assets/products/welding/barrier-3/black-gray/4.png'],
+    sizes: ['Adjusttable'],
+    colors: [
+      { name: 'Black Gray', hex: 'linear-gradient(225deg, #000 50%, #4b5563 50%)', img: 'assets/products/welding/barrier-3/black-gray/1.png', images: ['assets/products/welding/barrier-3/black-gray/1.png', 'assets/products/welding/barrier-3/black-gray/2.png', 'assets/products/welding/barrier-3/black-gray/3.png', 'assets/products/welding/barrier-3/black-gray/4.png',] }
+    ]
   },
   {
     id: 701,
@@ -816,7 +1007,12 @@ export const products = [
     tags: ['Welding Hood', 'Polypropylene'],
     desc: 'Welding hood in durable polypropylene with flip-up lift-front design. Provides head and face protection during arc welding with a standard passive lens filter.',
     features: ['Durable heat-resistant polypropylene shell', 'Flip-up lift-front design', 'Passive filter lens', 'Impact-resistant construction', 'Adjustable headgear', 'EN 175 certified'],
-    img: 'assets/products/welding/casoud_3.png'
+    img: 'assets/products/welding/casoud-3/thumbnail.png',
+    images: ['assets/products/welding/casoud-3/black/1.png'],
+    sizes: ['Adjustable'],
+    colors: [
+      { name: 'Black', hex: '#000', img: 'assets/products/welding/casoud-3/black/1.png', sizes: ['Adjustable'] }
+    ]
   },
   {
     id: 702,
@@ -826,7 +1022,12 @@ export const products = [
     tags: ['Integrated', 'Flip-Up Screen', 'Safety Helmet'],
     desc: 'Welding shield for safety helmet with flip-up screen. Attaches to the Quartz safety helmet family to provide integrated head and welding face protection on multi-hazard sites.',
     features: ['Mounts on Quartz safety helmet series', 'Flip-up welding shield front', 'High-impact head protection retained', 'Easy-lift mechanism', 'Passive filter lens', 'EN 166 / EN 175 certified'],
-    img: 'assets/products/welding/casoud2he.png'
+    img: 'assets/products/welding/casoud2he/thumbnail.png',
+    images: ['assets/products/welding/casoud2he/black/1.png', 'assets/products/welding/casoud2he/black/2.png'],
+    sizes: ['Adjustable'],
+    colors: [
+      { name: 'Black', hex: '#000', img: 'assets/products/welding/casoud2he/black/1.png', images: ['assets/products/welding/casoud2he/black/1.png', 'assets/products/welding/casoud2he/black/2.png'], sizes: ['Adjustable'] }
+    ]
   },
   {
     id: 703,
@@ -836,7 +1037,25 @@ export const products = [
     tags: ['DIN 9-13', 'Electric Arc', 'MIG/MAG/TIG'],
     desc: 'Helmet for electric arc welding with fixed passive lens filter, DIN 9-13. Suitable for MIG-MAG and TIG welding processes. Simple, robust construction for everyday welding operations.',
     features: ['Fixed passive lens filter (DIN 9-13)', 'Suitable for MIG, MAG, TIG, and MMA', 'Lightweight shell construction', 'Adjustable headgear band', 'Wide viewing area', 'EN 175 certified'],
-    img: 'assets/products/welding/screen.png'
+    img: 'assets/products/welding/screen/thumbnail.png',
+    images: ['assets/products/welding/screen/black/1.png', 'assets/products/welding/screen/black/2.png', 'assets/products/welding/screen/black/3.png', 'assets/products/welding/screen/black/4.png'],
+    colors: [
+      { name: "Black", hex: '#000', img: 'assets/products/welding/screen/black/1.png', images: ['assets/products/welding/screen/black/1.png', 'assets/products/welding/screen/black/2.png', 'assets/products/welding/screen/black/3.png', 'assets/products/welding/screen/black/4.png'], }
+    ]
+  },
+  {
+    id: 704,
+    cat: 'welding',
+    name: 'TOBA 3 T5',
+    brand: 'DeltaPlus',
+    tags: [],
+    desc: 'Welding goggles with clear lens/shade 5 retractable lenses, perfect for occasional welding.',
+    features: [],
+    img: 'assets/products/welding/toba3-t5/thumbnail.png',
+    images: ['assets/products/welding/toba3-t5/red/1.png'],
+    colors: [
+      { name: 'Red', hex: '#dc3545', img: 'assets/products/welding/toba3-t5/red/1.png', images: ['assets/products/welding/toba3-t5/red/1.png'] }
+    ]
   },
 
   // ── FALL PROTECTION (DeltaPlus) ──
@@ -900,26 +1119,6 @@ export const products = [
     features: ['10m braided rope construction', 'High-tenacity polyester fibers', 'Suitable for vertical lifeline systems', 'Compatible with fall arresters', 'Termination connectors at each end', 'EN 795 compatible'],
     img: 'assets/products/fall/an30010.png'
   },
-  {
-    id: 806,
-    cat: 'fall',
-    name: 'TC044',
-    brand: 'DeltaPlus',
-    tags: ['Figure Eight', 'Descender', 'Large Aluminum'],
-    desc: 'Large figure of eight descender in aluminum. Used for rope access, rescue, and controlled descent operations. Large-loop design for smooth rope management and controlled lowering.',
-    features: ['Large figure-of-eight design', 'Lightweight aluminum construction', 'Suitable for rope access and rescue', 'Smooth rope braking control', 'Compatible with standard ropes', 'EN 341 compatible'],
-    img: 'assets/products/fall/tc044.png'
-  },
-  {
-    id: 807,
-    cat: 'fall',
-    name: 'ASDRISS2 AN068',
-    brand: 'DeltaPlus',
-    tags: ['Fall Arrester', 'Braided Rope', 'Aluminum 10.5mm'],
-    desc: 'Braided rope fall arrester on rope — aluminum 10.5mm. Guided type automatic fall arrester that locks instantly on a fall, for use on braided rope anchorage lines.',
-    features: ['Aluminum body construction', 'Designed for 10.5mm braided rope', 'Automatic locking on fall detection', 'Manual release after arrest', 'Compact and lightweight', 'EN 353-2 certified'],
-    img: 'assets/products/fall/asdriss2_an068.png'
-  }
 
 ];
 

@@ -6,28 +6,32 @@ let activeBrand = 'all';
 let currentPage = 1;
 let searchQuery = '';
 let searchDebounceTimer = null;
-const itemsPerPage = 6;
+const itemsPerPage = 9;
 
 export const ProductsListing = {
   render: () => {
     return `
-      <section class="py-24 bg-surface-warm min-h-screen pt-32 transition-colors duration-500">
+      <section aria-labelledby="products-hero-title" class="py-24 bg-surface-warm min-h-screen pt-24 lg:pt-32 transition-colors duration-500">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
           
-          <!-- Page Header -->
-          <div class="mb-10 lg:mb-14 pb-8 border-b border-brand-muted/20">
-            <h1 class="reveal font-display font-800 text-3xl md:text-4xl lg:text-5xl text-ink leading-tight tracking-tight">Product <span class="text-brand">Catalog</span></h1>
+          <!-- Page Header (scrolls normally) -->
+          <div class="mb-4 lg:mb-6 pb-6 border-b border-brand-muted/20">
+            <h1 id="products-hero-title" class="reveal font-display font-800 text-3xl md:text-4xl lg:text-5xl text-ink leading-tight tracking-tight">Product <span class="text-brand">Catalog</span></h1>
             <p class="reveal delay-100 font-body text-ink-3 mt-4 max-w-2xl text-sm md:text-base leading-relaxed">Source industry-grade protective equipment with guaranteed compliance. Filter by category to find specialized gear for your worksite.</p>
+          </div>
+
+          <!-- Sticky Search + Brand Filters + Quick Filter Carousel (mobile only sticky) -->
+          <div class="sticky top-[64px] lg:static z-30 bg-surface-warm/95 backdrop-blur-md -mx-4 px-4 lg:mx-0 lg:px-0 pt-3 pb-4 lg:pt-0 lg:pb-0 border-b border-brand-muted/15 lg:border-none mb-6 lg:mb-14">
             
             <!-- Search Bar & Brand Filters -->
-            <div class="reveal delay-200 mt-6 flex flex-col md:flex-row gap-4 items-start md:items-center">
+            <div class="reveal delay-200 flex flex-col md:flex-row gap-3 items-start md:items-center">
               <div class="relative w-full max-w-xl">
                 <input
                   id="product-search"
                   type="text"
                   placeholder="Search by name, brand, or tag..."
                   autocomplete="off"
-                  class="w-full pl-12 pr-12 py-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-brand-muted/30 font-body text-ink text-sm placeholder:text-ink-3/60 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/10 transition-all duration-300 shadow-sm"
+                  class="w-full pl-12 pr-12 py-3.5 lg:py-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-brand-muted/30 font-body text-ink text-sm placeholder:text-ink-3/60 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/10 transition-all duration-300 shadow-sm"
                 >
                 <i class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-ink z-10 text-sm pointer-events-none"></i>
                 <button id="search-clear" class="absolute right-4 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-ink/5 flex items-center justify-center text-ink-3 hover:bg-brand/10 hover:text-brand transition-all duration-200 opacity-0 pointer-events-none z-10">
@@ -40,27 +44,26 @@ export const ProductsListing = {
                  <!-- Rendered dynamically -->
               </div>
             </div>
+
+            <!-- Mobile Quick Filter Carousel (inside sticky bar) -->
+            <div class="lg:hidden w-full mt-3">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="font-display font-800 text-ink text-xs uppercase tracking-wider">Quick Filters</h3>
+                <span class="text-[10px] text-brand font-700 bg-brand/5 px-2 py-1 rounded-full"><i class="fa-solid fa-hand-pointer mr-1"></i> swipe</span>
+              </div>
+              <div id="mobile-filter-carousel" class="flex items-center gap-2 overflow-x-auto scrollbar-hide pb-1 -mx-0">
+                <!-- chips rendered dynamically -->
+              </div>
+            </div>
+
           </div>
 
           <!-- Catalog Layout: Sidebar + Grid -->
           <div id="catalog-main" class="flex flex-col lg:flex-row gap-8 lg:gap-14">
-            
-            <!-- Mobile Filter Region -->
-            <div class="lg:hidden w-full mb-2">
-               <div class="flex flex-col gap-4">
-                 <div class="flex items-center justify-between">
-                   <h3 class="font-display font-800 text-ink text-sm uppercase tracking-wider">Quick Filters</h3>
-                   <span class="text-[10px] text-brand font-700 bg-brand/5 px-2 py-1 rounded-full"><i class="fa-solid fa-hand-pointer mr-1"></i> swipe</span>
-                 </div>
-                 <div id="mobile-filter-carousel" class="flex items-center gap-3 overflow-x-auto scrollbar-hide pb-2 -mx-4 px-4">
-                    <!-- chips rendered dynamically -->
-                 </div>
-               </div>
-            </div>
 
             <!-- Left Sidebar (Filters) -->
             <aside id="catalog-sidebar" class="w-full lg:w-64 flex-shrink-0 hidden lg:block bg-white/60 backdrop-blur-md lg:bg-transparent rounded-3xl lg:rounded-none p-6 lg:p-0 shadow-lg border border-brand/10 lg:border-none lg:shadow-none transition-all duration-300">
-              <div class="space-y-6">
+              <div class="space-y-6 sticky top-[100px]">
                 <h3 class="hidden lg:flex font-display font-800 text-ink text-lg items-center gap-2">
                    <span class="w-2 h-7 bg-brand rounded-full"></span> Categories
                 </h3>
@@ -78,7 +81,7 @@ export const ProductsListing = {
                 <div id="active-filters" class="flex items-center gap-2 flex-wrap"></div>
               </div>
               
-              <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              <div id="products-grid" class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
                 <!-- Products rendered here -->
               </div>
 
@@ -101,15 +104,18 @@ export const ProductsListing = {
     currentPage = 1;
     searchQuery = '';
 
+    // Create a stable randomized list for "all" filter to prevent reshuffling on pagination
+    const shuffledProducts = [...products].sort(() => Math.random() - 0.5);
+
     // Categories list shared between views
-    const tabs = [{ id:'all', label:'All Equipment' }, ...categories.map(c => ({id:c.id,label:c.label}))];
+    const tabs = [{ id:'all', label:'All Equipment', icon:'<i class="fa-solid fa-layer-group"></i>' }, ...categories.map(c => ({id:c.id, label:c.label, icon:c.icon}))];
 
     const renderCarousel = () => {
       const c = document.getElementById('mobile-filter-carousel');
       if (!c) return;
 
       c.innerHTML = tabs.map(t => `
-        <button data-filter="${t.id}" class="filter-chip flex items-center gap-2 whitespace-nowrap px-6 py-2.5 rounded-full text-[14px] font-display font-800 transition-all duration-300 ${t.id === activeFilter ? 'bg-brand text-white scale-105' : 'bg-white text-ink-3 border border-brand/5 hover:border-brand/20'}">
+        <button data-filter="${t.id}" class="filter-chip flex items-center gap-2 whitespace-nowrap px-6 py-2.5 rounded-full text-[14px] font-display font-800 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${t.id === activeFilter ? 'bg-brand text-white scale-105' : 'bg-white text-ink-3 border border-brand/5 hover:border-brand/20'}">
           ${t.id === activeFilter ? '<i class="fa-solid fa-circle-check text-[10px]"></i>' : '<i class="fa-solid fa-circle text-[4px] opacity-30"></i>'}
           ${t.label}
         </button>
@@ -125,7 +131,7 @@ export const ProductsListing = {
         { id: 'safetyjogger', label: 'Safety Jogger' }
       ];
       c.innerHTML = brands.map(b => `
-        <button data-brand="${b.id}" class="flex-1 whitespace-nowrap px-4 py-2 rounded-xl text-sm font-display font-700 text-center transition-all ${activeBrand === b.id ? 'bg-ink text-white shadow-md' : 'text-ink-3 hover:bg-ink/5 hover:text-ink'}">
+        <button data-brand="${b.id}" class="flex-1 whitespace-nowrap px-4 py-2 rounded-xl text-sm font-display font-700 text-center transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${activeBrand === b.id ? 'bg-ink text-white shadow-md' : 'text-ink-3 hover:bg-ink/5 hover:text-ink'}">
           ${b.label}
         </button>
       `).join('');
@@ -136,9 +142,14 @@ export const ProductsListing = {
       if (!d) return;
 
       d.innerHTML = tabs.map(t => `
-        <button data-filter="${t.id}" class="filter-btn text-left px-5 py-3 rounded-2xl text-sm font-display transition-all duration-300 w-full flex justify-between items-center group ${t.id===activeFilter ? 'bg-brand/10 text-brand font-700' : 'text-ink-3 hover:text-brand font-600'}">
-          <span>${t.label}</span>
-          ${t.id===activeFilter ? '<i class="fa-solid fa-circle-check text-[10px]"></i>' : '<i class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all font-800"></i>'}
+        <button data-filter="${t.id}" class="filter-btn text-left px-4 py-3 rounded-2xl text-sm font-display transition-all duration-300 w-full flex justify-between items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${t.id===activeFilter ? 'bg-brand/10 text-brand font-700' : 'text-ink-3 hover:text-brand font-600'}">
+          <span class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 [&_i]:text-[13px] [&_i]:!text-inherit ${t.id===activeFilter ? 'bg-brand text-white' : 'bg-ink/5 text-ink-3 group-hover:bg-brand/10 group-hover:text-brand'}">
+              ${t.icon}
+            </span>
+            ${t.label}
+          </span>
+          ${t.id===activeFilter ? '<i class="fa-solid fa-circle-check text-[10px]" aria-hidden="true"></i>' : '<i class="fa-solid fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all font-800" aria-hidden="true"></i>'}
         </button>
       `).join('');
     };
@@ -184,7 +195,7 @@ export const ProductsListing = {
     };
 
     const getFiltered = () => {
-      let list = activeFilter === 'all' ? products : products.filter(p => p.cat === activeFilter);
+      let list = activeFilter === 'all' ? shuffledProducts : products.filter(p => p.cat === activeFilter);
       if (activeBrand !== 'all') {
         const brandMatch = activeBrand === 'deltaplus' ? 'delta' : 'safety jogger';
         list = list.filter(p => p.brand.toLowerCase().includes(brandMatch));
@@ -234,35 +245,35 @@ export const ProductsListing = {
           `;
         } else {
           g.innerHTML = shown.map((p,i) => `
-            <div class="product-card group reveal relative h-[400px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-700" style="transition-delay: ${i * 60}ms;">
+            <div class="product-card group reveal relative h-[260px] sm:h-[350px] md:h-[400px] rounded-2xl overflow-hidden shadow-[0_10px_25px_rgba(0,0,0,0.08)] sm:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-700" style="transition-delay: ${i * 60}ms;">
               
               <!-- Full Bleed Image Background -->
               <div class="absolute inset-0 transition-transform duration-1000 group-hover:scale-110">
                  <img src="${p.img}" alt="${p.name}" 
                       onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect width=%22400%22 height=%22400%22 fill=%22%23f0faf6%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2214%22 fill=%22%2327C291%22%3EImage Pending%3C/text%3E%3C/svg%3E';"
-                      class="w-full h-full object-contain absolute bottom-10  ">
+                      class="w-full h-[70%] sm:h-[75%] object-contain absolute top-2 sm:top-4 inset-x-0 mx-auto">
                  <!-- Subtle overlay to ensure text readability -->
-                 <div class="absolute inset-0 bg-ink/10 group-hover:bg-ink/30 transition-all duration-700"></div>
+                 <div class="absolute inset-0 bg-ink/5 group-hover:bg-ink/20 transition-all duration-700"></div>
               </div>
 
               <!-- Faded Blur Layer (Refined Glassmorphism) -->
-              <div class="absolute inset-x-0 bottom-0 z-10 p-7 pt-28 bg-gradient-to-t from-ink/60 via-ink/20 to-transparent backdrop-blur-lg" style="mask-image: linear-gradient(to top, black 70%, transparent); -webkit-mask-image: linear-gradient(to top, black 70%, transparent);">
-                 <div class="space-y-4">
-                    <div class="space-y-1.5">
-                       <h3 class="text-white font-display font-800 text-2xl leading-[1.1] tracking-tight drop-shadow-md">${p.name}</h3>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-3 sm:p-6 pt-16 sm:pt-28 bg-gradient-to-t from-ink/70 via-ink/20 to-transparent backdrop-blur-md" style="mask-image: linear-gradient(to top, black 70%, transparent); -webkit-mask-image: linear-gradient(to top, black 70%, transparent);">
+                 <div class="space-y-2 sm:space-y-4">
+                    <div class="space-y-0.5 sm:space-y-1.5">
+                       <h3 class="text-white font-display font-800 text-sm sm:text-base md:text-2xl leading-[1.2] tracking-tight drop-shadow-md line-clamp-1 sm:line-clamp-2">${p.name}</h3>
                     </div>
 
-                    <div class="pt-4 flex items-center justify-between border-t border-white/10">
-                       <a href="#/product/${p.id}" class="text-white font-display font-900 text-[11px] hover:text-brand transition-colors tracking-widest flex items-center gap-2 group/btn">
-                          VIEW PRODUCT <i class="fa-solid fa-arrow-right-long text-[10px] transition-transform group-hover/btn:translate-x-2"></i>
-                       </a>
-                       <span class="text-[9px] text-white/40 font-500 uppercase tracking-[0.3em]">WSSCI</span>
+                    <div class="pt-2 sm:pt-4 flex items-center justify-between border-t border-white/10">
+                       <span class="text-white font-display font-900 text-[8px] sm:text-[11px] tracking-widest flex items-center gap-1.5 sm:gap-2 group/btn">
+                          VIEW PRODUCT <i class="fa-solid fa-arrow-right-long text-[8px] sm:text-[10px] transition-transform group-hover/btn:translate-x-2" aria-hidden="true"></i>
+                       </span>
+                       <span class="text-[8px] sm:text-[9px] text-white/40 font-500 uppercase tracking-[0.2em] sm:tracking-[0.3em]">${p.cat}</span>
                     </div>
                  </div>
               </div>
 
               <!-- Clickable Link Area -->
-              <a href="#/product/${p.id}" class="absolute inset-0 z-0"></a>
+              <a href="#/product/${p.id}" class="absolute inset-0 z-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded-2xl" aria-label="View details for ${p.name}"></a>
             </div>
           `).join('');
         }
@@ -284,8 +295,8 @@ export const ProductsListing = {
       pagesHtml += `
         <div class="flex items-center gap-2 px-2 py-2 rounded-full">
           <!-- Previous Button -->
-          <button class="flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-display font-800 transition-all duration-300 ${currentPage === 1 ? 'text-ink/10 cursor-default' : 'text-ink-3 hover:text-brand hover:bg-brand/5'}" ${currentPage === 1 ? 'disabled' : ''} data-page="${currentPage - 1}">
-            <i class="fa-solid fa-chevron-left text-[8px]"></i> Previous
+          <button class="flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-display font-800 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${currentPage === 1 ? 'text-ink/10 cursor-default' : 'text-ink-3 hover:text-brand hover:bg-brand/5'}" ${currentPage === 1 ? 'disabled' : ''} data-page="${currentPage - 1}">
+            <i class="fa-solid fa-chevron-left text-[8px]" aria-hidden="true"></i> Previous
           </button>
           
           <div class="flex items-center gap-1 mx-2">
@@ -324,7 +335,7 @@ export const ProductsListing = {
         } else {
           const isActive = currentPage === i;
           pagesHtml += `
-            <button class="w-8 h-8 rounded-xl flex items-center justify-center font-display font-800 text-sm transition-all duration-300 ${isActive ? 'bg-brand/30 text-brand border-2 border-brand/60 shadow-sm' : 'text-ink-3 hover:bg-brand/5 hover:text-brand'}" data-page="${i}">
+            <button class="w-8 h-8 rounded-xl flex items-center justify-center font-display font-800 text-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${isActive ? 'bg-brand/30 text-brand border-2 border-brand/60 shadow-sm' : 'text-ink-3 hover:bg-brand/5 hover:text-brand'}" data-page="${i}">
               ${i}
             </button>
           `;
@@ -335,8 +346,8 @@ export const ProductsListing = {
           </div>
 
           <!-- Next Button -->
-          <button class="flex items-center gap-3 bg-brand text-white px-6 py-2.5 rounded-full text-xs font-display font-800 shadow-lg shadow-brand/20 hover:bg-brand-dark transition-all duration-300 hover:scale-[1.03] active:scale-95 ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}" ${currentPage === totalPages ? 'disabled' : ''} data-page="${currentPage + 1}">
-            Next <i class="fa-solid fa-chevron-right text-[8px]"></i>
+          <button class="flex items-center gap-3 bg-brand text-white px-6 py-2.5 rounded-full text-xs font-display font-800 shadow-lg shadow-brand/20 hover:bg-brand-dark transition-all duration-300 hover:scale-[1.03] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}" ${currentPage === totalPages ? 'disabled' : ''} data-page="${currentPage + 1}">
+            Next <i class="fa-solid fa-chevron-right text-[8px]" aria-hidden="true"></i>
           </button>
         </div>
       `;
@@ -471,5 +482,17 @@ export const ProductsListing = {
     renderCarousel();
     renderCards();
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // SEO: Set dynamic page title
+    document.title = 'PPE Product Catalog | World Safety Supply Center, Inc.';
+
+    // SEO: Set dynamic meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Browse our full catalog of high-quality PPE products including safety shoes, helmets, goggles, safety vests, gloves, and more. Certified CE & OSHC.');
   }
 };

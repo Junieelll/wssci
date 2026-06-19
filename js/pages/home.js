@@ -212,14 +212,14 @@ export const Home = {
       </section>
 
       <!-- TOP PICKS SHOWCASE -->
-      <section class="py-24 bg-surface px-6 lg:px-16 overflow-hidden">
+      <section class="py-10 bg-surface px-6 lg:px-16 overflow-hidden">
         <div class="max-w-7xl mx-auto">
           <div class="text-center space-y-4 mb-16">
             <div class="reveal flex justify-center"><div class="section-pill"><span class="dot"></span>Top Picks</div></div>
-            <h2 class="reveal delay-100 font-display font-800 text-4xl lg:text-5xl text-ink">Featured <span class="text-brand">Safety Jogger</span> Models</h2>
-            <p class="reveal delay-200 font-body text-ink-3 max-w-xl mx-auto">The gold standard in protective footwear, now available for nationwide deployment.</p>
+            <h2 class="reveal delay-100 font-display font-800 text-4xl lg:text-5xl text-ink">Featured <span class="text-brand">PPE</span> Models</h2>
+            <p class="reveal delay-200 font-body text-ink-3 max-w-xl mx-auto">Top-rated safety equipment from our trusted partners, available for nationwide deployment.</p>
           </div>
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8" id="top-picks-grid">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8" id="top-picks-grid">
              <!-- Rendered via JS -->
           </div>
           <div class="mt-16 text-center">
@@ -229,7 +229,7 @@ export const Home = {
       </section>
 
       <!-- DUAL SPLIT BANNERS -->
-      <section class="py-24 px-6 lg:px-16 max-w-7xl mx-auto">
+      <section class="py-10 px-6 lg:px-16 max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-8 h-full">
            <!-- Banner 1: Construction -->
            <div class="reveal group relative h-[400px] rounded-3xl overflow-hidden cursor-pointer shadow-xl">
@@ -298,7 +298,7 @@ export const Home = {
                 As an authorized partner of Delta Plus, World Safety Supply Center, Inc. brings you world-class PPE solutions that meet the highest international safety standards. From head to toe, we've got you covered.
               </p>
               <div class="flex flex-wrap gap-4 pt-4">
-                <a href="#/products" class="btn-primary bg-ink text-white hover:bg-ink-2 shadow-xl border-ink">Browse Delta Plus Gear</a>
+                <a href="#/products?brand=deltaplus" class="btn-primary bg-ink text-white hover:bg-ink-2 shadow-xl border-ink">Browse Delta Plus Gear</a>
                 <div class="flex items-center gap-2 text-ink font-display font-800 text-sm">
                   <i class="fa-solid fa-check-circle"></i> CE Certified
                 </div>
@@ -451,30 +451,42 @@ export const Home = {
       if (window.lucide) window.lucide.createIcons();
       }
 
-    // Render Top Picks Showcase
+    // Render Top Picks Showcase — dynamic featured products from all brands/categories
     const picks = document.getElementById('top-picks-grid');
     if (picks) {
-      const topShoes = [13, 14, 15, 16]; // Safety Jogger IDs
-      const filteredProducts = products.filter(p => topShoes.includes(p.id));
-      picks.innerHTML = filteredProducts.map((p, i) => {
+      // Pick 4 featured products: 2 from each brand, spread across categories
+      const deltaProducts = products.filter(p => p.brand.toLowerCase().includes('delta'));
+      const joggerProducts = products.filter(p => p.brand.toLowerCase().includes('jogger'));
+      
+      // Shuffle and pick 2 from each brand for variety
+      const shuffle = arr => [...arr].sort(() => Math.random() - 0.5);
+      const featured = [
+        ...shuffle(joggerProducts).slice(0, 2),
+        ...shuffle(deltaProducts).slice(0, 2)
+      ].sort(() => Math.random() - 0.5); // Mix them up
+
+      picks.innerHTML = featured.map((p, i) => {
         const isDelta = p.brand.toLowerCase().includes('delta');
         const accentClass = isDelta ? 'text-caution' : 'text-brand';
         const bgAccentClass = isDelta ? 'bg-caution/90' : 'bg-brand/90';
+        // Build tag chips from actual product tags
+        const tagChips = (p.tags || []).slice(0, 2).map(t => 
+          `<span class="text-[10px] px-2 py-0.5 rounded-full bg-surface-2 text-ink-3 font-600">${t}</span>`
+        ).join('');
         
         return `
-            <a href="#/product/${p.id}" class="reveal block group bg-white rounded-3xl p-5 border border-brand-muted/10 shadow-lg transition-all hover:shadow-2xl" style="transition-delay:${i * 100}ms;">
-                <div class="aspect-square rounded-2xl overflow-hidden bg-surface mb-5 relative">
+            <a href="#/product/${p.id}" class="reveal block group bg-white rounded-3xl p-3 sm:p-5 border border-brand-muted/10 shadow-lg transition-all hover:shadow-2xl" style="transition-delay:${i * 100}ms;">
+                <div class="aspect-square rounded-2xl overflow-hidden bg-surface mb-3 sm:mb-5 relative">
                     <img src="${p.img}" alt="${p.name}" 
-                         onerror="this.src='https://images.unsplash.com/photo-1588612143468-b359929235bd?w=600&q=80'; this.classList.add('opacity-40')"
-                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute top-3 left-3 ${bgAccentClass} backdrop-blur text-white text-[10px] font-display font-900 px-2 py-1 rounded-md uppercase tracking-widest">Featured</div>
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect width=%22400%22 height=%22400%22 fill=%22%23f0faf6%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2214%22 fill=%22%2327C291%22%3EImage Pending%3C/text%3E%3C/svg%3E'; this.classList.add('opacity-40')"
+                         class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-2 left-2 sm:top-3 sm:left-3 ${bgAccentClass} backdrop-blur text-white text-[8px] sm:text-[10px] font-display font-900 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md uppercase tracking-widest">Featured</div>
                 </div>
                 <div class="space-y-1">
-                    <div class="text-[10px] font-display font-800 ${accentClass} uppercase tracking-tighter">${p.brand}</div>
-                    <h4 class="font-display font-800 text-ink text-lg group-hover:text-brand transition-colors">${p.name}</h4>
-                    <div class="flex items-center gap-2 pt-2">
-                            <span class="text-[10px] px-2 py-0.5 rounded-full bg-surface-2 text-ink-3 font-600">S3 Rated</span>
-                            <span class="text-[10px] px-2 py-0.5 rounded-full bg-surface-2 text-ink-3 font-600">Steel Toe</span>
+                    <div class="text-[9px] sm:text-[10px] font-display font-800 ${accentClass} uppercase tracking-tighter">${p.brand}</div>
+                    <h4 class="font-display font-800 text-ink text-sm sm:text-lg group-hover:text-brand transition-colors line-clamp-1">${p.name}</h4>
+                    <div class="flex items-center gap-1 sm:gap-2 pt-1 sm:pt-2 flex-wrap">
+                            ${tagChips}
                     </div>
                 </div>
             </a>

@@ -11,12 +11,14 @@ const handleMobileMenu = () => {
   const closeMenu = () => {
     menu.classList.remove('active');
     toggle.classList.remove('burger-active');
+    toggle.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('mobile-menu-active');
   };
 
   toggle.addEventListener('click', () => {
     const isActive = menu.classList.toggle('active');
     toggle.classList.toggle('burger-active');
+    toggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
     document.body.classList.toggle('mobile-menu-active', isActive);
   });
 

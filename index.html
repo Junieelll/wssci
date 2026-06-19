@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>World Safety Supply Center, Inc. — Premium PPE Solutions</title>
+<meta name="description" content="World Safety Supply Center, Inc. (WSSCI) is the Philippines' trusted source for premium CE & OSHC certified Personal Protective Equipment (PPE) powered by DELTAPLUS." />
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="icon" type="image/png" href="logo.png">
@@ -198,29 +199,29 @@ tailwind.config = {
 <!-- ═══════════════════════════════════ NAVBAR ═══════════════════════════════════ -->
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-[60] px-6 lg:px-16 py-4">
   <div class="max-w-7xl mx-auto flex items-center justify-between">
-    <a href="#/" class="flex items-center gap-3 group">
+    <a href="#/" aria-label="World Safety Supply Center, Inc. Home" class="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-xl p-1 -m-1">
       <div class="w-10 h-10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-        <img src="logo.png" alt="Logo" class="w-full h-full object-cover">
+        <img src="logo.png" alt="World Safety Supply Center, Inc. Logo" class="w-full h-full object-cover">
       </div>
       <span class="font-display font-800 text-ink text-lg leading-tight">World Safety<br><span class="text-brand text-sm font-600">Supply Center, Inc.</span></span>
     </a>
     <div class="hidden lg:flex items-center gap-8 text-sm font-body font-500 text-ink-3">
-      <a href="#/" class="nav-link hover:text-brand">Home</a>
-      <a href="#/products" class="nav-link hover:text-brand">Products</a>
-      <a href="#/categories" class="nav-link hover:text-brand">Categories</a>
-      <a href="#/about" class="nav-link hover:text-brand">About</a>
-      <a href="#/contact" class="nav-link hover:text-brand">Contact</a>
+      <a href="#/" class="nav-link hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1.5 py-0.5">Home</a>
+      <a href="#/products" class="nav-link hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1.5 py-0.5">Products</a>
+      <a href="#/categories" class="nav-link hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1.5 py-0.5">Categories</a>
+      <a href="#/about" class="nav-link hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1.5 py-0.5">About</a>
+      <a href="#/contact" class="nav-link hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1.5 py-0.5">Contact</a>
     </div>
 
     <!-- Right Side: CTA (Desktop) & Menu (Mobile) -->
     <div class="flex items-center gap-4">
-      <a href="#/contact" class="hidden lg:flex btn-primary pulse-glow">
+      <a href="#/contact" class="hidden lg:flex btn-primary pulse-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
         Get in Touch
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
 
       <!-- Premium Mobile Hamburger -->
-      <button id="menu-toggle" class="lg:hidden w-10 h-10 flex items-center justify-center transition-all duration-300 relative z-[60]">
+      <button id="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden w-10 h-10 flex items-center justify-center transition-all duration-300 relative z-[60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-xl">
         <svg width="20" height="14" viewBox="0 0 20 14" fill="none" class="group-active:scale-90 transition-transform">
           <path d="M2 1H18" stroke="#0a1a14" stroke-width="2" stroke-linecap="round" class="burger-line line-1"/>
           <path d="M6 7H18" stroke="#0a1a14" stroke-width="2" stroke-linecap="round" class="burger-line line-2"/>
@@ -232,20 +233,20 @@ tailwind.config = {
 </nav>
 
 <!-- ═══════════════════════════════════ MOBILE MENU MODAL ═══════════════════════════════════ -->
-<div id="mobile-menu" class="fixed top-20 right-4 z-50 lg:hidden w-[240px]">
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation menu" class="fixed top-20 right-4 z-50 lg:hidden w-[240px]">
   <div class="relative bg-ink rounded-[1.5rem] p-3 shadow-2xl border border-white/5 flex flex-col">
     <div class="flex flex-col gap-0.5">
-      <a href="#/" class="menu-item block px-4 py-3 rounded-lg text-brand font-display font-700 text-sm transition-all active:scale-95">Home</a>
-      <a href="#/categories" class="menu-item block px-4 py-3 rounded-lg text-white/50 hover:text-white hover:bg-white/5 font-display font-600 text-sm transition-all">Categories</a>
-      <a href="#/products" class="menu-item block px-4 py-3 rounded-lg text-white/50 hover:text-white hover:bg-white/5 font-display font-600 text-sm transition-all">Products</a>
-      <a href="#/about" class="menu-item block px-4 py-3 rounded-lg text-white/50 hover:text-white hover:bg-white/5 font-display font-600 text-sm transition-all">About</a>
-      <a href="#/contact" class="menu-item block px-4 py-3 rounded-lg text-white/50 hover:text-white hover:bg-white/5 font-display font-600 text-sm transition-all">Contact</a>
+      <a href="#/" class="menu-item block px-4 py-3 rounded-lg text-brand font-display font-700 text-sm transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand">Home</a>
+      <a href="#/categories" class="menu-item block px-4 py-3 rounded-lg text-white/50 hover:text-white hover:bg-white/5 font-display font-600 text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand">Categories</a>
+      <a href="#/products" class="menu-item block px-4 py-3 rounded-lg text-white/50 hover:text-white hover:bg-white/5 font-display font-600 text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand">Products</a>
+      <a href="#/about" class="menu-item block px-4 py-3 rounded-lg text-white/50 hover:text-white hover:bg-white/5 font-display font-600 text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand">About</a>
+      <a href="#/contact" class="menu-item block px-4 py-3 rounded-lg text-white/50 hover:text-white hover:bg-white/5 font-display font-600 text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand">Contact</a>
     </div>
 
     <div class="mt-4">
-      <a href="#/contact" class="w-full h-11 bg-brand text-white rounded-xl flex items-center justify-between px-4 font-display font-800 text-sm transition-all active:scale-95">
+      <a href="#/contact" class="w-full h-11 bg-brand text-white rounded-xl flex items-center justify-between px-4 font-display font-800 text-sm transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
         <span>Get in Touch</span>
-        <i class="fa-solid fa-arrow-right text-[12px]"></i>
+        <i class="fa-solid fa-arrow-right text-[12px]" aria-hidden="true"></i>
       </a>
     </div>
   </div>
@@ -260,36 +261,36 @@ tailwind.config = {
     <div class="grid lg:grid-cols-4 gap-12 pb-12 border-b border-white/10">
       <div class="lg:col-span-2 space-y-5">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center"><img src="logo.png" alt="Logo" class="w-full h-full object-cover"></div>
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center"><img src="logo.png" alt="World Safety Supply Center, Inc. Logo" class="w-full h-full object-cover"></div>
           <span class="font-display font-800 text-white text-lg leading-tight">World Safety<br><span class="text-brand text-sm font-600">Supply Center, Inc.</span></span>
         </div>
         <p class="font-body text-white/50 text-sm max-w-sm leading-relaxed">Your trusted partner in personal protective equipment. Serving industries across the Philippines with premium safety solutions.</p>
         <div class="flex gap-3">
-          <a href="https://www.facebook.com/profile.php?id=61554434231420" target="_blank" class="w-10 h-10 rounded-xl bg-white/8 hover:bg-brand transition-colors flex items-center justify-center">
-            <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          <a href="https://www.facebook.com/profile.php?id=61554434231420" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page (opens in a new tab)" class="w-10 h-10 rounded-xl bg-white/8 hover:bg-brand transition-colors flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
+            <svg width="18" height="18" fill="white" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
           </a>
-          <a href="mailto:worldsafetysci@gmail.com" class="w-10 h-10 rounded-xl bg-white/8 hover:bg-brand transition-colors flex items-center justify-center">
-            <svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:worldsafetysci@gmail.com" aria-label="Send us an email" class="w-10 h-10 rounded-xl bg-white/8 hover:bg-brand transition-colors flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
+            <svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </a>
         </div>
       </div>
       <div>
         <div class="font-display font-700 text-white mb-5">Products</div>
         <ul class="space-y-3 text-white/50 text-sm font-body">
-          <li><a href="#/products?filter=shoes" class="hover:text-brand transition-colors">Safety Shoes</a></li>
-          <li><a href="#/products?filter=head" class="hover:text-brand transition-colors">Head Protection</a></li>
-          <li><a href="#/products?filter=eye" class="hover:text-brand transition-colors">Eye Protection</a></li>
-          <li><a href="#/products?filter=body" class="hover:text-brand transition-colors">Body Protection</a></li>
-          <li><a href="#/products?filter=fall" class="hover:text-brand transition-colors">Fall Protection</a></li>
+          <li><a href="#/products?filter=shoes" class="hover:text-brand transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">Safety Shoes</a></li>
+          <li><a href="#/products?filter=head" class="hover:text-brand transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">Head Protection</a></li>
+          <li><a href="#/products?filter=eye" class="hover:text-brand transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">Eye Protection</a></li>
+          <li><a href="#/products?filter=body" class="hover:text-brand transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">Body Protection</a></li>
+          <li><a href="#/products?filter=fall" class="hover:text-brand transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">Fall Protection</a></li>
         </ul>
       </div>
       <div>
         <div class="font-display font-700 text-white mb-5">Company</div>
         <ul class="space-y-3 text-white/50 text-sm font-body">
-          <li><a href="#/about" class="hover:text-brand transition-colors">About Us</a></li>
-          <li><a href="#/contact" class="hover:text-brand transition-colors">Contact</a></li>
-          <li><a href="#" class="hover:text-brand transition-colors">Catalog Download</a></li>
-          <li><a href="#" class="hover:text-brand transition-colors">Safety Blog</a></li>
+          <li><a href="#/about" class="hover:text-brand transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">About Us</a></li>
+          <li><a href="#/contact" class="hover:text-brand transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">Contact</a></li>
+          <li><a href="#" class="hover:text-brand transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">Catalog Download</a></li>
+          <li><a href="#" class="hover:text-brand transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">Safety Blog</a></li>
         </ul>
       </div>
     </div>

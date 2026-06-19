@@ -4,11 +4,11 @@ export const About = {
   render: () => {
     return `
       <!-- HERO BANNER -->
-      <section class="relative pt-40 pb-24 px-6 lg:px-16 overflow-hidden bg-surface-warm">
+      <section aria-labelledby="about-hero-title" class="relative pt-24 lg:pt-40 pb-16 lg:pb-24 px-6 lg:px-16 overflow-hidden bg-surface-warm">
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(39,194,145,0.07),transparent_60%)]"></div>
         <div class="max-w-7xl mx-auto relative z-10">
-          <div class="reveal section-pill mb-6"><span class="dot"></span>About WSSCI</div>
-          <h1 class="reveal delay-100 font-display font-900 text-5xl md:text-6xl lg:text-7xl text-ink leading-tight tracking-tight max-w-4xl">
+          <div class="reveal section-pill mb-6"><span class="dot" aria-hidden="true"></span>About WSSCI</div>
+          <h1 id="about-hero-title" class="reveal delay-100 font-display font-900 text-5xl md:text-6xl lg:text-7xl text-ink leading-tight tracking-tight max-w-4xl">
             Protecting Workers <span class="text-brand">Since 2016</span>
           </h1>
           <p class="reveal delay-200 font-body text-ink-3 text-xl mt-6 max-w-2xl leading-relaxed">
@@ -18,13 +18,13 @@ export const About = {
       </section>
 
       <!-- COMPANY HISTORY -->
-      <section class="py-24 px-6 lg:px-16">
+      <section aria-labelledby="history-title" class="py-24 px-6 lg:px-16">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           
           <!-- Left: Text -->
           <div class="space-y-7">
-            <div class="reveal section-pill"><span class="dot"></span>Our Story</div>
-            <h2 class="reveal delay-100 font-display font-800 text-4xl lg:text-5xl text-ink leading-tight">
+            <div class="reveal section-pill"><span class="dot" aria-hidden="true"></span>Our Story</div>
+            <h2 id="history-title" class="reveal delay-100 font-display font-800 text-4xl lg:text-5xl text-ink leading-tight">
               Built on <span class="text-brand">Dedication</span> and Trust
             </h2>
             <div class="space-y-5 font-body text-ink-3 text-lg leading-relaxed">
@@ -34,9 +34,9 @@ export const About = {
               <p class="reveal delay-300">
                 His outstanding performance led <strong class="text-ink font-700">DELTAPLUS</strong>, one of the world's leading PPE manufacturers, to personally urge him to establish World Safety Supply Center, Inc. with their full operational support.
               </p>
-              <div class="reveal delay-350 p-6 bg-caution/10 border-l-4 border-caution rounded-r-2xl">
+              <blockquote class="reveal delay-350 p-6 bg-caution/10 border-l-4 border-caution rounded-r-2xl">
                  <p class="font-body text-ink text-base italic">"The partnership with Delta Plus isn't just about distribution; it's about a shared vision for worker safety."</p>
-              </div>
+              </blockquote>
               <p class="reveal delay-400">
                 Barely a year after founding, the company was already servicing some of the Philippines' largest corporations. Today, WSSCI stands as a premier distributor of high-quality PPE — all CE and OSHC Certified — offered at truly reasonable prices.
               </p>
@@ -49,7 +49,7 @@ export const About = {
 
               <!-- Company hero — photo + overlay -->
               <div class="col-span-2 sm:col-span-2 sm:row-span-2 relative rounded-2xl sm:rounded-3xl overflow-hidden min-h-[200px] sm:min-h-[260px]">
-                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80" class="absolute inset-0 w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80" class="absolute inset-0 w-full h-full object-cover" alt="WSSCI team work environment showcasing dedication to worker safety">
                 <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/10"></div>
                 <div class="relative z-10 p-5 sm:p-7 h-full flex flex-col justify-between">
                   <span class="font-body text-white/50 text-[10px] uppercase tracking-[0.18em]">Philippines · Bulacan</span>
@@ -57,7 +57,7 @@ export const About = {
                     <div class="font-display font-900 text-lg sm:text-2xl text-white leading-tight">World Safety Supply Center, Inc.</div>
                     <div class="mt-1 font-body text-white/50 text-[10px] sm:text-xs">Authorized DeltaPlus &amp; Safety Jogger Distributor</div>
                     <div class="mt-3 sm:mt-4 inline-flex items-center gap-2 bg-caution rounded-full px-3 sm:px-4 py-1.5 sm:py-2">
-                      <i data-lucide="shield-check" class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-ink" stroke-width="2"></i>
+                      <i data-lucide="shield-check" class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-ink" stroke-width="2" aria-hidden="true"></i>
                       <span class="font-body font-700 text-ink text-[10px] sm:text-xs">Trusted Since 2016</span>
                     </div>
                   </div>
@@ -66,25 +66,25 @@ export const About = {
 
               <!-- CE & OSHC — brand green -->
               <div class="relative rounded-2xl sm:rounded-3xl bg-brand p-4 sm:p-6 flex flex-col justify-between min-h-[100px] sm:min-h-[125px]">
-                <span class="font-body text-white/40 text-[9px] sm:text-[10px] uppercase tracking-[0.15em]">Standards</span>
+                <span class="font-body text-white text-[9px] sm:text-[10px] uppercase tracking-[0.15em]">Standards</span>
                 <div>
                   <div class="font-display font-900 text-xl sm:text-2xl text-white leading-none">CE &amp; OSHC</div>
-                  <div class="font-body text-white/50 text-[10px] sm:text-[11px] mt-0.5 sm:mt-1">Certified Products</div>
+                  <div class="font-body text-white/70 text-[10px] sm:text-[11px] mt-0.5 sm:mt-1">Certified Products</div>
                 </div>
               </div>
 
               <!-- 500+ Products — dark ink -->
               <div class="relative rounded-2xl sm:rounded-3xl bg-ink p-4 sm:p-6 flex flex-col justify-between min-h-[100px] sm:min-h-[125px]">
-                <span class="font-body text-white/30 text-[9px] sm:text-[10px] uppercase tracking-[0.15em]">Catalog</span>
+                <span class="font-body text-white text-[9px] sm:text-[10px] uppercase tracking-[0.15em]">Catalog</span>
                 <div>
                   <div class="font-display font-900 text-3xl sm:text-4xl text-white leading-none">500+</div>
-                  <div class="font-body text-white/30 text-[10px] sm:text-xs mt-0.5 sm:mt-1">Products</div>
+                  <div class="font-body text-white/70 text-[10px] sm:text-xs mt-0.5 sm:mt-1">Products</div>
                 </div>
               </div>
 
               <!-- Est. 2016 — yellow -->
               <div class="col-span-2 sm:col-span-1 relative rounded-2xl sm:rounded-3xl bg-caution p-4 sm:p-6 flex flex-col justify-between min-h-[90px] sm:min-h-[110px]">
-                <span class="font-body text-ink/40 text-[9px] sm:text-[10px] uppercase tracking-[0.15em]">Est.</span>
+                <span class="font-body text-ink text-[9px] sm:text-[10px] uppercase tracking-[0.15em]">Est.</span>
                 <div class="font-display font-900 text-3xl sm:text-4xl text-ink leading-none">2016</div>
               </div>
 
@@ -92,10 +92,10 @@ export const About = {
               <div class="col-span-2 sm:col-span-2 relative rounded-2xl sm:rounded-3xl overflow-hidden min-h-[90px] sm:min-h-[110px]" style="background:linear-gradient(135deg,#f0f9ff 0%,#dbeafe 100%)">
                 <div class="p-4 sm:p-6 flex items-center gap-3 sm:gap-4 h-full">
                   <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-brand/15 flex items-center justify-center flex-shrink-0">
-                    <i data-lucide="map-pin" class="w-4 h-4 text-brand" stroke-width="1.8"></i>
+                    <i data-lucide="map-pin" class="w-4 h-4 text-brand" stroke-width="1.8" aria-hidden="true"></i>
                   </div>
                   <div>
-                    <div class="font-body text-brand/50 text-[9px] sm:text-[10px] uppercase tracking-widest mb-0.5">Office</div>
+                    <div class="font-body text-brand text-[9px] sm:text-[10px] uppercase tracking-widest mb-0.5">Office</div>
                     <div class="font-display font-700 text-ink text-xs sm:text-sm leading-snug">Lucky Place Bldg., M. Villarica Rd,<br>Sta. Rosa 1, Marilao, Bulacan</div>
                   </div>
                 </div>
@@ -104,11 +104,11 @@ export const About = {
               <!-- Email — white glass -->
               <div class="col-span-2 sm:col-span-2 bg-white/70 backdrop-blur-xl border border-brand-muted/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex items-center gap-3 sm:gap-4">
                 <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-brand/10 flex items-center justify-center flex-shrink-0">
-                  <i data-lucide="mail" class="w-4 h-4 text-brand" stroke-width="1.8"></i>
+                  <i data-lucide="mail" class="w-4 h-4 text-brand" stroke-width="1.8" aria-hidden="true"></i>
                 </div>
                 <div class="min-w-0">
-                  <div class="font-body text-ink/40 text-[9px] sm:text-[10px] uppercase tracking-widest mb-0.5">Email</div>
-                  <a href="mailto:worldsafetysci@gmail.com" class="font-display font-700 text-ink text-xs sm:text-sm hover:text-brand transition-colors truncate block">worldsafetysci@gmail.com</a>
+                  <div class="font-body text-ink text-[9px] sm:text-[10px] uppercase tracking-widest mb-0.5">Email</div>
+                  <a href="mailto:worldsafetysci@gmail.com" class="font-display font-700 text-ink text-xs sm:text-sm hover:text-brand transition-colors truncate block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">worldsafetysci@gmail.com</a>
                 </div>
               </div>
 
@@ -116,20 +116,20 @@ export const About = {
               <div class="bg-white/70 backdrop-blur-xl border border-brand-muted/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex flex-col justify-between min-h-[80px]">
                 <span class="font-body text-ink/40 text-[9px] sm:text-[10px] uppercase tracking-widest">Call</span>
                 <div>
-                  <a href="tel:0443056536" class="font-display font-700 text-ink text-xs sm:text-sm hover:text-brand transition-colors block">044 305-6536</a>
-                  <a href="tel:09688524423" class="font-body text-ink-3 text-[10px] sm:text-xs hover:text-brand transition-colors block mt-0.5">0968-852-4423</a>
+                  <a href="tel:0443056536" class="font-display font-700 text-ink text-xs sm:text-sm hover:text-brand transition-colors block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">044 305-6536</a>
+                  <a href="tel:09688524423" class="font-body text-ink-3 text-[10px] sm:text-xs hover:text-brand transition-colors block mt-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">0968-852-4423</a>
                 </div>
               </div>
 
               <!-- Legal footer — full width -->
               <div class="col-span-2 sm:col-span-3 bg-ink/[0.04] rounded-xl sm:rounded-2xl px-4 sm:px-5 py-2.5 sm:py-3 flex flex-wrap items-center gap-x-4 sm:gap-x-5 gap-y-1">
                 <div class="flex items-center gap-1.5">
-                  <i data-lucide="award" class="w-3 h-3 text-ink/20" stroke-width="1.8"></i>
+                  <i data-lucide="award" class="w-3 h-3 text-ink/20" stroke-width="1.8" aria-hidden="true"></i>
                   <span class="font-body text-ink/30 text-[10px] sm:text-[11px]">SEC CS20162163 · Sept. 23, 2016</span>
                 </div>
                 <div class="w-px h-3 bg-ink/10 hidden sm:block"></div>
                 <div class="flex items-center gap-1.5">
-                  <i data-lucide="file-text" class="w-3 h-3 text-ink/20" stroke-width="1.8"></i>
+                  <i data-lucide="file-text" class="w-3 h-3 text-ink/20" stroke-width="1.8" aria-hidden="true"></i>
                   <span class="font-body text-ink/30 text-[10px] sm:text-[11px]">BPN 2355 · OR No. 1232925 · Feb. 05, 2026</span>
                 </div>
               </div>
@@ -141,11 +141,11 @@ export const About = {
       </section>
 
       <!-- MISSION & VISION -->
-      <section class="py-24 px-6 lg:px-16 bg-surface-warm">
+      <section aria-labelledby="mission-vision-title" class="py-24 px-6 lg:px-16 bg-surface-warm">
         <div class="max-w-7xl mx-auto">
           <div class="text-center mb-16">
-            <div class="reveal section-pill mx-auto mb-4 w-fit"><span class="dot"></span>Mission & Vision</div>
-            <h2 class="reveal delay-100 font-display font-800 text-4xl lg:text-5xl text-ink leading-tight">
+            <div class="reveal section-pill mx-auto mb-4 w-fit"><span class="dot" aria-hidden="true"></span>Mission & Vision</div>
+            <h2 id="mission-vision-title" class="reveal delay-100 font-display font-800 text-4xl lg:text-5xl text-ink leading-tight">
               What <span class="text-brand">Drives</span> Us
             </h2>
           </div>
@@ -156,18 +156,18 @@ export const About = {
               <div class="absolute top-0 left-0 w-40 h-40 bg-brand/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2 group-hover:bg-brand/10 transition-colors duration-500"></div>
               <div class="relative z-10">
                 <div class="w-14 h-14 rounded-2xl bg-brand/10 flex items-center justify-center mb-8 group-hover:bg-brand group-hover:scale-110 transition-all duration-300">
-                  <i class="fa-solid fa-bullseye text-brand group-hover:text-white text-xl transition-colors duration-300"></i>
+                  <i class="fa-solid fa-bullseye text-brand group-hover:text-white text-xl transition-colors duration-300" aria-hidden="true"></i>
                 </div>
                 <h3 class="font-display font-800 text-2xl text-ink mb-6">Our Mission</h3>
                 <ul class="space-y-4">
                   <li class="flex items-start gap-4">
-                    <div class="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div aria-hidden="true" class="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <div class="w-2 h-2 rounded-full bg-brand"></div>
                     </div>
                     <p class="font-body text-ink-3 leading-relaxed">To provide <strong class="text-ink font-600">100% quality performance and satisfaction</strong> in terms of services.</p>
                   </li>
                   <li class="flex items-start gap-4">
-                    <div class="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div aria-hidden="true" class="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <div class="w-2 h-2 rounded-full bg-brand"></div>
                     </div>
                     <p class="font-body text-ink-3 leading-relaxed">To provide <strong class="text-ink font-600">quality, durable, and reliable Personal Protective Equipment</strong> to all our customers.</p>
@@ -181,7 +181,7 @@ export const About = {
               <div class="absolute top-0 right-0 w-48 h-48 bg-caution/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
               <div class="relative z-10">
                 <div class="w-14 h-14 rounded-2xl bg-caution/20 flex items-center justify-center mb-8 group-hover:bg-caution group-hover:scale-110 transition-all duration-300">
-                  <i class="fa-solid fa-eye text-caution group-hover:text-ink text-xl transition-colors duration-300"></i>
+                  <i class="fa-solid fa-eye text-caution group-hover:text-ink text-xl transition-colors duration-300" aria-hidden="true"></i>
                 </div>
                 <h3 class="font-display font-800 text-2xl text-white mb-6">Our Vision</h3>
                 <p class="font-body text-white/70 text-lg leading-relaxed">
@@ -197,7 +197,7 @@ export const About = {
       </section>
 
       <!-- TRUST STATS STRIP -->
-      <div class="bg-caution py-16 px-6 lg:px-16 overflow-hidden">
+      <section aria-label="Key performance and safety statistics" class="bg-caution py-16 px-6 lg:px-16 overflow-hidden">
         <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-ink text-center">
           <div class="reveal">
             <div class="font-display font-800 text-5xl mb-2">2016<span class="text-ink/50 text-2xl ml-1"></span></div>
@@ -216,16 +216,16 @@ export const About = {
             <div class="font-body text-ink/70">Marilao, Bulacan HQ</div>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- INDUSTRIES & CTA -->
-      <section class="py-24 px-6 lg:px-16">
+      <section aria-labelledby="industries-title" class="py-24 px-6 lg:px-16">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           
           <!-- Industries -->
           <div class="space-y-7">
-            <div class="reveal section-pill"><span class="dot"></span>Industries We Serve</div>
-            <h2 class="reveal delay-100 font-display font-800 text-4xl lg:text-5xl text-ink leading-tight">
+            <div class="reveal section-pill"><span class="dot" aria-hidden="true"></span>Industries We Serve</div>
+            <h2 id="industries-title" class="reveal delay-100 font-display font-800 text-4xl lg:text-5xl text-ink leading-tight">
               Trusted Across <span class="text-brand">Every Sector</span>
             </h2>
             <div class="reveal delay-200 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -241,7 +241,7 @@ export const About = {
               ].map((ind, i) => `
                 <div class="flex items-center gap-3 bg-white/60 backdrop-blur-sm border border-brand-muted/20 rounded-2xl px-5 py-4 hover:border-brand/30 hover:bg-brand/5 transition-all duration-300 group" style="transition-delay:${i*40}ms">
                   <div class="w-9 h-9 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand transition-colors duration-300">
-                    <i class="fa-solid ${ind.icon} text-brand group-hover:text-white text-sm transition-colors duration-300"></i>
+                    <i class="fa-solid ${ind.icon} text-brand group-hover:text-white text-sm transition-colors duration-300" aria-hidden="true"></i>
                   </div>
                   <span class="font-display font-700 text-ink text-sm">${ind.label}</span>
                 </div>
@@ -255,18 +255,18 @@ export const About = {
               <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,204,0,0.18),transparent_70%)]"></div>
               <div class="relative z-10 space-y-7">
                 <div class="w-20 h-20 rounded-3xl bg-caution/20 flex items-center justify-center mx-auto">
-                  <i class="fa-solid fa-handshake text-caution text-4xl"></i>
+                  <i class="fa-solid fa-handshake text-caution text-4xl" aria-hidden="true"></i>
                 </div>
                 <h3 class="font-display font-800 text-3xl text-white leading-tight">Ready to Partner with WSSCI?</h3>
                 <p class="font-body text-white/60 leading-relaxed">
                   From safety helmets to chemical-resistant overalls, we supply the equipment your workforce deserves — all compliant, all certified.
                 </p>
                 <div class="space-y-3 pt-2">
-                  <a href="#/contact" class="btn-primary w-full block text-center">
-                    <i class="fa-solid fa-envelope mr-2"></i> Get in Touch
+                  <a href="#/contact" class="btn-primary w-full block text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
+                    <i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i> Get in Touch
                   </a>
-                  <a href="https://www.facebook.com/messages/t/61554434231420/" target="_blank" class="btn-outline w-full block text-center !border-white/20 !text-white hover:!bg-white/10">
-                    <i class="fa-brands fa-facebook-messenger mr-2"></i> Chat on Messenger
+                  <a href="https://www.facebook.com/messages/t/61554434231420/" target="_blank" rel="noopener noreferrer" aria-label="Chat on Messenger (opens in a new tab)" class="btn-outline w-full block text-center !border-white/20 !text-white hover:!bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-caution focus-visible:ring-offset-2">
+                    <i class="fa-brands fa-facebook-messenger mr-2" aria-hidden="true"></i> Chat on Messenger
                   </a>
                 </div>
               </div>
@@ -280,5 +280,17 @@ export const About = {
     setupScrollReveal();
     if (window.lucide) window.lucide.createIcons();
     window.scrollTo({ top: 0, behavior: 'instant' });
+
+    // SEO: Set dynamic page title
+    document.title = 'About Us | World Safety Supply Center, Inc.';
+
+    // SEO: Set dynamic meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Learn about World Safety Supply Center, Inc. (WSSCI), established in 2016. Discover our story, mission, vision, and how we deliver premium, CE & OSHC certified PPE solutions across the Philippines.');
   }
 };
