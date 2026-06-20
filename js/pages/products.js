@@ -6,7 +6,7 @@ let activeBrand = 'all';
 let currentPage = 1;
 let searchQuery = '';
 let searchDebounceTimer = null;
-const itemsPerPage = 9;
+const itemsPerPage = window.innerWidth < 1024 ? 8 : 9;
 
 export const ProductsListing = {
   render: () => {
@@ -63,7 +63,7 @@ export const ProductsListing = {
 
             <!-- Left Sidebar (Filters) -->
             <aside id="catalog-sidebar" class="w-full lg:w-64 flex-shrink-0 hidden lg:block bg-white/60 backdrop-blur-md lg:bg-transparent rounded-3xl lg:rounded-none p-6 lg:p-0 shadow-lg border border-brand/10 lg:border-none lg:shadow-none transition-all duration-300">
-              <div class="space-y-6 sticky top-[100px]">
+              <div class="space-y-6 sticky top-[86px]">
                 <h3 class="hidden lg:flex font-display font-800 text-ink text-lg items-center gap-2">
                    <span class="w-2 h-7 bg-brand rounded-full"></span> Categories
                 </h3>
@@ -107,8 +107,11 @@ export const ProductsListing = {
     // Create a stable randomized list for "all" filter to prevent reshuffling on pagination
     const shuffledProducts = [...products].sort(() => Math.random() - 0.5);
 
-    // Categories list shared between views
-    const tabs = [{ id:'all', label:'All Equipment', icon:'<i class="fa-solid fa-layer-group"></i>' }, ...categories.map(c => ({id:c.id, label:c.label, icon:c.icon}))];
+    // Categories list shared between views — includes icon from data.js
+    const tabs = [
+      { id: 'all', label: 'All Equipment', icon: '<i class="fa-solid fa-layer-group"></i>' },
+      ...categories.map(c => ({ id: c.id, label: c.label, icon: c.icon }))
+    ];
 
     const renderCarousel = () => {
       const c = document.getElementById('mobile-filter-carousel');
@@ -144,7 +147,7 @@ export const ProductsListing = {
       d.innerHTML = tabs.map(t => `
         <button data-filter="${t.id}" class="filter-btn text-left px-4 py-3 rounded-2xl text-sm font-display transition-all duration-300 w-full flex justify-between items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${t.id===activeFilter ? 'bg-brand/10 text-brand font-700' : 'text-ink-3 hover:text-brand font-600'}">
           <span class="flex items-center gap-3">
-            <span class="w-7 h-7 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 [&_i]:text-[13px] [&_i]:!text-inherit ${t.id===activeFilter ? 'bg-brand text-white' : 'bg-ink/5 text-ink-3 group-hover:bg-brand/10 group-hover:text-brand'}">
+            <span class="w-7 h-7 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 [&_i]:!text-[13px] [&_i]:!text-inherit [&_svg]:w-3.5 [&_svg]:h-3.5 [&_svg]:fill-current ${t.id===activeFilter ? 'bg-brand text-white' : 'bg-ink/5 text-ink-3 group-hover:bg-brand/10 group-hover:text-brand'}">
               ${t.icon}
             </span>
             ${t.label}
@@ -251,6 +254,8 @@ export const ProductsListing = {
               <div class="absolute inset-0 transition-transform duration-1000 group-hover:scale-110">
                  <img src="${p.img}" alt="${p.name}" 
                       onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect width=%22400%22 height=%22400%22 fill=%22%23f0faf6%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2214%22 fill=%22%2327C291%22%3EImage Pending%3C/text%3E%3C/svg%3E';"
+                      loading="${i < 4 ? 'eager' : 'lazy'}"
+                      decoding="async"
                       class="w-full h-[70%] sm:h-[75%] object-contain absolute top-2 sm:top-4 inset-x-0 mx-auto">
                  <!-- Subtle overlay to ensure text readability -->
                  <div class="absolute inset-0 bg-ink/5 group-hover:bg-ink/20 transition-all duration-700"></div>

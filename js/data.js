@@ -232,7 +232,9 @@ export const products = [
     tags: ['S1P', 'SRC', 'Split Leather'],
     desc: 'Pigmented split leather safety shoe with S1P SRC rating. Designed for general industrial and manufacturing environments requiring basic impact and slip resistance.',
     features: ['Pigmented split leather upper', 'S1P safety rating', 'SRC slip resistance', 'Steel toecap', 'Anti-perforation midsole', 'Energy-absorbing heel'],
-    img: 'assets/products/shoes/jumper3_s1p_src.png'
+    img: 'assets/products/shoes/jumper3-s1p-sr/thumbnail.png',
+    images: ['assets/products/shoes/jumper3-s1p-sr/1.png', 'assets/products/shoes/jumper3-s1p-sr/2.png'],
+    sizes: [4 , 5 , 6 , 6 , 7 , 8 , 9 , 10 , 11 , 11.5 , 12 , 13]
   },
   {
     id: 101,
@@ -242,7 +244,12 @@ export const products = [
     tags: ['S2', 'SRC', 'Microfibre'],
     desc: 'White microfibre low-cut safety shoe with S2 SRC rating. Ideal for food industry, pharmaceuticals, and clean manufacturing environments.',
     features: ['Microfibre upper — easy to clean', 'S2 safety rating', 'SRC slip resistance', 'Steel toecap', 'Water-resistant properties', 'Lightweight design'],
-    img: 'assets/products/shoes/miami_s2_src.png'
+    img: 'assets/products/shoes/miamis2-src/thumbnail.png',
+    images: ['assets/products/shoes/miamis2-src/white/1.png', 'assets/products/shoes/miamis2-src/white/2.png'],
+    colors: [
+      {name: 'White', hex: '#fff', images: ['assets/products/shoes/miamis2-src/white/1.png', 'assets/products/shoes/miamis2-src/white/2.png']},
+      {name: 'Black', hex: '#000', images: ['assets/products/shoes/miamis2-src/black/1.png']}
+    ]
   },
   {
     id: 102,
@@ -252,7 +259,12 @@ export const products = [
     tags: ['S1P', 'SRC', 'Polyester/Cotton'],
     desc: 'Breathable polyester and cotton safety shoe with S1P SRC rating. Designed for warm environments where ventilation and comfort are essential without compromising protection.',
     features: ['Polyester and cotton upper', 'S1P safety rating', 'SRC slip resistance', 'Composite toecap', 'Anti-perforation midsole', 'Breathable mesh lining'],
-    img: 'assets/products/shoes/summer_s1p_src.png'
+    img: 'assets/products/shoes/summer-s1p-src/thumbnail.png',
+    images: ['assets/products/shoes/summer-s1p-src/gray-orange/1.png', 'assets/products/shoes/summer-s1p-src/gray-orange/2.png'],
+    colors: [
+      {name: 'Gray-Orange', hex: 'linear-gradient(225deg, #4b5563 50%, #fd7e14 50%)', images: ['assets/products/shoes/summer-s1p-src/gray-orange/1.png', 'assets/products/shoes/summer-s1p-src/gray-orange/2.png']},
+      {name: 'Blue-Yellow', hex: 'linear-gradient(225deg, #0d6efd 50%, #eab308 50%)', images: ['assets/products/shoes/summer-s1p-src/blue-yellow/1.png']}
+    ]
   },
   {
     id: 103,
@@ -262,7 +274,9 @@ export const products = [
     tags: ['S3', 'SRC', 'Buffalo Leather'],
     desc: 'Pigmented split buffalo leather high-cut safety boot with S3 SRC rating. Built for heavy construction, mining, and outdoor industrial applications requiring maximum protection.',
     features: ['Pigmented split buffalo leather upper', 'S3 safety rating', 'SRC slip resistance', 'Steel toecap', 'Anti-perforation steel midsole', 'Water-resistant (WR) construction'],
-    img: 'assets/products/shoes/simba_s3_src.png'
+    img: 'assets/products/shoes/simba-s3-src/thumbnail.png',
+    images: ['assets/products/shoes/simba-s3-src/1.png', 'assets/products/shoes/simba-s3-src/2.png'],
+    sizes: [4 , 5 , 6 , 6 , 7 , 8 , 9 , 10 , 11 , 11.5 , 12 , 13 , 14]
   },
   {
     id: 104,
@@ -272,7 +286,8 @@ export const products = [
     tags: ['Winter', 'SB', 'Fur Lined'],
     desc: 'Winter safety boots with fur lining. Provides warmth and protection in cold outdoor environments such as logistics, construction, and outdoor maintenance.',
     features: ['Warm fur inner lining', 'SB safety rating', 'Cold insulation protection', 'Slip-resistant outsole', 'High-cut ankle support', 'Waterproof outer construction'],
-    img: 'assets/products/shoes/eskimo_sbhps.png'
+    img: 'assets/products/shoes/eskimo-sbhps/thumbnail.png',
+    images: ['assets/products/shoes/eskimo-sbhps/1.png', 'assets/products/shoes/eskimo-sbhps/2.png', 'assets/products/shoes/eskimo-sbhps/3.png']
   },
   {
     id: 105,
@@ -282,7 +297,9 @@ export const products = [
     tags: ['S3', 'SRC', 'Full Grain Leather'],
     desc: 'Full grain leather high-cut safety boot with S3 SRC rating. Premium construction for demanding construction and industrial environments requiring durability and all-day comfort.',
     features: ['Full grain leather upper', 'S3 safety rating', 'SRC slip resistance', 'Steel toecap', 'Anti-perforation midsole', 'Shock-absorbing heel cushion'],
-    img: 'assets/products/shoes/tw402_s3_src.png'
+    img: 'assets/products/shoes/tw402-s3-src/thumbnail.png',
+    images: ['assets/products/shoes/tw402-s3-src/1.png','assets/products/shoes/tw402-s3-src/2.png','assets/products/shoes/tw402-s3-src/3.png','assets/products/shoes/tw402-s3-src/4.png', 'assets/products/shoes/tw402-s3-src/5.png',],
+    sizes: [6 , 7 , 8 , 9 , 10 , 11 , 11.5 , 12 , 13 , 14]
   },
   {
     id: 106,
@@ -292,7 +309,9 @@ export const products = [
     tags: ['S5', 'SRA', 'PVC/Nitrile'],
     desc: 'Full PVC/nitrile outsole safety rubber boot with S5 SRA rating. Designed for wet, muddy, and chemically challenging environments such as agriculture, food processing, and outdoor construction.',
     features: ['PVC/nitrile outsole construction', 'S5 safety rating', 'SRA slip resistance', 'Steel toecap', 'Chemical and oil resistant', 'Full waterproof protection'],
-    img: 'assets/products/shoes/amazone_s5_sra.png'
+    img: 'assets/products/shoes/amazone-s5-sra/thumbnail.png',
+    images: ['assets/products/shoes/amazone-s5-sra/1.png'],
+    sizes: [4 , 5 , 6 , 6 , 7 , 8 , 9 , 10 , 11 , 11.5 , 12 , 13]
   },
   {
     id: 107,
@@ -302,7 +321,14 @@ export const products = [
     tags: ['S1P', 'SRC', 'Suede/Mesh'],
     desc: 'Low-cut safety shoe combining suede and mesh polyester upper with S1P SRC rating. Sporty, lightweight design suitable for logistics, automotive, and light manufacturing.',
     features: ['Suede and mesh polyester upper', 'S1P safety rating', 'SRC slip resistance', 'Composite toecap', 'Anti-perforation midsole', 'Breathable and lightweight'],
-    img: 'assets/products/shoes/como_s1p_src.png'
+    img: 'assets/products/shoes/como-s1p-src/thumbnail.png',
+    images: ['assets/products/shoes/como-s1p-src/navy-blue/1.png', 'assets/products/shoes/como-s1p-src/navy-blue/2.png'],
+    sizes: [6 , 7 , 8 , 9 , 10 , 11 , 11.5 , 12 , 13 , 14],
+    colors: [
+      {name: 'Navy Blue', hex: '#1e3a5f', images: ['assets/products/shoes/como-s1p-src/navy-blue/1.png', 'assets/products/shoes/como-s1p-src/navy-blue/2.png'], sizes: [6 , 7 , 8 , 9 , 10 , 11 , 11.5 , 12 , 13 , 14],},
+      {name: 'Gray-Black', hex: 'linear-gradient(225deg, #4b5563 50%, #000 50%)', images: ['assets/products/shoes/como-s1p-src/gray-black/1.png'], sizes: [6 , 7 , 8 , 9 , 10 , 11 , 11.5 , 12 , 13 , 14],},
+      {name: 'Black-Orange', hex: 'linear-gradient(225deg, #000 50%, #fd7e14 50%)', images: ['assets/products/shoes/como-s1p-src/black-orange/1.png'], sizes: [6 , 7 , 8 , 9 , 10 , 11 , 11.5 , 12 , 13 , 14],}
+    ]
   },
 
   // ── SKULL PROTECTION (DeltaPlus) ──
@@ -832,17 +858,43 @@ export const products = [
     tags: ['100% Cotton', 'Hi-Vis', 'Overall'],
     desc: 'Overall with reflector in 100% cotton, 200 g/m². High visibility blue or orange. Features retro-reflective bands for superior visual presence in daylight and night conditions.',
     features: ['100% cotton 200 g/m² fabric', 'EN ISO 20471 high-visibility', 'Reflective bands on arms and legs', 'Multiple tool-staging pockets', 'Reinforced stitching', 'Available in blue or orange'],
-    img: 'assets/products/body/palighvco.png'
+    img: 'assets/products/body/palighvco/thumbnail.png',
+    images: ['assets/products/body/palighvco/blue/1.png', 'assets/products/body/palighvco/blue/2.png'],
+    sizes: ['SM', ' MD', 'LG', 'XL', '2X', '3X'],
+    colors: [
+      { name: 'Blue', hex: '#1e3a5f', images: ['assets/products/body/palighvco/blue/1.png', 'assets/products/body/palighvco/blue/2.png'], sizes: ['SM', ' MD', 'LG', 'XL', '2X', '3X'] },
+      { name: 'Orange', hex: '#f97316', images: ['assets/products/body/palighvco/orange/1.png'], sizes: ['SM', ' MD', 'LG', 'XL', '2X', '3X'] }
+    ]
   },
   {
     id: 504,
     cat: 'body',
     name: 'M5VE3',
     brand: 'DeltaPlus',
-    tags: ['60% Cotton', '40% Polyester', '270g/m²'],
-    desc: 'MACH SPIRIT working jacket in 60% cotton / 40% polyester blend, 270 g/m². Professional workwear jacket designed for durability and skin-friendly comfort across industrial, automotive, and maintenance environments.',
-    features: ['60% cotton / 40% polyester blend', '270 g/m² canvas fabric weight', 'Reinforced elbows and shoulders', 'Multiple functional pockets', 'Adjustable cuffs', 'Suitable for automotive, maintenance, and manufacturing'],
-    img: 'assets/products/body/m5ve3.png'
+    tags: ['Work Jacket', 'Polyester Cotton', 'Multi-Pocket'],
+    desc: 'Unisex work jacket in twill 65% polyester / 35% cotton blend at 245 g/m². Features 7 pockets including a badge-holder, elasticated wrist cuffs, and low blas collar with zipper closure. Compatible with all garments in the M5 range for a complete workwear system.',
+    features: [
+      'Twill — 65% polyester / 35% cotton, 245 g/m²',
+      'Low blas collar with zipper closure',
+      'Elastic lower sleeve with elasticated wrist cuffs',
+      '6 exterior pockets (1 zipper, 1 flap, 2 flap gusset, 2 open)',
+      '1 interior patch pocket',
+      'Badge-holder accessory included',
+      'Unisex work jacket',
+    ],
+    img: 'assets/products/body/m5ve3/thumbnail.png',
+    images: ['assets/products/body/m5ve3/gray/1.png', 'assets/products/body/m5ve3/gray/2.png'],
+    colors: [
+      { name: 'Gray', hex: '#585d66ff', images: ['assets/products/body/m5ve3/gray/1.png', 'assets/products/body/m5ve3/gray/2.png'], sizes: ['SM', 'MD', 'LG', 'XL', '2XL', '3XL'] },
+      { name: 'Beige', hex: '#bb9e7aff', images: ['assets/products/body/m5ve3/beige/1.png', 'assets/products/body/m5ve3/beige/2.png'], sizes: ['SM', 'MD', 'LG', 'XL', '2XL', '3XL'] },
+      { name: 'Navy Blue', hex: '#1e3a5f', images: ['assets/products/body/m5ve3/navy-blue/1.png', 'assets/products/body/m5ve3/navy-blue/2.png'], sizes: ['SM', 'MD', 'LG', 'XL', '2XL', '3XL'] },
+    ],
+    sizes: ['SM', 'MD', 'LG', 'XL', '2XL', '3XL'],
+    benefits: getBenefits('forestierCompatibility'),
+    certifications: [
+      { name: 'EN ISO 13688', details: 'General requirements for protective clothing' },
+      { name: 'CE Category 1', details: 'Self-certified protection for minimal risks' },
+    ],
   },
   {
     id: 505,
@@ -854,7 +906,8 @@ export const products = [
     benefits: getBenefits('chemicalProtection', 'antiStatic'),
     certifications: getCerts('enIso139821', 'en13034', 'en14126', 'en11495', 'en10732'),
     features: ['Fixed hood with elasticated face opening', 'Double zipper with flap and hook & loop closure', 'Waterproof zipper construction', 'Ribbed cuffs for secure fit', '63 g/m² — lightweight and breathable', 'Silicone free and latex free'],
-    img: 'assets/products/body/dt117.png'
+    img: 'assets/products/body/dt117/thumbnail.png',
+    images: ['assets/products/body/dt117/white/1.png', 'assets/products/body/dt117/white/2.png', 'assets/products/body/dt117/white/3.png', 'assets/products/body/dt117/white/4.png', 'assets/products/body/dt117/white/5.png']
   },
 
   // ── HEARING PROTECTION (DeltaPlus) ──
@@ -1062,12 +1115,17 @@ export const products = [
   {
     id: 800,
     cat: 'fall',
-    name: 'ELARA282',
+    name: 'ELARA280V2',
     brand: 'DeltaPlus',
     tags: ['EN361', '2-Point', 'Energy Absorber'],
     desc: 'Harness with 2 anchorage points + double webbing energy absorber, 2m. Complete fall arrest system for high-altitude industrial maintenance and construction.',
     features: ['2 anchorage points (back and sternal)', 'Double webbing energy absorber lanyard (2m)', 'Polyester webbing construction', 'Adjustable buckles for secure fit', 'Reduces arrest force below 6kN', 'EN 361 / EN 355 certified'],
-    img: 'assets/products/fall/elara282.png'
+    img: 'assets/products/fall/elara280v2/thumbnail.png',
+    images: ['assets/products/fall/elara280v2/orange/1.png', 'assets/products/fall/elara280v2/orange/2.png'],
+    colors: [
+      {name: 'Orange', hex: '#ec7b1eff', images: ['assets/products/fall/elara280v2/orange/1.png', 'assets/products/fall/elara280v2/orange/2.png']}
+    ],
+    sizes: ['SM/MD/LG' , 'XL/2X']
   },
   {
     id: 801,
@@ -1077,7 +1135,9 @@ export const products = [
     tags: ['EN361', 'H-Style', 'D-Ring + Sternal'],
     desc: 'Harness with H style with 2 anchorage points — D-ring (dorsal) and sternal. Designed for work at height requiring reliable fall arrest with ergonomic H-bar chest connection.',
     features: ['H-style load distribution design', 'Dorsal D-ring anchorage point', 'Sternal anchorage point', 'Adjustable shoulder and leg straps', 'Steel hardware components', 'EN 361 certified'],
-    img: 'assets/products/fall/har22h.png'
+    img: 'assets/products/fall/har22h/thumbnail.png',
+    images: ['assets/products/fall/har22h/1.png'],
+    sizes: ['SM/MD/LG' , 'XL/2X']
   },
   {
     id: 802,
@@ -1087,7 +1147,9 @@ export const products = [
     tags: ['EN361', '4-Point', 'Dielectric'],
     desc: 'Harness with belt, 4 anchorage points E — dielectric. Full-body fall arrest harness with 4 anchor points and dielectric properties for use near electrical hazards.',
     features: ['4 anchorage points for versatile attachment', 'Dielectric — safe near electrical hazards', 'Integrated positioning belt', 'Adjustable shoulder, chest, and leg straps', 'Lightweight ergonomic design', 'EN 361 / EN 358 certified'],
-    img: 'assets/products/fall/har42el.png'
+    img: 'assets/products/fall/har42el/thumbnail.png',
+    images: ['assets/products/fall/har42el/1.png'],
+    sizes: ['SM/MD/LG' , 'XL/2X']
   },
   {
     id: 803,
@@ -1097,7 +1159,9 @@ export const products = [
     tags: ['Evacuation', 'All-Size', 'Rescue Triangle'],
     desc: 'Evacuation triangle — all size in one. Emergency rescue and evacuation device designed to fit all body sizes for rapid extraction in confined spaces and emergency descent.',
     features: ['Universal fit — all size in one', 'Emergency evacuation and rescue', 'High-tenacity polyester webbing', 'Quick donning design', 'Compatible with standard connectors', 'EN 1498 certified'],
-    img: 'assets/products/fall/tc022.png'
+    img: 'assets/products/fall/tc022/thumbnail.png',
+    images: ['assets/products/fall/tc022/1.png'],
+    sizes: ['One size']
   },
   {
     id: 804,
@@ -1107,7 +1171,8 @@ export const products = [
     tags: ['Karabiner', 'Steel', '17mm Gate'],
     desc: 'Galvanized steel karabiner — opening 17mm. Reliable connector for fall arrest systems, work positioning, and anchorage setups in construction and industrial environments.',
     features: ['Galvanized steel construction', '17mm gate opening', 'Auto-locking gate mechanism', 'High static load rating', 'Corrosion-resistant finish', 'EN 362 certified'],
-    img: 'assets/products/fall/am002.png'
+    img: 'assets/products/fall/am002/thumbnail.png',
+    images: ['assets/products/fall/am002/1.png']
   },
   {
     id: 805,
@@ -1117,7 +1182,8 @@ export const products = [
     tags: ['Anchorage Line', '10m', 'Braided Rope'],
     desc: '10 metre anchorage line. Braided rope anchorage line for vertical lifeline systems and temporary anchorage setups on construction and industrial sites.',
     features: ['10m braided rope construction', 'High-tenacity polyester fibers', 'Suitable for vertical lifeline systems', 'Compatible with fall arresters', 'Termination connectors at each end', 'EN 795 compatible'],
-    img: 'assets/products/fall/an30010.png'
+    img: 'assets/products/fall/an30010/thumbnail.png',
+    images: ['assets/products/fall/an30010/1.png', 'assets/products/fall/an30010/2.png', 'assets/products/fall/an30010/3.png']
   },
 
 ];

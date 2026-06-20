@@ -362,7 +362,7 @@ export const ProductDetail = {
     // Related products — same category, exclude current
     const related = products.filter(x => x.cat === p.cat && x.id !== p.id).slice(0, 4);
 
-    document.title = p.name
+    document.title = `${p.name} - ${catLabel.toUpperCase()}`
 
     return `
     <div id="product-detail-container" class="bg-white overflow-hidden">

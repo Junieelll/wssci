@@ -129,7 +129,7 @@ export const Home = {
       </div>
 
       <!-- VISUAL CATEGORIES STRIP -->
-      <section class="py-16 px-6 lg:px-16 max-w-7xl mx-auto overflow-hidden">
+      <section class="py-8 lg:py-16 px-6 lg:px-16 max-w-7xl mx-auto overflow-hidden">
         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-10 gap-4">
           <div>
             <h2 class="font-display font-800 text-3xl text-ink">Browse by <span class="text-brand">Category</span></h2>
@@ -143,7 +143,7 @@ export const Home = {
       </section>
 
       <!-- FOUNDER & COMPANY STORY -->
-      <section class="py-28 px-6 lg:px-16 bg-surface-warm overflow-hidden">
+      <section class="py-10 lg:py-28 px-6 lg:px-16 bg-surface-warm overflow-hidden">
         <div class="max-w-7xl mx-auto">
           <div class="grid lg:grid-cols-2 gap-16 items-center">
             
@@ -258,7 +258,7 @@ export const Home = {
       </section>
 
       <!-- TRUST & CERTIFICATION SECTION -->
-      <section class="py-20 bg-brand-light/20 border-y border-brand-muted/20">
+      <section class="py-10 lg:py-20 bg-brand-light/20 border-y border-brand-muted/20">
         <div class="max-w-7xl mx-auto px-6 lg:px-16">
           <div class="flex flex-wrap justify-between items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
              <div class="flex items-center gap-3">
