@@ -95,12 +95,12 @@ export const Contact = {
               <div class="relative z-10 flex items-center gap-4 pt-2 border-t border-white/10">
                 <a href="https://www.facebook.com/profile.php?id=61554434231420" target="_blank"
                    class="flex items-center gap-2 text-white/50 hover:text-white text-xs font-display font-700 uppercase tracking-widest transition-colors">
-                  <i data-lucide="facebook" class="w-4 h-4" stroke-width="1.8"></i> Facebook
+                  <i class="fa-brands fa-facebook text-lg"></i> Facebook
                 </a>
                 <span class="w-px h-4 bg-white/20"></span>
                 <a href="https://www.facebook.com/messages/t/61554434231420/" target="_blank"
                    class="flex items-center gap-2 text-white/50 hover:text-white text-xs font-display font-700 uppercase tracking-widest transition-colors">
-                  <i data-lucide="message-circle" class="w-4 h-4" stroke-width="1.8"></i> Messenger
+                  <i class="fa-brands fa-facebook-messenger text-lg"></i> Messenger
                 </a>
               </div>
             </div>

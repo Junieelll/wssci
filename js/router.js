@@ -1,14 +1,8 @@
-import { Home } from './pages/home.js';
-import { ProductsListing } from './pages/products.js';
-import { ProductDetail } from './pages/product-detail.js';
-import { About } from './pages/about.js';
-import { Contact } from './pages/contact.js';
-import { Categories } from './pages/categories.js';
-
-export function router() {
+export async function router() {
   const hash = window.location.hash.slice(1) || '/';
   const root = document.getElementById('app-container');
-  let view = null;
+  let modulePromise = null;
+  let viewName = '';
   let param = null;
   let scrollTarget = null;
   
@@ -16,38 +10,52 @@ export function router() {
   updateNavActiveState(hash);
 
   if (hash.startsWith('/product/')) {
-    view = ProductDetail;
+    modulePromise = import('./pages/product-detail.js');
+    viewName = 'ProductDetail';
     param = hash.split('/')[2];
   } else if (hash.startsWith('/products')) {
-    view = ProductsListing;
+    modulePromise = import('./pages/products.js');
+    viewName = 'ProductsListing';
   } else if (hash.startsWith('/about')) {
-    view = About;
+    modulePromise = import('./pages/about.js');
+    viewName = 'About';
   } else if (hash.startsWith('/categories')) {
-    view = Categories;
+    modulePromise = import('./pages/categories.js');
+    viewName = 'Categories';
   } else if (hash.startsWith('/contact')) {
-    view = Contact;
+    modulePromise = import('./pages/contact.js');
+    viewName = 'Contact';
   } else {
     // If navigating to home or a section inside home
-    view = Home;
+    modulePromise = import('./pages/home.js');
+    viewName = 'Home';
     if (hash && hash !== '/') {
       scrollTarget = hash.replace(/^\/?/, '');
     }
   }
-  
-  root.innerHTML = view.render(param);
-  if (view.init) view.init(param);
-  
-  if (scrollTarget && scrollTarget !== '') {
-      setTimeout(() => {
-          const el = document.getElementById(scrollTarget);
-          if (el) {
-              const yOffset = -80; // nav height offset
-              const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
-              window.scrollTo({top: y, behavior: 'smooth'});
-          }
-      }, 100);
-  } else {
-      setTimeout(() => { window.scrollTo(0,0); }, 10);
+
+  try {
+    const module = await modulePromise;
+    const view = module[viewName];
+    
+    root.innerHTML = view.render(param);
+    if (view.init) await view.init(param);
+    
+    if (scrollTarget && scrollTarget !== '') {
+        setTimeout(() => {
+            const el = document.getElementById(scrollTarget);
+            if (el) {
+                const yOffset = -80; // nav height offset
+                const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+                window.scrollTo({top: y, behavior: 'smooth'});
+            }
+        }, 100);
+    } else {
+        setTimeout(() => { window.scrollTo(0,0); }, 10);
+    }
+  } catch (err) {
+    console.error('Error loading page component:', err);
+    root.innerHTML = `<div class="py-20 text-center font-display font-800 text-red-500">Failed to load page. Please try again.</div>`;
   }
 }
 

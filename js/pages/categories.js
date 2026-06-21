@@ -1,4 +1,4 @@
-import { categories, products } from '../data.js';
+import { categories } from '../data.js';
 import { setupScrollReveal } from '../utils.js';
 
 export const Categories = {
@@ -28,14 +28,14 @@ export const Categories = {
           <!-- Categories Grid -->
           <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
             ${categories.map((c, i) => {
-              const count = products.filter(p => p.cat === c.id).length;
+              const count = c.count;
               const img = categoryImages[c.id] || categoryImages.shoes;
               return `
                 <div class="reveal group relative h-[220px] sm:h-[350px] md:h-[450px] rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-[0_15px_30px_rgba(0,0,0,0.08)] sm:shadow-[0_30px_60px_rgba(0,0,0,0.12)] transition-all duration-700 hover:shadow-brand/20" style="transition-delay: ${i * 50}ms;">
                   
                   <!-- Background Image Container -->
                   <div class="absolute inset-0 transition-transform duration-1000 group-hover:scale-110">
-                    <img src="${img}" alt="${c.label}" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700">
+                    <img src="${img}" alt="${c.label}" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" width="400" height="400" loading="${i < 2 ? 'eager' : 'lazy'}" decoding="async">
                     <!-- Dynamic Gradient Overlay -->
                     <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500"></div>
                   </div>
@@ -77,9 +77,9 @@ export const Categories = {
             <div class="inline-block p-1 rounded-full bg-brand/5 border border-brand/10 backdrop-blur-sm mb-8">
                <div class="px-6 py-2 flex items-center gap-2">
                   <div class="flex -space-x-2">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Industrial Partner Profile" class="w-6 h-6 rounded-full border-2 border-surface-2 object-cover">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Industrial Partner Profile" class="w-6 h-6 rounded-full border-2 border-surface-2 object-cover">
-                    <img src="https://randomuser.me/api/portraits/men/86.jpg" alt="Industrial Partner Profile" class="w-6 h-6 rounded-full border-2 border-surface-2 object-cover">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Industrial Partner Profile" class="w-6 h-6 rounded-full border-2 border-surface-2 object-cover" width="24" height="24" loading="lazy" decoding="async">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Industrial Partner Profile" class="w-6 h-6 rounded-full border-2 border-surface-2 object-cover" width="24" height="24" loading="lazy" decoding="async">
+                    <img src="https://randomuser.me/api/portraits/men/86.jpg" alt="Industrial Partner Profile" class="w-6 h-6 rounded-full border-2 border-surface-2 object-cover" width="24" height="24" loading="lazy" decoding="async">
                   </div>
                   <p class="text-[11px] font-display font-800 text-ink/70 uppercase tracking-widest">Join 500+ Industrial Partners</p>
                </div>

@@ -1,5 +1,5 @@
 import { router } from './router.js';
-import { setupNavScroll, setupParallax } from './utils.js';
+import { setupNavScroll } from './utils.js';
 
 const handleMobileMenu = () => {
   const toggle = document.getElementById('menu-toggle');
@@ -43,9 +43,8 @@ window.addEventListener('hashchange', () => {
   document.body.classList.remove('mobile-menu-active');
 });
 
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
   setupNavScroll();
-  setupParallax();
   handleMobileMenu();
   router(); // trigger initial route
 });

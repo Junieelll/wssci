@@ -1,4 +1,4 @@
-import { categories, marqueeItems, products } from '../data.js';
+import { categories, marqueeItems, featuredProducts } from '../data.js';
 import { setupScrollReveal, setupStats } from '../utils.js';
 
 export const Home = {
@@ -67,47 +67,47 @@ export const Home = {
                   <!-- Column 1 — scrolls UP (your images) -->
                   <div class="flex-1 overflow-hidden">
                     <div class="masonry-col animate-masonry-up w-full">
-                      <img src="assets/hero-img/img-1.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
-                      <img src="assets/hero-img/img-2.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
-                      <img src="assets/hero-img/img-3.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
-                      <img src="assets/hero-img/img-4.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
-                      <img src="assets/hero-img/img-5.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
+                      <img src="assets/hero-img/img-1.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety" width="256" height="256" loading="lazy" decoding="async" fetchpriority="low">
+                      <img src="assets/hero-img/img-2.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety" width="256" height="256" loading="lazy" decoding="async">
+                      <img src="assets/hero-img/img-3.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety" width="256" height="256" loading="lazy" decoding="async">
+                      <img src="assets/hero-img/img-4.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety" width="256" height="256" loading="lazy" decoding="async">
+                      <img src="assets/hero-img/img-5.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety" width="256" height="256" loading="lazy" decoding="async">
                       <!-- Duplicate for seamless loop -->
-                      <img src="assets/hero-img/img-1.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
-                      <img src="assets/hero-img/img-2.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
-                      <img src="assets/hero-img/img-3.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
-                      <img src="assets/hero-img/img-4.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
-                      <img src="assets/hero-img/img-5.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety">
+                      <img src="assets/hero-img/img-1.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety" width="256" height="256" loading="lazy" decoding="async">
+                      <img src="assets/hero-img/img-2.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety" width="256" height="256" loading="lazy" decoding="async">
+                      <img src="assets/hero-img/img-3.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety" width="256" height="256" loading="lazy" decoding="async">
+                      <img src="assets/hero-img/img-4.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety" width="256" height="256" loading="lazy" decoding="async">
+                      <img src="assets/hero-img/img-5.avif" class="w-full object-cover rounded-xl h-64" alt="PPE Safety" width="256" height="256" loading="lazy" decoding="async">
                     </div>
                   </div>
 
                   <!-- Column 2 — scrolls DOWN -->
                   <div class="flex-1 overflow-hidden">
                     <div class="masonry-col animate-masonry-down w-full" style="animation-duration:48s;">
-                      <img src="assets/hero-img/img-6.avif" class="w-full object-cover rounded-xl h-64" alt="Industrial worker gloves">
-                      <img src="assets/hero-img/img-7.avif" class="w-full object-cover rounded-xl h-64" alt="Construction scaffolding">
-                      <img src="assets/hero-img/img-8.avif" class="w-full object-cover rounded-xl h-64" alt="Safety goggles worker">
-                      <img src="assets/hero-img/img-9.jpg" class="w-full object-cover rounded-xl h-64" alt="Manufacturing factory">
+                      <img src="assets/hero-img/img-6.avif" class="w-full object-cover rounded-xl h-64" alt="Industrial worker gloves" width="256" height="256" loading="lazy" decoding="async" fetchpriority="low">
+                      <img src="assets/hero-img/img-7.avif" class="w-full object-cover rounded-xl h-64" alt="Construction scaffolding" width="256" height="256" loading="lazy" decoding="async">
+                      <img src="assets/hero-img/img-8.avif" class="w-full object-cover rounded-xl h-64" alt="Safety goggles worker" width="256" height="256" loading="lazy" decoding="async">
+                      <img src="assets/hero-img/img-9.jpg" class="w-full object-cover rounded-xl h-64" alt="Manufacturing factory" width="256" height="256" loading="lazy" decoding="async">
                       <!-- Duplicate for seamless loop -->
-                      <img src="assets/hero-img/img-6.avif" class="w-full object-cover rounded-xl h-64" alt="Industrial worker gloves">
-                      <img src="assets/hero-img/img-7.avif" class="w-full object-cover rounded-xl h-64" alt="Construction scaffolding">
-                      <img src="assets/hero-img/img-8.avif" class="w-full object-cover rounded-xl h-64" alt="Safety goggles worker">
-                      <img src="assets/hero-img/img-9.jpg" class="w-full object-cover rounded-xl h-64" alt="Manufacturing factory">
+                      <img src="assets/hero-img/img-6.avif" class="w-full object-cover rounded-xl h-64" alt="Industrial worker gloves" width="256" height="256" loading="lazy" decoding="async">
+                      <img src="assets/hero-img/img-7.avif" class="w-full object-cover rounded-xl h-64" alt="Construction scaffolding" width="256" height="256" loading="lazy" decoding="async">
+                      <img src="assets/hero-img/img-8.avif" class="w-full object-cover rounded-xl h-64" alt="Safety goggles worker" width="256" height="256" loading="lazy" decoding="async">
+                      <img src="assets/hero-img/img-9.jpg" class="w-full object-cover rounded-xl h-64" alt="Manufacturing factory" width="256" height="256" loading="lazy" decoding="async">
                     </div>
                   </div>
 
                   <!-- Column 3 — scrolls UP (different speed) -->
                   <div class="flex-1 overflow-hidden hidden sm:block">
                     <div class="masonry-col animate-masonry-up w-full" style="animation-duration:36s;">
-                      <img src="assets/hero-img/img-10.avif" class="w-full object-cover rounded-xl h-64" alt="Electrical engineering">
-                      <img src="assets/hero-img/img-11.avif" class="w-full object-cover rounded-xl h-64" alt="Factory worker">
-                      <img src="assets/hero-img/img-12.avif" class="w-full object-cover rounded-xl h-64" alt="Protective workwear">
-                      <img src="assets/hero-img/img-13.avif" class="w-full object-cover rounded-xl h-64" alt="Hardhat construction">
+                      <img src="assets/hero-img/img-10.avif" class="w-full object-cover rounded-xl h-64" alt="Electrical engineering" width="256" height="256" loading="lazy" decoding="async" fetchpriority="low">
+                      <img src="assets/hero-img/img-11.avif" class="w-full object-cover rounded-xl h-64" alt="Factory worker" width="256" height="256" loading="lazy" decoding="async">
+                      <img src="assets/hero-img/img-12.avif" class="w-full object-cover rounded-xl h-64" alt="Protective workwear" width="256" height="256" loading="lazy" decoding="async">
+                      <img src="assets/hero-img/img-13.avif" class="w-full object-cover rounded-xl h-64" alt="Hardhat construction" width="256" height="256" loading="lazy" decoding="async">
                       <!-- Duplicate for seamless loop -->
-                      <img src="assets/hero-img/img-10.avif" class="w-full object-cover rounded-xl h-64" alt="Electrical engineering">
-                      <img src="assets/hero-img/img-11.avif" class="w-full object-cover rounded-xl h-64" alt="Factory worker">
-                      <img src="assets/hero-img/img-12.avif" class="w-full object-cover rounded-xl h-64" alt="Protective workwear">
-                      <img src="assets/hero-img/img-13.avif" class="w-full object-cover rounded-xl h-64" alt="Hardhat construction">
+                      <img src="assets/hero-img/img-10.avif" class="w-full object-cover rounded-xl h-64" alt="Electrical engineering" width="256" height="256" loading="lazy" decoding="async">
+                      <img src="assets/hero-img/img-11.avif" class="w-full object-cover rounded-xl h-64" alt="Factory worker" width="256" height="256" loading="lazy" decoding="async">
+                      <img src="assets/hero-img/img-12.avif" class="w-full object-cover rounded-xl h-64" alt="Protective workwear" width="256" height="256" loading="lazy" decoding="async">
+                      <img src="assets/hero-img/img-13.avif" class="w-full object-cover rounded-xl h-64" alt="Hardhat construction" width="256" height="256" loading="lazy" decoding="async">
                     </div>
                   </div>
 
@@ -314,6 +314,7 @@ export const Home = {
                   <img src="black-logo.svg" 
                        alt="Delta Plus Logo" 
                        class="w-full max-w-[300px] mx-auto relative z-10"
+                       width="300" height="100" loading="lazy" decoding="async"
                   >
                   <!-- Overlay to ensure the yellow triangle pops -->
                   <div class="absolute inset-0 bg-ink/5 pointer-events-none"></div>
@@ -374,7 +375,7 @@ export const Home = {
       <!-- CTA BANNER -->
       <section class="pb-16 px-6 lg:px-16 max-w-7xl mx-auto">
         <div class="bg-ink rounded-3xl p-10 lg:p-16 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-10">
-          <div class="absolute inset-0 opacity-20 bg-center bg-cover" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&q=80')"></div>
+          <div class="absolute inset-0 opacity-20 bg-center bg-cover" style="background-image:url('assets/images/body-protection.avif')"></div>
           <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/90 to-transparent"></div>
           
           <div class="relative z-10 max-w-2xl text-center lg:text-left">
@@ -454,9 +455,8 @@ export const Home = {
     // Render Top Picks Showcase — dynamic featured products from all brands/categories
     const picks = document.getElementById('top-picks-grid');
     if (picks) {
-      // Pick 4 featured products: 2 from each brand, spread across categories
-      const deltaProducts = products.filter(p => p.brand.toLowerCase().includes('delta'));
-      const joggerProducts = products.filter(p => p.brand.toLowerCase().includes('jogger'));
+      const deltaProducts = featuredProducts.filter(p => p.brand.toLowerCase().includes('delta'));
+      const joggerProducts = featuredProducts.filter(p => p.brand.toLowerCase().includes('jogger'));
       
       // Shuffle and pick 2 from each brand for variety
       const shuffle = arr => [...arr].sort(() => Math.random() - 0.5);
@@ -478,6 +478,7 @@ export const Home = {
             <a href="#/product/${p.id}" class="reveal block group bg-white rounded-3xl p-3 sm:p-5 border border-brand-muted/10 shadow-lg transition-all hover:shadow-2xl" style="transition-delay:${i * 100}ms;">
                 <div class="aspect-square rounded-2xl overflow-hidden bg-surface mb-3 sm:mb-5 relative">
                     <img src="${p.img}" alt="${p.name}" 
+                         width="200" height="200" loading="lazy" decoding="async"
                          onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect width=%22400%22 height=%22400%22 fill=%22%23f0faf6%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2214%22 fill=%22%2327C291%22%3EImage Pending%3C/text%3E%3C/svg%3E'; this.classList.add('opacity-40')"
                          class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute top-2 left-2 sm:top-3 sm:left-3 ${bgAccentClass} backdrop-blur text-white text-[8px] sm:text-[10px] font-display font-900 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md uppercase tracking-widest">Featured</div>
@@ -498,18 +499,7 @@ export const Home = {
     setupScrollReveal();
     setupStats();
 
-    // Setup 3D float interactions
-    document.querySelectorAll('.float-card').forEach(card => {
-      document.addEventListener('mousemove', e => {
-        const rect = card.getBoundingClientRect();
-        if (rect.width === 0) return; // not visible
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
-        const dx = (e.clientX - cx) / rect.width * 10;
-        const dy = (e.clientY - cy) / rect.height * 10;
-        card.style.transform = `perspective(600px) rotateY(${dx}deg) rotateX(${-dy}deg) translateZ(10px)`;
-      });
-    });
+
 
   }
 };

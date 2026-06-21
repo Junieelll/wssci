@@ -1,4 +1,4 @@
-import { products, categories } from '../data.js';
+import { categories } from '../data.js';
 import { setupScrollReveal } from '../utils.js';
 
 let activeFilter = 'all';
@@ -96,7 +96,7 @@ export const ProductsListing = {
       </section>
     `;
   },
-  init: () => {
+  init: async () => {
     const hash = window.location.hash;
     const urlParams = new URLSearchParams(hash.split('?')[1]);
     activeFilter = urlParams.get('filter') || 'all';
@@ -104,8 +104,35 @@ export const ProductsListing = {
     currentPage = 1;
     searchQuery = '';
 
-    // Create a stable randomized list for "all" filter to prevent reshuffling on pagination
-    const shuffledProducts = [...products].sort(() => Math.random() - 0.5);
+    let productsList = [];
+    let shuffledProducts = [];
+
+    // Cache for loaded categories to avoid double fetching
+    const loadedCategories = {};
+
+    const loadCategoryProducts = async (cat) => {
+      if (cat === 'all') {
+        const activeCats = categories.filter(c => c.count > 0);
+        const results = await Promise.all(activeCats.map(async (c) => {
+          if (!loadedCategories[c.id]) {
+            const mod = await import(`../data/${c.id}.js`);
+            loadedCategories[c.id] = mod.products;
+          }
+          return loadedCategories[c.id];
+        }));
+        productsList = results.flat();
+      } else {
+        if (!loadedCategories[cat]) {
+          const mod = await import(`../data/${cat}.js`);
+          loadedCategories[cat] = mod.products;
+        }
+        productsList = loadedCategories[cat];
+      }
+      shuffledProducts = [...productsList].sort(() => Math.random() - 0.5);
+    };
+
+    // Before doing anything else, wait for initial products load
+    await loadCategoryProducts(activeFilter);
 
     // Categories list shared between views — includes icon from data.js
     const tabs = [
@@ -198,7 +225,7 @@ export const ProductsListing = {
     };
 
     const getFiltered = () => {
-      let list = activeFilter === 'all' ? shuffledProducts : products.filter(p => p.cat === activeFilter);
+      let list = activeFilter === 'all' ? shuffledProducts : productsList.filter(p => p.cat === activeFilter);
       if (activeBrand !== 'all') {
         const brandMatch = activeBrand === 'deltaplus' ? 'delta' : 'safety jogger';
         list = list.filter(p => p.brand.toLowerCase().includes(brandMatch));
@@ -249,10 +276,10 @@ export const ProductsListing = {
         } else {
           g.innerHTML = shown.map((p,i) => `
             <div class="product-card group reveal relative h-[260px] sm:h-[350px] md:h-[400px] rounded-2xl overflow-hidden shadow-[0_10px_25px_rgba(0,0,0,0.08)] sm:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-700" style="transition-delay: ${i * 60}ms;">
-              
-              <!-- Full Bleed Image Background -->
+                            <!-- Full Bleed Image Background -->
               <div class="absolute inset-0 transition-transform duration-1000 group-hover:scale-110">
                  <img src="${p.img}" alt="${p.name}" 
+                      width="300" height="300"
                       onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect width=%22400%22 height=%22400%22 fill=%22%23f0faf6%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2214%22 fill=%22%2327C291%22%3EImage Pending%3C/text%3E%3C/svg%3E';"
                       loading="${i < 4 ? 'eager' : 'lazy'}"
                       decoding="async"
@@ -421,7 +448,13 @@ export const ProductsListing = {
           currentPage = 1;
           renderSidebar();
           renderCarousel();
-          renderCards();
+          
+          const g = document.getElementById('products-grid');
+          if (g) g.innerHTML = `<div class="col-span-full py-20 text-center font-display font-800 text-brand">Loading products...</div>`;
+          
+          loadCategoryProducts(activeFilter).then(() => {
+            renderCards();
+          });
           if (window.innerWidth < 1024) window.scrollTo({ top: 200, behavior: 'smooth' });
           return;
         }
@@ -451,7 +484,13 @@ export const ProductsListing = {
           currentPage = 1;
           renderSidebar();
           renderCarousel();
-          renderCards();
+          
+          const g = document.getElementById('products-grid');
+          if (g) g.innerHTML = `<div class="col-span-full py-20 text-center font-display font-800 text-brand">Loading products...</div>`;
+          
+          loadCategoryProducts(activeFilter).then(() => {
+            renderCards();
+          });
           return;
         }
 
@@ -476,7 +515,13 @@ export const ProductsListing = {
           renderBrandFilters();
           renderSidebar();
           renderCarousel();
-          renderCards();
+          
+          const g = document.getElementById('products-grid');
+          if (g) g.innerHTML = `<div class="col-span-full py-20 text-center font-display font-800 text-brand">Loading products...</div>`;
+          
+          loadCategoryProducts(activeFilter).then(() => {
+            renderCards();
+          });
           return;
         }
       });

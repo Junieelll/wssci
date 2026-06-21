@@ -49,7 +49,7 @@ export const About = {
 
               <!-- Company hero — photo + overlay -->
               <div class="col-span-2 sm:col-span-2 sm:row-span-2 relative rounded-2xl sm:rounded-3xl overflow-hidden min-h-[200px] sm:min-h-[260px]">
-                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80" class="absolute inset-0 w-full h-full object-cover" alt="WSSCI team work environment showcasing dedication to worker safety">
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80" class="absolute inset-0 w-full h-full object-cover" alt="WSSCI team work environment showcasing dedication to worker safety" width="500" height="350" loading="lazy" decoding="async">
                 <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/10"></div>
                 <div class="relative z-10 p-5 sm:p-7 h-full flex flex-col justify-between">
                   <span class="font-body text-white/50 text-[10px] uppercase tracking-[0.18em]">Philippines · Bulacan</span>
