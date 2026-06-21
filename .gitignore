@@ -1,5 +1,4 @@
 node_modules/
-css/output.css
 .env
 .DS_Store
 Thumbs.db
