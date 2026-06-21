@@ -1,6 +1,11 @@
 import { categories } from '../data.js';
 import { setupScrollReveal } from '../utils.js';
 
+// ── EmailJS config ──
+const EMAILJS_PUBLIC_KEY  = 'OJ6anVfhwH-_67vFG';
+const EMAILJS_SERVICE_ID  = 'service_5ptgjdb';
+const EMAILJS_TEMPLATE_ID = 'template_mirw5m8';
+
 export const Contact = {
   render: () => {
     return `
@@ -32,7 +37,6 @@ export const Contact = {
                    style="background-image:url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%221%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
               <div class="absolute -bottom-16 -right-16 w-56 h-56 bg-brand/20 rounded-full blur-3xl pointer-events-none"></div>
 
-              <!-- Brand intro -->
               <div class="relative z-10">
                 <div class="inline-flex items-center gap-2 bg-brand/15 border border-brand/25 text-brand text-xs font-display font-700 tracking-widest uppercase px-3 py-1.5 rounded-full mb-8">
                   <span class="w-1.5 h-1.5 rounded-full bg-brand inline-block"></span>
@@ -46,9 +50,7 @@ export const Contact = {
                 </p>
               </div>
 
-              <!-- Contact links -->
               <div class="relative z-10 space-y-5">
-
                 <a href="https://www.google.com/maps/place/World+Safety+Supply+Center+Inc." target="_blank" class="flex items-start gap-4 group">
                   <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand transition-colors duration-300">
                     <i data-lucide="map-pin" class="w-4 h-4 text-white" stroke-width="1.8"></i>
@@ -58,7 +60,6 @@ export const Contact = {
                     <div class="text-white/80 text-sm font-body leading-relaxed group-hover:text-white transition-colors">Lucky Place Bldg., M. Villarica Road,<br>Sta Rosa 1, Marilao, Bulacan</div>
                   </div>
                 </a>
-
                 <a href="tel:0443056536" class="flex items-start gap-4 group">
                   <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand transition-colors duration-300">
                     <i data-lucide="phone" class="w-4 h-4 text-white" stroke-width="1.8"></i>
@@ -68,7 +69,6 @@ export const Contact = {
                     <div class="text-white/80 text-sm font-body group-hover:text-white transition-colors">044 305-6536</div>
                   </div>
                 </a>
-
                 <a href="tel:09688524423" class="flex items-start gap-4 group">
                   <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand transition-colors duration-300">
                     <i data-lucide="smartphone" class="w-4 h-4 text-white" stroke-width="1.8"></i>
@@ -78,7 +78,6 @@ export const Contact = {
                     <div class="text-white/80 text-sm font-body group-hover:text-white transition-colors">0968-852-4423 &nbsp;·&nbsp; 0968-855-9162</div>
                   </div>
                 </a>
-
                 <a href="mailto:worldsafetysci@gmail.com" class="flex items-start gap-4 group">
                   <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand transition-colors duration-300">
                     <i data-lucide="mail" class="w-4 h-4 text-white" stroke-width="1.8"></i>
@@ -88,10 +87,8 @@ export const Contact = {
                     <div class="text-white/80 text-sm font-body group-hover:text-white transition-colors break-all">worldsafetysci@gmail.com</div>
                   </div>
                 </a>
-
               </div>
 
-              <!-- Social row -->
               <div class="relative z-10 flex items-center gap-4 pt-2 border-t border-white/10">
                 <a href="https://www.facebook.com/profile.php?id=61554434231420" target="_blank"
                    class="flex items-center gap-2 text-white/50 hover:text-white text-xs font-display font-700 uppercase tracking-widest transition-colors">
@@ -110,42 +107,41 @@ export const Contact = {
               <h3 class="font-display font-800 text-ink text-xl mb-1">Send us a Request</h3>
               <p class="font-body text-ink-3 text-sm mb-8">Fill out the form and we'll prepare a quote tailored to your needs.</p>
 
-              <form id="contact-form" class="space-y-5" onsubmit="return false;">
+              <form id="contact-form" class="space-y-5" novalidate>
 
                 <!-- Name + Company -->
                 <div class="grid sm:grid-cols-2 gap-4">
                   <div class="contact-field-group">
-                    <label class="contact-label">Full Name</label>
-                    <input type="text" class="contact-input" placeholder="Juan dela Cruz" />
+                    <label class="contact-label">Full Name <span class="text-red-400">*</span></label>
+                    <input id="cf-name" type="text" class="contact-input" placeholder="Juan dela Cruz" />
+                    <span class="contact-error hidden" id="err-name">Please enter your name.</span>
                   </div>
                   <div class="contact-field-group">
                     <label class="contact-label">Company</label>
-                    <input type="text" class="contact-input" placeholder="Your Company, Inc." />
+                    <input id="cf-company" type="text" class="contact-input" placeholder="Your Company, Inc." />
                   </div>
                 </div>
 
                 <!-- Email + Phone -->
                 <div class="grid sm:grid-cols-2 gap-4">
                   <div class="contact-field-group">
-                    <label class="contact-label">Email Address</label>
-                    <input type="email" class="contact-input" placeholder="juan@company.com" />
+                    <label class="contact-label">Email Address <span class="text-red-400">*</span></label>
+                    <input id="cf-email" type="email" class="contact-input" placeholder="juan@company.com" />
+                    <span class="contact-error hidden" id="err-email">Please enter a valid email.</span>
                   </div>
                   <div class="contact-field-group">
-                    <label class="contact-label">Phone</label>
-                    <input type="tel" class="contact-input" placeholder="+63 9XX XXX XXXX" />
+                    <label class="contact-label">Phone <span class="text-red-400">*</span></label>
+                    <input id="cf-phone" type="tel" class="contact-input" placeholder="+63 9XX XXX XXXX" />
+                    <span class="contact-error hidden" id="err-phone">Please enter a valid phone number.</span>
                   </div>
                 </div>
 
                 <!-- Category + Quantity -->
                 <div class="grid sm:grid-cols-2 gap-4">
-
-                  <!-- ── DROPDOWN ── -->
                   <div class="contact-field-group">
-                    <label class="contact-label">PPE Category</label>
+                    <label class="contact-label">PPE Category <span class="text-red-400">*</span></label>
                     <div class="relative" id="custom-dropdown">
                       <input type="hidden" name="ppe_category" id="ppe-category-input" value="">
-
-                      <!-- Trigger button — uses contact-select (flex variant) -->
                       <button type="button" id="dropdown-trigger" class="contact-select">
                         <span id="dropdown-selected" class="flex items-center gap-2 text-ink-3 min-w-0">
                           <i data-lucide="layers" class="w-3.5 h-3.5 text-brand flex-shrink-0" stroke-width="1.8"></i>
@@ -155,26 +151,25 @@ export const Contact = {
                            class="w-4 h-4 text-ink-3 flex-shrink-0 transition-transform duration-200"
                            stroke-width="1.8"></i>
                       </button>
-
-                      <!-- Options panel -->
                       <div id="dropdown-options"
                            class="hidden absolute top-full left-0 right-0 mt-1.5 bg-white border border-brand-muted/40 rounded-2xl shadow-2xl z-30 max-h-56 overflow-y-auto">
-                        <!-- Injected by JS -->
                       </div>
                     </div>
+                    <span class="contact-error hidden" id="err-category">Please select a PPE category.</span>
                   </div>
-
                   <div class="contact-field-group">
-                    <label class="contact-label">Estimated Quantity</label>
-                    <input type="number" class="contact-input" placeholder="e.g. 50 units" min="1" />
+                    <label class="contact-label">Estimated Quantity <span class="text-red-400">*</span></label>
+                    <input id="cf-quantity" type="number" class="contact-input" placeholder="e.g. 50 units" min="1" />
+                    <span class="contact-error hidden" id="err-quantity">Please enter a quantity of at least 1.</span>
                   </div>
                 </div>
 
                 <!-- Message -->
                 <div class="contact-field-group">
-                  <label class="contact-label">Message</label>
-                  <textarea class="contact-input resize-none" rows="4"
+                  <label class="contact-label">Message <span class="text-red-400">*</span></label>
+                  <textarea id="cf-message" class="contact-input resize-none" rows="4"
                             placeholder="Describe your safety requirements, industry, or specific PPE needs…"></textarea>
+                  <span class="contact-error hidden" id="err-message">Please enter your message.</span>
                 </div>
 
                 <!-- Submit -->
@@ -184,38 +179,43 @@ export const Contact = {
                     Your data is kept private &amp; never shared.
                   </p>
                   <button id="submit-btn" type="submit"
-                    class="btn-primary w-full sm:w-auto px-8 py-3.5 flex items-center justify-center gap-2 shadow-lg"
-                    onclick="
-                      this.innerHTML = '<i data-lucide=\\'check\\' style=\\'width:16px;height:16px;margin-right:6px;\\'></i> Request Sent!';
-                      this.classList.add(\\'opacity-70\\');
-                      this.disabled = true;
-                      if(window.lucide) window.lucide.createIcons();
-                    ">
-                    Send Request
+                    class="btn-primary w-full sm:w-auto px-8 py-3.5 flex items-center justify-center gap-2 shadow-lg transition-all">
+                    <span id="submit-label">Send Request</span>
                     <i data-lucide="arrow-right" class="w-4 h-4" stroke-width="2.2"></i>
                   </button>
                 </div>
 
+                <!-- Success / Error banners -->
+                <div id="form-success" class="hidden items-center gap-3 bg-brand/10 border border-brand/20 text-brand rounded-2xl px-5 py-4">
+                  <i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0" stroke-width="1.8"></i>
+                  <div>
+                    <div class="font-display font-700 text-sm">Request sent successfully!</div>
+                    <div class="font-body text-xs mt-0.5 text-brand/70">We'll get back to you within 24 hours.</div>
+                  </div>
+                </div>
+                <div id="form-error" class="hidden items-center gap-3 bg-red-50 border border-red-200 text-red-600 rounded-2xl px-5 py-4">
+                  <i data-lucide="alert-circle" class="w-5 h-5 flex-shrink-0" stroke-width="1.8"></i>
+                  <div>
+                    <div class="font-display font-700 text-sm">Something went wrong.</div>
+                    <div class="font-body text-xs mt-0.5 text-red-400">Please try again or email us directly at worldsafetysci@gmail.com</div>
+                  </div>
+                </div>
+
               </form>
             </div>
-          </div><!-- /split card -->
+          </div>
         </div>
       </section>
 
-      <!-- CREDENTIALS — inline trust strip -->
+      <!-- CREDENTIALS -->
       <section class="reveal py-16 px-6 lg:px-16 bg-caution">
         <div class="max-w-5xl mx-auto rounded-[2rem] bg-ink px-8 py-10 sm:px-12 sm:py-12 relative overflow-hidden">
-          <!-- Subtle noise -->
           <div class="absolute inset-0 opacity-[0.04]" style="background-image:url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%221%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
           <div class="absolute -top-20 -right-20 w-64 h-64 bg-caution/10 rounded-full blur-3xl pointer-events-none"></div>
-
-          <!-- Eyebrow -->
           <div class="relative z-10 text-center mb-10">
             <p class="font-display font-700 text-caution text-[10px] uppercase tracking-[0.2em] mb-2">Registration Details</p>
             <h2 class="font-display font-800 text-white text-2xl sm:text-3xl">Company Credentials</h2>
           </div>
-
-          <!-- Credential rows -->
           <div class="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6 sm:gap-x-0">
             ${[
               { lucide: 'building-2', label: 'Registered Name',  value: 'World Safety Supply Center, Inc.' },
@@ -259,67 +259,16 @@ export const Contact = {
       </section>
 
       <style>
-        /* ── shared field base ── */
-        .contact-label {
-          display: block;
-          font-family: var(--font-display, inherit);
-          font-weight: 600;
-          font-size: 0.75rem;
-          color: var(--color-ink, #1a1a1a);
-          margin-bottom: 0.375rem;
-          letter-spacing: 0.01em;
-        }
-        .contact-input {
-          display: block;
-          width: 100%;
-          padding: 0.65rem 0.875rem;
-          font-size: 0.875rem;
-          font-family: var(--font-body, inherit);
-          color: var(--color-ink, #1a1a1a);
-          background: #f8fafc;
-          border: 1.5px solid #e2e8f0;
-          border-radius: 0.75rem;
-          outline: none;
-          transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
-          min-height: 44px;
-          box-sizing: border-box;
-        }
-        .contact-input:focus {
-          border-color: #27C291;
-          background: #fff;
-          box-shadow: 0 0 0 3px rgba(39,194,145,0.12);
-        }
-        .contact-input::placeholder { color: #94a3b8; }
-        .contact-field-group { display: flex; flex-direction: column; }
-
-        /* ── dropdown trigger — flex variant so chevron stays on the right ── */
-        .contact-select {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          width: 100%;
-          padding: 0.65rem 0.875rem;
-          font-size: 0.875rem;
-          font-family: var(--font-body, inherit);
-          color: var(--color-ink, #1a1a1a);
-          background: #f8fafc;
-          border: 1.5px solid #e2e8f0;
-          border-radius: 0.75rem;
-          outline: none;
-          cursor: pointer;
-          min-height: 44px;
-          box-sizing: border-box;
-          text-align: left;
-          transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
-          gap: 0.5rem;
-        }
-        .contact-select:focus,
-        .contact-select.open {
-          border-color: #27C291;
-          background: #fff;
-          box-shadow: 0 0 0 3px rgba(39,194,145,0.12);
-        }
-        .contact-select .chevron-open { transform: rotate(180deg); }
+        .contact-label { display:block; font-family:var(--font-display,inherit); font-weight:600; font-size:0.75rem; color:var(--color-ink,#1a1a1a); margin-bottom:0.375rem; letter-spacing:0.01em; }
+        .contact-input { display:block; width:100%; padding:0.65rem 0.875rem; font-size:0.875rem; font-family:var(--font-body,inherit); color:var(--color-ink,#1a1a1a); background:#f8fafc; border:1.5px solid #e2e8f0; border-radius:0.75rem; outline:none; transition:border-color 0.2s,box-shadow 0.2s,background 0.2s; min-height:44px; box-sizing:border-box; }
+        .contact-input:focus { border-color:#27C291; background:#fff; box-shadow:0 0 0 3px rgba(39,194,145,0.12); }
+        .contact-input::placeholder { color:#94a3b8; }
+        .contact-input.error { border-color:#f87171; box-shadow:0 0 0 3px rgba(248,113,113,0.1); }
+        .contact-field-group { display:flex; flex-direction:column; }
+        .contact-error { font-size:0.7rem; color:#f87171; margin-top:4px; font-family:var(--font-body,inherit); }
+        .contact-select { display:flex; align-items:center; justify-content:space-between; width:100%; padding:0.65rem 0.875rem; font-size:0.875rem; font-family:var(--font-body,inherit); color:var(--color-ink,#1a1a1a); background:#f8fafc; border:1.5px solid #e2e8f0; border-radius:0.75rem; outline:none; cursor:pointer; min-height:44px; box-sizing:border-box; text-align:left; transition:border-color 0.2s,box-shadow 0.2s; gap:0.5rem; }
+        .contact-select:focus, .contact-select.open { border-color:#27C291; background:#fff; box-shadow:0 0 0 3px rgba(39,194,145,0.12); }
+        .contact-select.error { border-color:#f87171; box-shadow:0 0 0 3px rgba(248,113,113,0.1); }
       </style>
     `;
   },
@@ -327,47 +276,49 @@ export const Contact = {
   init: () => {
     setupScrollReveal();
 
+    // ── Load EmailJS SDK ──
+    if (!window.emailjs) {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+      script.onload = () => {
+        window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+      };
+      document.head.appendChild(script);
+    } else {
+      window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    }
+
     const lucideIcons = {
-      shoes: 'footprints',
-      head: 'hard-hat',
-      eye: 'glasses',
-      vest: 'shirt',
-      gloves: 'hand',
-      body: 'shield',
-      hearing: 'headphones',
-      welding: 'flame',
-      fall: 'link-2'
+      shoes: 'footprints', head: 'hard-hat', eye: 'glasses',
+      vest: 'shirt', gloves: 'hand', body: 'shield',
+      hearing: 'headphones', welding: 'flame', fall: 'link-2'
     };
 
-    // Render all Lucide icons present at render time
     if (window.lucide) window.lucide.createIcons();
 
+    // ── Dropdown ──
     const dropdownSelected = document.getElementById('dropdown-selected');
     const dropdownOptions  = document.getElementById('dropdown-options');
     const dropdownTrigger  = document.getElementById('dropdown-trigger');
     const dropdownChevron  = document.getElementById('dropdown-chevron');
     const hiddenInput      = document.getElementById('ppe-category-input');
 
-    if (!dropdownSelected || !dropdownOptions) return;
+    if (dropdownOptions) {
+      dropdownOptions.innerHTML = categories.map(c => `
+        <button type="button" data-val="${c.id}" data-label="${c.label}"
+          class="dropdown-item w-full text-left px-4 py-2.5 flex items-center gap-3
+                 hover:bg-surface-2 transition-colors duration-150
+                 border-b border-brand-muted/10 last:border-0
+                 font-body text-sm text-ink cursor-pointer first:rounded-t-2xl last:rounded-b-2xl">
+          <span class="text-brand flex-shrink-0">
+            <i data-lucide="${lucideIcons[c.id] || 'layers'}" class="w-4 h-4" stroke-width="1.8"></i>
+          </span>
+          <span class="font-500">${c.label}</span>
+        </button>
+      `).join('');
+      if (window.lucide) window.lucide.createIcons();
+    }
 
-    // Populate options
-    dropdownOptions.innerHTML = categories.map(c => `
-      <button type="button" data-val="${c.id}"
-        class="dropdown-item w-full text-left px-4 py-2.5 flex items-center gap-3
-               hover:bg-surface-2 transition-colors duration-150
-               border-b border-brand-muted/10 last:border-0
-               font-body text-sm text-ink cursor-pointer first:rounded-t-2xl last:rounded-b-2xl">
-        <span class="text-brand flex-shrink-0">
-          <i data-lucide="${lucideIcons[c.id] || 'layers'}" class="w-4 h-4" stroke-width="1.8"></i>
-        </span>
-        <span class="font-500">${c.label}</span>
-      </button>
-    `).join('');
-
-    // Rehydrate Lucide icons for dynamically injected HTML
-    if (window.lucide) window.lucide.createIcons();
-
-    // Toggle open / close
     dropdownTrigger?.addEventListener('click', () => {
       const isOpen = !dropdownOptions.classList.contains('hidden');
       dropdownOptions.classList.toggle('hidden');
@@ -375,10 +326,10 @@ export const Contact = {
       dropdownTrigger.classList.toggle('open', !isOpen);
     });
 
-    // Select item
     document.querySelectorAll('.dropdown-item').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const val      = e.currentTarget.dataset.val;
+        const label    = e.currentTarget.dataset.label;
         const category = categories.find(c => c.id === val);
         if (category) {
           dropdownSelected.innerHTML = `
@@ -386,8 +337,11 @@ export const Contact = {
               <i data-lucide="${lucideIcons[category.id] || 'layers'}" class="w-4 h-4 text-brand flex-shrink-0" stroke-width="1.8"></i>
               <span class="font-500 truncate text-sm">${category.label}</span>
             </span>`;
-          if (hiddenInput) hiddenInput.value = val;
+          if (hiddenInput) hiddenInput.value = label;
           if (window.lucide) window.lucide.createIcons();
+          // Clear category error on selection
+          document.getElementById('err-category')?.classList.add('hidden');
+          dropdownTrigger?.classList.remove('error');
         }
         dropdownOptions.classList.add('hidden');
         dropdownChevron?.classList.remove('chevron-open');
@@ -395,13 +349,148 @@ export const Contact = {
       });
     });
 
-    // Close on outside click
     document.addEventListener('click', (e) => {
       if (!e.target.closest('#custom-dropdown')) {
-        dropdownOptions.classList.add('hidden');
+        dropdownOptions?.classList.add('hidden');
         dropdownChevron?.classList.remove('chevron-open');
         dropdownTrigger?.classList.remove('open');
       }
     });
+
+    // ── Form submission ──
+    const form        = document.getElementById('contact-form');
+    const submitBtn   = document.getElementById('submit-btn');
+    const submitLabel = document.getElementById('submit-label');
+    const successBox  = document.getElementById('form-success');
+    const errorBox    = document.getElementById('form-error');
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Clear previous states
+      ['name', 'email', 'phone', 'category', 'quantity', 'message'].forEach(f => {
+        document.getElementById(`err-${f}`)?.classList.add('hidden');
+        document.getElementById(`cf-${f}`)?.classList.remove('error');
+      });
+      dropdownTrigger?.classList.remove('error');
+      successBox?.classList.add('hidden');
+      errorBox?.classList.add('hidden');
+
+      // Collect values
+      const name     = document.getElementById('cf-name')?.value.trim();
+      const email    = document.getElementById('cf-email')?.value.trim();
+      const phone    = document.getElementById('cf-phone')?.value.trim();
+      const category = hiddenInput?.value || '';
+      const quantity = document.getElementById('cf-quantity')?.value.trim();
+      const message  = document.getElementById('cf-message')?.value.trim();
+      let valid = true;
+
+      // Name
+      if (!name) {
+        document.getElementById('err-name')?.classList.remove('hidden');
+        document.getElementById('cf-name')?.classList.add('error');
+        valid = false;
+      }
+
+      // Email
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        document.getElementById('err-email')?.classList.remove('hidden');
+        document.getElementById('cf-email')?.classList.add('error');
+        valid = false;
+      }
+
+      // Phone — must be non-empty and match basic PH/intl format
+      if (!phone || !/^[\d\s\-\+\(\)]{7,15}$/.test(phone)) {
+        document.getElementById('err-phone')?.classList.remove('hidden');
+        document.getElementById('cf-phone')?.classList.add('error');
+        valid = false;
+      }
+
+      // PPE Category
+      if (!category) {
+        document.getElementById('err-category')?.classList.remove('hidden');
+        dropdownTrigger?.classList.add('error');
+        valid = false;
+      }
+
+      // Quantity — must be a positive integer
+      const qty = parseInt(quantity, 10);
+      if (!quantity || isNaN(qty) || qty < 1) {
+        document.getElementById('err-quantity')?.classList.remove('hidden');
+        document.getElementById('cf-quantity')?.classList.add('error');
+        valid = false;
+      }
+
+      // Message
+      if (!message) {
+        document.getElementById('err-message')?.classList.remove('hidden');
+        document.getElementById('cf-message')?.classList.add('error');
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      // Loading state
+      submitBtn.disabled = true;
+      submitLabel.textContent = 'Sending…';
+      submitBtn.classList.add('opacity-70');
+
+      const templateParams = {
+        from_name:  name,
+        company:    document.getElementById('cf-company')?.value.trim() || '—',
+        from_email: email,
+        phone:      phone,
+        category:   category,
+        quantity:   qty,
+        message:    message,
+        initial:    name.charAt(0).toUpperCase(),
+        date:       new Date().toLocaleDateString('en-PH', { year:'numeric', month:'long', day:'numeric' }),
+      };
+
+      try {
+        await window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+
+        // Success
+        successBox?.classList.remove('hidden');
+        successBox?.classList.add('flex');
+        if (window.lucide) window.lucide.createIcons();
+        form.reset();
+        if (hiddenInput) hiddenInput.value = '';
+        if (dropdownSelected) dropdownSelected.innerHTML = `
+          <span class="flex items-center gap-2 text-ink-3 min-w-0">
+            <i data-lucide="layers" class="w-3.5 h-3.5 text-brand flex-shrink-0" stroke-width="1.8"></i>
+            <span class="truncate text-sm">Select Category…</span>
+          </span>`;
+        if (window.lucide) window.lucide.createIcons();
+        submitLabel.textContent = 'Send Request';
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-70');
+
+      } catch (err) {
+        console.error('EmailJS error:', err);
+        errorBox?.classList.remove('hidden');
+        errorBox?.classList.add('flex');
+        if (window.lucide) window.lucide.createIcons();
+        submitLabel.textContent = 'Send Request';
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-70');
+      }
+    });
+
+    // ── Inline error clearing ──
+    const clearOnValid = (id, errId, isValid) => {
+      document.getElementById(id)?.addEventListener('input', (e) => {
+        if (isValid(e.target.value.trim())) {
+          document.getElementById(errId)?.classList.add('hidden');
+          e.target.classList.remove('error');
+        }
+      });
+    };
+
+    clearOnValid('cf-name',     'err-name',     v => v.length > 0);
+    clearOnValid('cf-email',    'err-email',    v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+    clearOnValid('cf-phone',    'err-phone',    v => /^[\d\s\-\+\(\)]{7,15}$/.test(v));
+    clearOnValid('cf-quantity', 'err-quantity', v => !isNaN(parseInt(v, 10)) && parseInt(v, 10) >= 1);
+    clearOnValid('cf-message',  'err-message',  v => v.length > 0);
   }
 };
