@@ -144,3 +144,9 @@ footer { background:linear-gradient(135deg,#0a1a14,#1c2e26); }
 .animate-masonry-down {
   animation: masonryDown 48s linear infinite;
 }
+
+@layer utilities {
+  .hidden {
+    display: none !important;
+  }
+}
