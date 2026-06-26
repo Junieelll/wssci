@@ -6,11 +6,9 @@ export const products = [
     cat: 'shoes',
     name: 'MANILABOY S3',
     brand: 'Safety Jogger',
-    tags: ["S3","SR","FO"],
+    tags: ['S3', 'SR', 'FO'],
     desc: 'SJPH Exclusive Item. Premium safety shoe featuring a Barton Action Leather upper and Recycled Mesh lining. Equipped with a robust Steel midsole and PU/PU outsole. Provides unparalleled protection with a Steel toecap and supreme comfort via the SJ Foam footbed. Rated S3 / SR, SC, LG, CI, FO.',
-    features: ["Upper: Barton Action Leather","Lining: Recycled Mesh","Midsole: Steel","Outsole: PU/PU","Toecap: Steel","Footbed: SJ Foam","Norms: ASTM F2413:2018, EN ISO 20345:2022+A1:2024"],
-    benefits: [],
-    certs: [],
+    features: ['Upper: Barton Action Leather', 'Lining: Recycled Mesh', 'Midsole: Steel', 'Outsole: PU/PU', 'Toecap: Steel', 'Footbed: SJ Foam', 'Norms: ASTM F2413:2018, EN ISO 20345:2022+A1:2024'],
     img: 'assets/products/shoes/manilaboy_s3.png'
   },
   {
@@ -18,11 +16,9 @@ export const products = [
     cat: 'shoes',
     name: 'BESTBOY MF EH',
     brand: 'Safety Jogger',
-    tags: ["SB","EH","WPA"],
+    tags: ['SB', 'EH', 'WPA'],
     desc: 'SJPH Exclusive Item. Electrical hazard protection shoe with Barton Action Leather upper and Recycled Mesh lining. Features an Anti Puncture Textile midsole and BASF PU/BASF PU outsole for advanced shock absorption. Fitted with a Composite toecap. Rated SB / PS, SR, SC, WPA, LG, E, CI, FO.',
-    features: ["Upper: Barton Action Leather","Lining: Recycled Mesh","Midsole: Anti Puncture Textile","Outsole: BASF PU/BASF PU","Toecap: Composite","Footbed: SJ Foam","Norms: ASTM F2413:2018, EN ISO 20345:2022+A1:2024"],
-    benefits: [],
-    certs: [],
+    features: ['Upper: Barton Action Leather', 'Lining: Recycled Mesh', 'Midsole: Anti Puncture Textile', 'Outsole: BASF PU/BASF PU', 'Toecap: Composite', 'Footbed: SJ Foam', 'Norms: ASTM F2413:2018, EN ISO 20345:2022+A1:2024'],
     img: 'assets/products/shoes/bestboy_mf_eh.png'
   },
   {
@@ -30,11 +26,9 @@ export const products = [
     cat: 'shoes',
     name: 'MONTIS S3S',
     brand: 'Safety Jogger',
-    tags: ["S3S","ESD","CI"],
+    tags: ['S3S', 'ESD', 'CI'],
     desc: 'SJPH Exclusive Item. Dark grey/silver safety shoe with Nubuck Action Leather upper and breathable Mesh lining. Anti Puncture Textile midsole and PU/PU outsole. Composite toecap. Rated S3S / SR, SC, LG, ESD, CI, FO.',
-    features: ["Upper: Nubuck Action Leather","Lining: Mesh","Midsole: Anti Puncture Textile","Outsole: PU/PU","Toecap: Composite","Footbed: SJ Foam","Norms: ASTM F2413:2018, EN ISO 20345:2022"],
-    benefits: [],
-    certs: [],
+    features: ['Upper: Nubuck Action Leather', 'Lining: Mesh', 'Midsole: Anti Puncture Textile', 'Outsole: PU/PU', 'Toecap: Composite', 'Footbed: SJ Foam', 'Norms: ASTM F2413:2018, EN ISO 20345:2022'],
     img: 'assets/products/shoes/montis_s3s.png'
   },
   {
@@ -42,11 +36,9 @@ export const products = [
     cat: 'shoes',
     name: 'SAFETYBOY 2',
     brand: 'Safety Jogger',
-    tags: ["S1P","SR","FO"],
+    tags: ['S1P', 'SR', 'FO'],
     desc: 'SJPH Exclusive Item. Mid-cut safety boot with Barton Action Leather upper and Mesh lining. Steel midsole and PU outsole. Steel toecap with SJ Eco footbed. Rated S1 P / SR, FO.',
-    features: ["Upper: Barton Action Leather","Lining: Mesh","Midsole: Steel","Outsole: PU","Toecap: Steel","Footbed: SJ Eco","Norms: ASTM F2413:2018, EN ISO 20345:2022"],
-    benefits: [],
-    certs: [],
+    features: ['Upper: Barton Action Leather', 'Lining: Mesh', 'Midsole: Steel', 'Outsole: PU', 'Toecap: Steel', 'Footbed: SJ Eco', 'Norms: ASTM F2413:2018, EN ISO 20345:2022'],
     img: 'assets/products/shoes/safetyboy2.png'
   },
   {
@@ -54,11 +46,9 @@ export const products = [
     cat: 'shoes',
     name: 'MODULO S1PS LOW PERF',
     brand: 'Safety Jogger',
-    tags: ["S1PS","ESD","NANO CARBON"],
+    tags: ['S1PS', 'ESD', 'NANO CARBON'],
     desc: 'SJPH Exclusive Item. High-performance low-cut shoe with Microfiber upper, Mesh lining, and Anti Puncture Textile midsole. BASF PU/BASF PU outsole with ultra-light Nano Carbon toecap. Rated S1 PS / SR, SC, ESD, FO.',
-    features: ["Upper: Microfiber","Lining: Mesh","Midsole: Anti Puncture Textile","Outsole: BASF PU/BASF PU","Toecap: Nano Carbon","Footbed: SJ Foam","Norms: ASTM F2413:2018, EN ISO 20345:2022+A1:2024"],
-    benefits: [],
-    certs: [],
+    features: ['Upper: Microfiber', 'Lining: Mesh', 'Midsole: Anti Puncture Textile', 'Outsole: BASF PU/BASF PU', 'Toecap: Nano Carbon', 'Footbed: SJ Foam', 'Norms: ASTM F2413:2018, EN ISO 20345:2022+A1:2024'],
     img: 'assets/products/shoes/modulo_s1ps_low_perf.png'
   },
   {
@@ -66,11 +56,9 @@ export const products = [
     cat: 'shoes',
     name: 'ECOCADOR S1P ESD',
     brand: 'Safety Jogger',
-    tags: ["S1P","ESD","ECO"],
+    tags: ['S1P', 'ESD', 'ECO'],
     desc: 'SJPH Exclusive Item. Eco-conscious safety shoe with Knitted Recycled Textile upper and Recycled Mesh lining. Steel midsole and PU/PU outsole. Steel toecap. Rated S1 P / SR, ESD, FO.',
-    features: ["Upper: Knitted Recycled Textile","Lining: Recycled Mesh","Midsole: Steel","Outsole: PU/PU","Toecap: Steel","Footbed: SJ Foam","Norms: ASTM F2413:2018, EN ISO 20345:2022"],
-    benefits: [],
-    certs: [],
+    features: ['Upper: Knitted Recycled Textile', 'Lining: Recycled Mesh', 'Midsole: Steel', 'Outsole: PU/PU', 'Toecap: Steel', 'Footbed: SJ Foam', 'Norms: ASTM F2413:2018, EN ISO 20345:2022'],
     img: 'assets/products/shoes/ecocador_s1p_esd.png'
   },
   {
@@ -78,11 +66,9 @@ export const products = [
     cat: 'shoes',
     name: 'ECOLOBI S1P LOW TLS',
     brand: 'Safety Jogger',
-    tags: ["S3S","ESD","TLS"],
+    tags: ['S3S', 'ESD', 'TLS'],
     desc: 'SJPH Exclusive Item. Low-cut shoe with TLS (Twist Lock System) closure. Nubuck Action Leather upper, Mesh lining, Anti Puncture Textile midsole, and Phylon/Rubber (NBR) outsole. Composite toecap. Rated S3S / SR, SC, LG, ESD, CI, FO.',
-    features: ["Upper: Nubuck Action Leather","Lining: Mesh","Midsole: Anti Puncture Textile","Outsole: Phylon/Rubber (NBR)","Toecap: Composite","Footbed: SJ Foam","Norms: ASTM F2413:2018, EN ISO 20345:2022"],
-    benefits: [],
-    certs: [],
+    features: ['Upper: Nubuck Action Leather', 'Lining: Mesh', 'Midsole: Anti Puncture Textile', 'Outsole: Phylon/Rubber (NBR)', 'Toecap: Composite', 'Footbed: SJ Foam', 'Norms: ASTM F2413:2018, EN ISO 20345:2022'],
     img: 'assets/products/shoes/ecolobi_s1p_low_tls.png'
   },
   {
@@ -90,11 +76,9 @@ export const products = [
     cat: 'shoes',
     name: 'MANILARUN S3',
     brand: 'Safety Jogger',
-    tags: ["S3","SR","FO"],
+    tags: ['S3', 'SR', 'FO'],
     desc: 'SJPH Exclusive Item. Low-cut runner safety shoe with Barton Action Leather upper and Recycled Mesh lining. Steel midsole and PU/PU outsole. Steel toecap with SJ Foam footbed. Rated S3 / SR, SC, LG, CI, FO.',
-    features: ["Upper: Barton Action Leather","Lining: Recycled Mesh","Midsole: Steel","Outsole: PU/PU","Toecap: Steel","Footbed: SJ Foam","Norms: ASTM F2413:2018, EN ISO 20345:2022+A1:2024"],
-    benefits: [],
-    certs: [],
+    features: ['Upper: Barton Action Leather', 'Lining: Recycled Mesh', 'Midsole: Steel', 'Outsole: PU/PU', 'Toecap: Steel', 'Footbed: SJ Foam', 'Norms: ASTM F2413:2018, EN ISO 20345:2022+A1:2024'],
     img: 'assets/products/shoes/manilarun_s3.png'
   },
   {
@@ -102,11 +86,9 @@ export const products = [
     cat: 'shoes',
     name: 'BESTRUN MF EH',
     brand: 'Safety Jogger',
-    tags: ["SB","EH","WPA"],
+    tags: ['SB', 'EH', 'WPA'],
     desc: 'SJPH Exclusive Item. Electrical hazard low-cut shoe with Barton Action Leather upper and Recycled Mesh lining. Anti Puncture Textile midsole and BASF PU/BASF PU outsole. Composite toecap. Rated SB / PS, SR, SC, WPA, LG, E, CI, FO.',
-    features: ["Upper: Barton Action Leather","Lining: Recycled Mesh","Midsole: Anti Puncture Textile","Outsole: BASF PU/BASF PU","Toecap: Composite","Footbed: SJ Foam","Norms: ASTM F2413:2018, EN ISO 20345:2022+A1:2024"],
-    benefits: [],
-    certs: [],
+    features: ['Upper: Barton Action Leather', 'Lining: Recycled Mesh', 'Midsole: Anti Puncture Textile', 'Outsole: BASF PU/BASF PU', 'Toecap: Composite', 'Footbed: SJ Foam', 'Norms: ASTM F2413:2018, EN ISO 20345:2022+A1:2024'],
     img: 'assets/products/shoes/bestrun_mf_eh.png'
   },
   {
@@ -114,11 +96,9 @@ export const products = [
     cat: 'shoes',
     name: 'VALLIS S3S',
     brand: 'Safety Jogger',
-    tags: ["S3S","ESD","CI"],
+    tags: ['S3S', 'ESD', 'CI'],
     desc: 'SJPH Exclusive Item. Low-profile shoe with Nubuck Action Leather upper and Mesh lining. Anti Puncture Textile midsole and PU/PU outsole. Composite toecap. Rated S3S / SR, SC, LG, ESD, CI, FO.',
-    features: ["Upper: Nubuck Action Leather","Lining: Mesh","Midsole: Anti Puncture Textile","Outsole: PU/PU","Toecap: Composite","Footbed: SJ Foam","Norms: ASTM F2413:2018, EN ISO 20345:2022"],
-    benefits: [],
-    certs: [],
+    features: ['Upper: Nubuck Action Leather', 'Lining: Mesh', 'Midsole: Anti Puncture Textile', 'Outsole: PU/PU', 'Toecap: Composite', 'Footbed: SJ Foam', 'Norms: ASTM F2413:2018, EN ISO 20345:2022'],
     img: 'assets/products/shoes/vallis_s3s.png'
   },
   {
@@ -126,11 +106,9 @@ export const products = [
     cat: 'shoes',
     name: 'SAFETYRUN 2',
     brand: 'Safety Jogger',
-    tags: ["S1P","SR","FO"],
+    tags: ['S1P', 'SR', 'FO'],
     desc: 'SJPH Exclusive Item. Agile low-cut runner with Barton Action Leather upper and Mesh lining. Steel midsole, PU outsole, and Steel toecap. Rated S1 P / SR, FO.',
-    features: ["Upper: Barton Action Leather","Lining: Mesh","Midsole: Steel","Outsole: PU","Toecap: Steel","Footbed: SJ Eco","Norms: ASTM F2413:2018, EN ISO 20345:2022"],
-    benefits: [],
-    certs: [],
+    features: ['Upper: Barton Action Leather', 'Lining: Mesh', 'Midsole: Steel', 'Outsole: PU', 'Toecap: Steel', 'Footbed: SJ Eco', 'Norms: ASTM F2413:2018, EN ISO 20345:2022'],
     img: 'assets/products/shoes/safetyrun2.png'
   },
   {
@@ -138,67 +116,108 @@ export const products = [
     cat: 'shoes',
     name: 'JUMPER3 S1P SRC',
     brand: 'DeltaPlus',
-    tags: ["S1P","SRC","Split Leather"],
+    tags: ['S1P', 'SRC', 'Split Leather'],
     desc: 'Pigmented split leather safety shoe with S1P SRC rating. Designed for general industrial and manufacturing environments requiring basic impact and slip resistance.',
-    features: ["Pigmented split leather upper","S1P safety rating","SRC slip resistance","Steel toecap","Anti-perforation midsole","Energy-absorbing heel"],
-    benefits: [],
-    certs: [],
-    img: 'assets/products/shoes/jumper3-s1p-sr/thumbnail.png'
+    features: ['Pigmented split leather upper', 'S1P safety rating', 'SRC slip resistance', 'Steel toecap', 'Anti-perforation midsole', 'Energy-absorbing heel'],
+    img: 'assets/products/shoes/jumper3-s1p-sr/thumbnail.png',
+    images: ['assets/products/shoes/jumper3-s1p-sr/1.png', 'assets/products/shoes/jumper3-s1p-sr/2.png'],
+    sizes: [4, 5, 6, 6, 7, 8, 9, 10, 11, 11.5, 12, 13]
   },
   {
     id: 101,
     cat: 'shoes',
     name: 'MIAMI S2 SRC',
     brand: 'DeltaPlus',
-    tags: ["S2","SRC","Microfibre"],
+    tags: ['S2', 'SRC', 'Microfibre'],
     desc: 'White microfibre low-cut safety shoe with S2 SRC rating. Ideal for food industry, pharmaceuticals, and clean manufacturing environments.',
-    features: ["Microfibre upper — easy to clean","S2 safety rating","SRC slip resistance","Steel toecap","Water-resistant properties","Lightweight design"],
-    benefits: [],
-    certs: [],
-    img: 'assets/products/shoes/miamis2-src/thumbnail.png'
+    features: ['Microfibre upper — easy to clean', 'S2 safety rating', 'SRC slip resistance', 'Steel toecap', 'Water-resistant properties', 'Lightweight design'],
+    img: 'assets/products/shoes/miamis2-src/thumbnail.png',
+    images: ['assets/products/shoes/miamis2-src/white/1.png', 'assets/products/shoes/miamis2-src/white/2.png'],
+    colors: [
+      { name: 'White', hex: '#fff', images: ['assets/products/shoes/miamis2-src/white/1.png', 'assets/products/shoes/miamis2-src/white/2.png'] },
+      { name: 'Black', hex: '#000', images: ['assets/products/shoes/miamis2-src/black/1.png'] }
+    ]
   },
   {
     id: 102,
     cat: 'shoes',
     name: 'SUMMER S1P SRC',
     brand: 'DeltaPlus',
-    tags: ["S1P","SRC","Polyester/Cotton"],
+    tags: ['S1P', 'SRC', 'Polyester/Cotton'],
     desc: 'Breathable polyester and cotton safety shoe with S1P SRC rating. Designed for warm environments where ventilation and comfort are essential without compromising protection.',
-    features: ["Polyester and cotton upper","S1P safety rating","SRC slip resistance","Composite toecap","Anti-perforation midsole","Breathable mesh lining"],
-    benefits: [],
-    certs: [],
-    img: 'assets/products/shoes/summer-s1p-src/thumbnail.png'
+    features: ['Polyester and cotton upper', 'S1P safety rating', 'SRC slip resistance', 'Composite toecap', 'Anti-perforation midsole', 'Breathable mesh lining'],
+    img: 'assets/products/shoes/summer-s1p-src/thumbnail.png',
+    images: ['assets/products/shoes/summer-s1p-src/gray-orange/1.png', 'assets/products/shoes/summer-s1p-src/gray-orange/2.png'],
+    colors: [
+      { name: 'Gray-Orange', hex: 'linear-gradient(225deg, #4b5563 50%, #fd7e14 50%)', images: ['assets/products/shoes/summer-s1p-src/gray-orange/1.png', 'assets/products/shoes/summer-s1p-src/gray-orange/2.png'] },
+      { name: 'Blue-Yellow', hex: 'linear-gradient(225deg, #0d6efd 50%, #eab308 50%)', images: ['assets/products/shoes/summer-s1p-src/blue-yellow/1.png'] }
+    ]
   },
   {
     id: 103,
     cat: 'shoes',
     name: 'SIMBA S3 SRC',
     brand: 'DeltaPlus',
-    tags: ["S3","SRC","Buffalo Leather"],
+    tags: ['S3', 'SRC', 'Buffalo Leather'],
     desc: 'Pigmented split buffalo leather high-cut safety boot with S3 SRC rating. Built for heavy construction, mining, and outdoor industrial applications requiring maximum protection.',
-    features: ["Pigmented split buffalo leather upper","S3 safety rating","SRC slip resistance","Steel toecap","Anti-perforation steel midsole","Water-resistant (WR) construction"],
-    benefits: [],
-    certs: [],
-    img: 'assets/products/shoes/simba-s3-src/thumbnail.png'
+    features: ['Pigmented split buffalo leather upper', 'S3 safety rating', 'SRC slip resistance', 'Steel toecap', 'Anti-perforation steel midsole', 'Water-resistant (WR) construction'],
+    img: 'assets/products/shoes/simba-s3-src/thumbnail.png',
+    images: ['assets/products/shoes/simba-s3-src/1.png', 'assets/products/shoes/simba-s3-src/2.png'],
+    sizes: [4, 5, 6, 6, 7, 8, 9, 10, 11, 11.5, 12, 13, 14]
   },
   {
     id: 104,
     cat: 'shoes',
     name: 'ESKIMO SBHPS',
     brand: 'DeltaPlus',
-    tags: ["Winter","SB","Fur Lined"],
+    tags: ['Winter', 'SB', 'Fur Lined'],
     desc: 'Winter safety boots with fur lining. Provides warmth and protection in cold outdoor environments such as logistics, construction, and outdoor maintenance.',
-    features: ["Warm fur inner lining","SB safety rating","Cold insulation protection","Slip-resistant outsole","High-cut ankle support","Waterproof outer construction"],
-    benefits: [],
-    certs: [],
-    img: 'assets/products/shoes/eskimo-sbhps/thumbnail.png'
+    features: ['Warm fur inner lining', 'SB safety rating', 'Cold insulation protection', 'Slip-resistant outsole', 'High-cut ankle support', 'Waterproof outer construction'],
+    img: 'assets/products/shoes/eskimo-sbhps/thumbnail.png',
+    images: ['assets/products/shoes/eskimo-sbhps/1.png', 'assets/products/shoes/eskimo-sbhps/2.png', 'assets/products/shoes/eskimo-sbhps/3.png']
   },
   {
     id: 105,
     cat: 'shoes',
     name: 'TW402 S3 SRC',
     brand: 'DeltaPlus',
-    tags: ["S3","SRC","Full Grain Leather"],
+    tags: ['S3', 'SRC', 'Full Grain Leather'],
+    desc: 'Full grain leather high-cut safety boot with S3 SRC rating. Premium construction for demanding construction and industrial environments requiring durability and all-day comfort.',
+    features: ['Full grain leather upper', 'S3 safety rating', 'SRC slip resistance', 'Steel toecap', 'Anti-perforation midsole', 'Shock-absorbing heel cushion'],
+    img: 'assets/products/shoes/tw402-s3-src/thumbnail.png',
+    images: ['assets/products/shoes/tw402-s3-src/1.png', 'assets/products/shoes/tw402-s3-src/2.png', 'assets/products/shoes/tw402-s3-src/3.png', 'assets/products/shoes/tw402-s3-src/4.png', 'assets/products/shoes/tw402-s3-src/5.png'],
+    sizes: [6, 7, 8, 9, 10, 11, 11.5, 12, 13, 14]
+  },
+  {
+    id: 106,
+    cat: 'shoes',
+    name: 'AMAZONE S5 SRA',
+    brand: 'DeltaPlus',
+    tags: ['S5', 'SRA', 'PVC/Nitrile'],
+    desc: 'Full PVC/nitrile outsole safety rubber boot with S5 SRA rating. Designed for wet, muddy, and chemically challenging environments such as agriculture, food processing, and outdoor construction.',
+    features: ['PVC/nitrile outsole construction', 'S5 safety rating', 'SRA slip resistance', 'Steel toecap', 'Chemical and oil resistant', 'Full waterproof protection'],
+    img: 'assets/products/shoes/amazone-s5-sra/thumbnail.png',
+    images: ['assets/products/shoes/amazone-s5-sra/1.png'],
+    sizes: [4, 5, 6, 6, 7, 8, 9, 10, 11, 11.5, 12, 13]
+  },
+  {
+    id: 107,
+    cat: 'shoes',
+    name: 'COMO S1P SRC',
+    brand: 'DeltaPlus',
+    tags: ['S1P', 'SRC', 'Suede/Mesh'],
+    desc: 'Low-cut safety shoe combining suede and mesh polyester upper with S1P SRC rating. Sporty, lightweight design suitable for logistics, automotive, and light manufacturing.',
+    features: ['Suede and mesh polyester upper', 'S1P safety rating', 'SRC slip resistance', 'Composite toecap', 'Anti-perforation midsole', 'Breathable and lightweight'],
+    img: 'assets/products/shoes/como-s1p-src/thumbnail.png',
+    images: ['assets/products/shoes/como-s1p-src/navy-blue/1.png', 'assets/products/shoes/como-s1p-src/navy-blue/2.png'],
+    sizes: [6, 7, 8, 9, 10, 11, 11.5, 12, 13, 14],
+    colors: [
+      { name: 'Navy Blue', hex: '#1e3a5f', images: ['assets/products/shoes/como-s1p-src/navy-blue/1.png', 'assets/products/shoes/como-s1p-src/navy-blue/2.png'], sizes: [6, 7, 8, 9, 10, 11, 11.5, 12, 13, 14] },
+      { name: 'Gray-Black', hex: 'linear-gradient(225deg, #4b5563 50%, #000 50%)', images: ['assets/products/shoes/como-s1p-src/gray-black/1.png'], sizes: [6, 7, 8, 9, 10, 11, 11.5, 12, 13, 14] },
+      { name: 'Black-Orange', hex: 'linear-gradient(225deg, #000 50%, #fd7e14 50%)', images: ['assets/products/shoes/como-s1p-src/black-orange/1.png'], sizes: [6, 7, 8, 9, 10, 11, 11.5, 12, 13, 14] }
+    ]
+  }
+];"S3","SRC","Full Grain Leather"],
     desc: 'Full grain leather high-cut safety boot with S3 SRC rating. Premium construction for demanding construction and industrial environments requiring durability and all-day comfort.',
     features: ["Full grain leather upper","S3 safety rating","SRC slip resistance","Steel toecap","Anti-perforation midsole","Shock-absorbing heel cushion"],
     benefits: [],
