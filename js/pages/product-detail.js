@@ -746,6 +746,17 @@ export const ProductDetail = {
       if (window.lucide) window.lucide.createIcons();
     }
 
+    // ── Preload all color images so swatch clicks feel instant ──
+    if (p.colors && p.colors.length > 0) {
+      p.colors.forEach(c => {
+        const urls = c.images && c.images.length > 0 ? c.images : (c.img ? [c.img] : []);
+        urls.forEach(url => {
+          const preloadImg = new Image();
+          preloadImg.src = url;
+        });
+      });
+    }
+
 
 
     // Track which thumbnail index is active — used by the lightbox
@@ -799,9 +810,8 @@ export const ProductDetail = {
 
         const targetImg = images.length > 0 ? images[0] : img;
         if (targetImg && productImg) {
-          productImg.style.opacity = '0';
-          productImg.style.transition = 'opacity 200ms ease, transform 700ms cubic-bezier(0.4, 0, 0.2, 1)';
-          setTimeout(() => { productImg.src = targetImg; productImg.style.opacity = '1'; }, 200);
+          productImg.style.transition = 'none';
+          productImg.src = targetImg;
         }
 
         if (thumbnailsCont) {
@@ -887,9 +897,8 @@ export const ProductDetail = {
           activeImageIndex = 0;
           const targetImg = images.length > 0 ? images[0] : img;
           if (targetImg && productImg) {
-            productImg.style.opacity = '0';
-            productImg.style.transition = 'opacity 200ms ease, transform 700ms cubic-bezier(0.4, 0, 0.2, 1)';
-            setTimeout(() => { productImg.src = targetImg; productImg.style.opacity = '1'; }, 200);
+            productImg.style.transition = 'none';
+            productImg.src = targetImg;
           }
 
           if (thumbnailsCont) {
@@ -939,9 +948,8 @@ export const ProductDetail = {
         });
 
         if (imgUrl && productImg) {
-          productImg.style.opacity = '0';
-          productImg.style.transition = 'opacity 200ms ease';
-          setTimeout(() => { productImg.src = imgUrl; productImg.style.opacity = '1'; }, 200);
+          productImg.style.transition = 'none';
+          productImg.src = imgUrl;
         }
       });
     }
