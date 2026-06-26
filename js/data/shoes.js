@@ -217,35 +217,4 @@ export const products = [
       { name: 'Black-Orange', hex: 'linear-gradient(225deg, #000 50%, #fd7e14 50%)', images: ['assets/products/shoes/como-s1p-src/black-orange/1.png'], sizes: [6, 7, 8, 9, 10, 11, 11.5, 12, 13, 14] }
     ]
   }
-];"S3","SRC","Full Grain Leather"],
-    desc: 'Full grain leather high-cut safety boot with S3 SRC rating. Premium construction for demanding construction and industrial environments requiring durability and all-day comfort.',
-    features: ["Full grain leather upper","S3 safety rating","SRC slip resistance","Steel toecap","Anti-perforation midsole","Shock-absorbing heel cushion"],
-    benefits: [],
-    certs: [],
-    img: 'assets/products/shoes/tw402-s3-src/thumbnail.png'
-  },
-  {
-    id: 106,
-    cat: 'shoes',
-    name: 'AMAZONE S5 SRA',
-    brand: 'DeltaPlus',
-    tags: ["S5","SRA","PVC/Nitrile"],
-    desc: 'Full PVC/nitrile outsole safety rubber boot with S5 SRA rating. Designed for wet, muddy, and chemically challenging environments such as agriculture, food processing, and outdoor construction.',
-    features: ["PVC/nitrile outsole construction","S5 safety rating","SRA slip resistance","Steel toecap","Chemical and oil resistant","Full waterproof protection"],
-    benefits: [],
-    certs: [],
-    img: 'assets/products/shoes/amazone-s5-sra/thumbnail.png'
-  },
-  {
-    id: 107,
-    cat: 'shoes',
-    name: 'COMO S1P SRC',
-    brand: 'DeltaPlus',
-    tags: ["S1P","SRC","Suede/Mesh"],
-    desc: 'Low-cut safety shoe combining suede and mesh polyester upper with S1P SRC rating. Sporty, lightweight design suitable for logistics, automotive, and light manufacturing.',
-    features: ["Suede and mesh polyester upper","S1P safety rating","SRC slip resistance","Composite toecap","Anti-perforation midsole","Breathable and lightweight"],
-    benefits: [],
-    certs: [],
-    img: 'assets/products/shoes/como-s1p-src/thumbnail.png'
-  }
 ];
