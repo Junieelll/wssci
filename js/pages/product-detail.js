@@ -455,6 +455,36 @@ export const ProductDetail = {
               </div>
             </div>
 
+            ${hasVariants ? `
+            <div class="reveal mt-4 space-y-5 lg:hidden">
+              ${colors.length > 0 ? `
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-display font-800 text-xs text-ink uppercase tracking-widest">Color</span>
+                  <span id="pd-color-label-mobile" class="font-body text-xs text-brand font-600 transition-all duration-200">${colors[0].name}</span>
+                </div>
+                <div class="flex items-center gap-2.5 flex-wrap" id="pd-color-swatches-mobile">
+                  ${colors.map((c, i) => `
+                    <button data-color-index="${i}" data-color-name="${c.name}" data-color-img="${c.img || ''}" data-color-images="${c.images ? c.images.join(',') : ''}" data-color-sizes="${c.sizes ? c.sizes.join('|') : ''}" title="${c.name}" aria-label="Select color: ${c.name}"
+                      class="pd-color-swatch relative w-8 h-8 rounded-full transition-all duration-200 focus:outline-none ${i === 0 ? 'ring-2 ring-offset-2 ring-brand scale-110' : 'ring-1 ring-ink/10 hover:scale-110 hover:ring-brand/40'}"
+                      style="background: ${c.hex};">
+                      ${c.hex === '#f5f5f5' || c.hex === '#ffffff' || c.hex === '#fff' ? `<span class="absolute inset-0 rounded-full border border-ink/10"></span>` : ''}
+                    </button>
+                  `).join('')}
+                </div>
+              </div>
+              ` : ''}
+              <div id="pd-sizes-container-mobile" class="${initialSizes.length > 0 ? '' : 'hidden'}">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="font-display font-800 text-xs text-ink uppercase tracking-widest">Available Sizes</span>
+                </div>
+                <div id="pd-sizes-list-mobile" class="flex gap-2 overflow-x-auto pb-1 scrollbar-hide -mx-1 px-1">
+                  ${initialSizes.map(s => `<span class="flex-shrink-0 px-4 py-2 rounded-xl bg-white border border-brand-muted/15 font-display font-700 text-xs text-ink-2 shadow-sm select-none cursor-default">${s}</span>`).join('')}
+                </div>
+              </div>
+            </div>
+            ` : ''}
+
             <div class="reveal mt-5 flex flex-wrap items-center justify-center gap-y-3 gap-x-4 sm:gap-6 bg-white rounded-2xl px-4 sm:px-6 py-4 border border-brand-muted/15 shadow-sm">
               <div class="flex items-center gap-2 text-ink-3">
                 <i class="fa-solid fa-circle-check text-brand text-sm"></i>
@@ -506,7 +536,7 @@ export const ProductDetail = {
             </div>
 
             ${hasVariants ? `
-            <div class="reveal-right delay-75 space-y-5">
+            <div class="reveal-right delay-75 space-y-5 hidden lg:block">
               ${colors.length > 0 ? `
               <div>
                 <div class="flex items-center justify-between mb-3">
@@ -798,6 +828,98 @@ export const ProductDetail = {
           } else {
             sizesCont.classList.add('hidden');
           }
+        }
+
+        // Sync mobile sizes
+        const sizesContMobile = document.getElementById('pd-sizes-container-mobile');
+        const sizesListMobile = document.getElementById('pd-sizes-list-mobile');
+        if (sizesContMobile && sizesListMobile) {
+          if (colorSizes.length > 0) {
+            sizesContMobile.classList.remove('hidden');
+            sizesListMobile.innerHTML = colorSizes.map(s => `
+              <span class="flex-shrink-0 px-4 py-2 rounded-xl bg-white border border-brand-muted/15 font-display font-700 text-xs text-ink-2 shadow-sm select-none cursor-default">${s}</span>
+            `).join('');
+          } else {
+            sizesContMobile.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    // ── Mobile color swatch selection ──
+    const swatchContainerMobile = document.getElementById('pd-color-swatches-mobile');
+    const colorLabelMobile = document.getElementById('pd-color-label-mobile');
+
+    if (swatchContainerMobile) {
+      swatchContainerMobile.addEventListener('click', (e) => {
+        const btn = e.target.closest('.pd-color-swatch');
+        if (!btn) return;
+
+        const index = btn.dataset.colorIndex;
+
+        // Sync ring states on mobile swatches
+        swatchContainerMobile.querySelectorAll('.pd-color-swatch').forEach(s => {
+          const isActive = s === btn;
+          s.classList.toggle('ring-2', isActive);
+          s.classList.toggle('ring-offset-2', isActive);
+          s.classList.toggle('ring-brand', isActive);
+          s.classList.toggle('scale-110', isActive);
+          s.classList.toggle('ring-1', !isActive);
+          s.classList.toggle('ring-ink/10', !isActive);
+        });
+
+        // Update mobile color label
+        if (colorLabelMobile) colorLabelMobile.textContent = btn.dataset.colorName;
+
+        // Delegate all image/size logic to the desktop swatch click
+        const desktopSwatch = swatchContainer?.querySelector(`[data-color-index="${index}"]`);
+        if (desktopSwatch) {
+          desktopSwatch.click();
+        } else {
+          // Fallback: no desktop swatch visible — run logic directly
+          const name = btn.dataset.colorName;
+          const img = btn.dataset.colorImg;
+          const imagesStr = btn.dataset.colorImages;
+          const images = imagesStr ? imagesStr.split(',') : [];
+          const sizesStr = btn.dataset.colorSizes;
+          const colorSizes = sizesStr ? sizesStr.split('|') : [];
+
+          activeImageIndex = 0;
+          const targetImg = images.length > 0 ? images[0] : img;
+          if (targetImg && productImg) {
+            productImg.style.opacity = '0';
+            productImg.style.transition = 'opacity 200ms ease, transform 700ms cubic-bezier(0.4, 0, 0.2, 1)';
+            setTimeout(() => { productImg.src = targetImg; productImg.style.opacity = '1'; }, 200);
+          }
+
+          if (thumbnailsCont) {
+            if (images.length > 1) {
+              thumbnailsCont.innerHTML = images.map((imgUrl, i) => `
+                <button data-img-url="${imgUrl}" data-img-index="${i}"
+                  class="pd-thumb-btn relative w-16 h-16 rounded-xl overflow-hidden border-2 ${i === 0 ? 'border-brand' : 'border-transparent'} hover:border-brand/50 transition-colors shrink-0 bg-white shadow-sm flex items-center justify-center p-2">
+                  <img src="${imgUrl}" alt="${name} thumbnail" class="w-full h-full object-contain" width="64" height="64" loading="lazy" decoding="async">
+                </button>
+              `).join('');
+            } else {
+              thumbnailsCont.innerHTML = '';
+            }
+          }
+
+          const sizesContMobile = document.getElementById('pd-sizes-container-mobile');
+          const sizesListMobile = document.getElementById('pd-sizes-list-mobile');
+          const sizesCont = document.getElementById('pd-sizes-container');
+          const sizesList = document.getElementById('pd-sizes-list');
+          [{ c: sizesCont, l: sizesList }, { c: sizesContMobile, l: sizesListMobile }].forEach(({ c, l }) => {
+            if (!c || !l) return;
+            if (colorSizes.length > 0) {
+              c.classList.remove('hidden');
+              l.innerHTML = colorSizes.map(s => `
+                <span class="flex-shrink-0 px-4 py-2 rounded-xl bg-white border border-brand-muted/15 font-display font-700 text-xs text-ink-2 shadow-sm select-none cursor-default">${s}</span>
+              `).join('');
+            } else {
+              c.classList.add('hidden');
+            }
+          });
         }
       });
     }
