@@ -107,24 +107,39 @@ export const ProductsListing = {
     let productsList = [];
     let shuffledProducts = [];
 
+    // For loading "all" — skip empty categories so they don't bloat the grid
+    const availableCats = categories.filter(c => c.count > 0);
+    // For tabs/sidebar — show all categories including ones with no products yet
+    const allCats = categories;
+
     // Cache for loaded categories to avoid double fetching
     const loadedCategories = {};
 
     const loadCategoryProducts = async (cat) => {
       if (cat === 'all') {
-        const activeCats = categories.filter(c => c.count > 0);
-        const results = await Promise.all(activeCats.map(async (c) => {
+        const results = await Promise.all(availableCats.map(async (c) => {
           if (!loadedCategories[c.id]) {
-            const mod = await import(`../data/${c.id}.js`);
-            loadedCategories[c.id] = mod.products;
+            try {
+              const mod = await import(`../data/${c.id}.js`);
+              loadedCategories[c.id] = mod.products;
+            } catch (err) {
+              // Category file missing — skip silently
+              console.warn(`Skipping missing category file: ${c.id}.js`);
+              loadedCategories[c.id] = [];
+            }
           }
           return loadedCategories[c.id];
         }));
         productsList = results.flat();
       } else {
         if (!loadedCategories[cat]) {
-          const mod = await import(`../data/${cat}.js`);
-          loadedCategories[cat] = mod.products;
+          try {
+            const mod = await import(`../data/${cat}.js`);
+            loadedCategories[cat] = mod.products;
+          } catch (err) {
+            console.warn(`Category file missing: ${cat}.js`);
+            loadedCategories[cat] = [];
+          }
         }
         productsList = loadedCategories[cat];
       }
@@ -134,10 +149,10 @@ export const ProductsListing = {
     // Before doing anything else, wait for initial products load
     await loadCategoryProducts(activeFilter);
 
-    // Categories list shared between views — includes icon from data.js
+    // Tabs — include all categories so vest (and future empty ones) appear in filters
     const tabs = [
       { id: 'all', label: 'All Equipment', icon: '<i class="fa-solid fa-layer-group"></i>' },
-      ...categories.map(c => ({ id: c.id, label: c.label, icon: c.icon }))
+      ...allCats.map(c => ({ id: c.id, label: c.label, icon: c.icon }))
     ];
 
     const renderCarousel = () => {
@@ -276,7 +291,7 @@ export const ProductsListing = {
         } else {
           g.innerHTML = shown.map((p,i) => `
             <div class="product-card group reveal relative h-[260px] sm:h-[350px] md:h-[400px] rounded-2xl overflow-hidden shadow-[0_10px_25px_rgba(0,0,0,0.08)] sm:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-700" style="transition-delay: ${i * 60}ms;">
-                            <!-- Full Bleed Image Background -->
+              <!-- Full Bleed Image Background -->
               <div class="absolute inset-0 transition-transform duration-1000 group-hover:scale-110">
                  <img src="${p.img}" alt="${p.name}" 
                       width="300" height="300"
@@ -284,17 +299,15 @@ export const ProductsListing = {
                       loading="${i < 4 ? 'eager' : 'lazy'}"
                       decoding="async"
                       class="w-full h-[70%] sm:h-[75%] object-contain absolute top-2 sm:top-4 inset-x-0 mx-auto">
-                 <!-- Subtle overlay to ensure text readability -->
                  <div class="absolute inset-0 bg-ink/5 group-hover:bg-ink/20 transition-all duration-700"></div>
               </div>
 
-              <!-- Faded Blur Layer (Refined Glassmorphism) -->
+              <!-- Faded Blur Layer -->
               <div class="absolute inset-x-0 bottom-0 z-10 p-3 sm:p-6 pt-16 sm:pt-28 bg-gradient-to-t from-ink/70 via-ink/20 to-transparent backdrop-blur-md" style="mask-image: linear-gradient(to top, black 70%, transparent); -webkit-mask-image: linear-gradient(to top, black 70%, transparent);">
                  <div class="space-y-2 sm:space-y-4">
                     <div class="space-y-0.5 sm:space-y-1.5">
                        <h3 class="text-white font-display font-800 text-sm sm:text-base md:text-2xl leading-[1.2] tracking-tight drop-shadow-md line-clamp-1 sm:line-clamp-2">${p.name}</h3>
                     </div>
-
                     <div class="pt-2 sm:pt-4 flex items-center justify-between border-t border-white/10">
                        <span class="text-white font-display font-900 text-[8px] sm:text-[11px] tracking-widest flex items-center gap-1.5 sm:gap-2 group/btn">
                           VIEW PRODUCT <i class="fa-solid fa-arrow-right-long text-[8px] sm:text-[10px] transition-transform group-hover/btn:translate-x-2" aria-hidden="true"></i>
@@ -326,34 +339,24 @@ export const ProductsListing = {
       
       pagesHtml += `
         <div class="flex items-center gap-2 px-2 py-2 rounded-full">
-          <!-- Previous Button -->
           <button class="flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-display font-800 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${currentPage === 1 ? 'text-ink/10 cursor-default' : 'text-ink-3 hover:text-brand hover:bg-brand/5'}" ${currentPage === 1 ? 'disabled' : ''} data-page="${currentPage - 1}">
             <i class="fa-solid fa-chevron-left text-[8px]" aria-hidden="true"></i> Previous
           </button>
-          
           <div class="flex items-center gap-1 mx-2">
       `;
 
       const getPageRange = () => {
         const range = [];
         const delta = 1;
-        
         for (let i = 1; i <= totalPages; i++) {
-          if (i === 1 || i === totalPages || (i >= currentPage - delta && i <= currentPage + delta)) {
-            range.push(i);
-          }
+          if (i === 1 || i === totalPages || (i >= currentPage - delta && i <= currentPage + delta)) range.push(i);
         }
-
         const finalRange = [];
         let l;
-
         for (let i of range) {
           if (l) {
-            if (i - l === 2) {
-              finalRange.push(l + 1);
-            } else if (i - l !== 1) {
-              finalRange.push('...');
-            }
+            if (i - l === 2) finalRange.push(l + 1);
+            else if (i - l !== 1) finalRange.push('...');
           }
           finalRange.push(i);
           l = i;
@@ -376,8 +379,6 @@ export const ProductsListing = {
 
       pagesHtml += `
           </div>
-
-          <!-- Next Button -->
           <button class="flex items-center gap-3 bg-brand text-white px-6 py-2.5 rounded-full text-xs font-display font-800 shadow-lg shadow-brand/20 hover:bg-brand-dark transition-all duration-300 hover:scale-[1.03] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}" ${currentPage === totalPages ? 'disabled' : ''} data-page="${currentPage + 1}">
             Next <i class="fa-solid fa-chevron-right text-[8px]" aria-hidden="true"></i>
           </button>
@@ -399,12 +400,10 @@ export const ProductsListing = {
     const searchClear = document.getElementById('search-clear');
     
     if (searchInput) {
-      // Restore any active search
       searchInput.value = searchQuery;
       toggleClearBtn(searchQuery);
 
       searchInput.addEventListener('input', (e) => {
-        // Debounce: wait 300ms after user stops typing before re-rendering
         clearTimeout(searchDebounceTimer);
         const val = e.target.value.trim();
         toggleClearBtn(val);
@@ -436,30 +435,22 @@ export const ProductsListing = {
       }
     }
 
-    // Scoped event delegation — attached to the page section, not document.
-    // This prevents listener accumulation on SPA re-navigation.
     const pageSection = document.querySelector('section');
     if (pageSection) {
       pageSection.addEventListener('click', (e) => {
-        // Category filter buttons
         const filterBtn = e.target.closest('[data-filter]');
         if (filterBtn) {
           activeFilter = filterBtn.dataset.filter;
           currentPage = 1;
           renderSidebar();
           renderCarousel();
-          
           const g = document.getElementById('products-grid');
           if (g) g.innerHTML = `<div class="col-span-full py-20 text-center font-display font-800 text-brand">Loading products...</div>`;
-          
-          loadCategoryProducts(activeFilter).then(() => {
-            renderCards();
-          });
+          loadCategoryProducts(activeFilter).then(() => { renderCards(); });
           if (window.innerWidth < 1024) window.scrollTo({ top: 200, behavior: 'smooth' });
           return;
         }
 
-        // Brand filter buttons
         const brandBtn = e.target.closest('[data-brand]');
         if (brandBtn) {
           activeBrand = brandBtn.dataset.brand;
@@ -469,7 +460,6 @@ export const ProductsListing = {
           return;
         }
 
-        // Clear brand chip
         if (e.target.closest('[data-clear-brand]')) {
           activeBrand = 'all';
           currentPage = 1;
@@ -478,23 +468,17 @@ export const ProductsListing = {
           return;
         }
 
-        // Clear category chip
         if (e.target.closest('[data-clear-filter]')) {
           activeFilter = 'all';
           currentPage = 1;
           renderSidebar();
           renderCarousel();
-          
           const g = document.getElementById('products-grid');
           if (g) g.innerHTML = `<div class="col-span-full py-20 text-center font-display font-800 text-brand">Loading products...</div>`;
-          
-          loadCategoryProducts(activeFilter).then(() => {
-            renderCards();
-          });
+          loadCategoryProducts(activeFilter).then(() => { renderCards(); });
           return;
         }
 
-        // Clear search chip
         if (e.target.closest('[data-clear-search]')) {
           searchQuery = '';
           if (searchInput) searchInput.value = '';
@@ -504,7 +488,6 @@ export const ProductsListing = {
           return;
         }
 
-        // Clear all
         if (e.target.closest('[data-clear-all]')) {
           activeFilter = 'all';
           activeBrand = 'all';
@@ -515,13 +498,9 @@ export const ProductsListing = {
           renderBrandFilters();
           renderSidebar();
           renderCarousel();
-          
           const g = document.getElementById('products-grid');
           if (g) g.innerHTML = `<div class="col-span-full py-20 text-center font-display font-800 text-brand">Loading products...</div>`;
-          
-          loadCategoryProducts(activeFilter).then(() => {
-            renderCards();
-          });
+          loadCategoryProducts(activeFilter).then(() => { renderCards(); });
           return;
         }
       });
@@ -533,10 +512,8 @@ export const ProductsListing = {
     renderCards();
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // SEO: Set dynamic page title
     document.title = 'PPE Product Catalog | World Safety Supply Center, Inc.';
 
-    // SEO: Set dynamic meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
