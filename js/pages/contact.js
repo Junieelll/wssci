@@ -60,15 +60,6 @@ export const Contact = {
                     <div class="text-white/80 text-sm font-body leading-relaxed group-hover:text-white transition-colors">Lucky Place Bldg., M. Villarica Road,<br>Sta Rosa 1, Marilao, Bulacan</div>
                   </div>
                 </a>
-                <a href="tel:0443056536" class="flex items-start gap-4 group">
-                  <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand transition-colors duration-300">
-                    <i data-lucide="phone" class="w-4 h-4 text-white" stroke-width="1.8"></i>
-                  </div>
-                  <div>
-                    <div class="text-white/40 text-[10px] font-display font-700 uppercase tracking-widest mb-0.5">Telephone</div>
-                    <div class="text-white/80 text-sm font-body group-hover:text-white transition-colors">044 305-6536</div>
-                  </div>
-                </a>
                 <a href="tel:09688524423" class="flex items-start gap-4 group">
                   <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand transition-colors duration-300">
                     <i data-lucide="smartphone" class="w-4 h-4 text-white" stroke-width="1.8"></i>
