@@ -28,9 +28,9 @@ export const products = [
     certifications: getCerts('en3881', 'enIso3741', 'enIso3745', 'foodContact'),
     features: ['Double-coated natural latex construction', 'Grip-textured pattern for superior grip', 'Inner flocked finish for comfort', '0.60mm thickness and 300mm length', 'Blue-Yellow dual-color design', 'Powder-free unsupported design'],
     img: 'assets/products/gloves/duocolor-ve330/thumbnail.png',
-    images: ['assets/products/gloves/duocolor-ve330/blue-yellow/1.png', 'assets/products/gloves/duocolor-ve330/blue-yellow/1.png'],
+    images: ['assets/products/gloves/duocolor-ve330/blue-yellow/1.png', 'assets/products/gloves/duocolor-ve330/blue-yellow/2.png'],
     colors: [
-      { name: 'Blue-Yellow', hex: 'linear-gradient(225deg, #0d6efd 50%, #eab308 50%)', images: ['assets/products/gloves/duocolor-ve330/blue-yellow/1.png', 'assets/products/gloves/duocolor-ve330/blue-yellow/1.png'], sizes: ['Adjustable'] }
+      { name: 'Blue-Yellow', hex: 'linear-gradient(225deg, #0d6efd 50%, #eab308 50%)', images: ['assets/products/gloves/duocolor-ve330/blue-yellow/1.png', 'assets/products/gloves/duocolor-ve330/blue-yellow/2.png'], sizes: ['Adjustable'] }
     ]
   },
   {

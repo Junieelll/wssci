@@ -49,7 +49,7 @@ export const Home = {
                 </div>
                 <div class="w-px bg-brand-muted"></div>
                 <div>
-                  <div class="font-display font-800 text-2xl lg:text-3xl text-ink stat-num" data-target="2016">0</div>
+                  <div class="font-display font-800 text-2xl lg:text-3xl text-ink stat-num" data-target="2016" data-suffix="">0</div>
                   <div class="text-ink-3 text-xs lg:text-sm font-body mt-1">Established</div>
                 </div>
               </div>

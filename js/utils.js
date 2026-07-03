@@ -31,12 +31,13 @@ export function setupStats() {
       if (e.isIntersecting) {
         const el = e.target;
         const target = parseInt(el.dataset.target) || 0;
+        const suffix = el.dataset.suffix !== undefined ? el.dataset.suffix : '+';
         let current = 0;
         const step = target / 60;
         const t = setInterval(() => {
           current += step;
-          if (current >= target) { el.textContent = target + '+'; clearInterval(t); }
-          else el.textContent = Math.floor(current) + '+';
+          if (current >= target) { el.textContent = target + suffix; clearInterval(t); }
+          else el.textContent = Math.floor(current) + suffix;
         }, 16);
         obs.unobserve(el);
       }
