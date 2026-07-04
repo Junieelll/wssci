@@ -4,7 +4,7 @@ import { setupScrollReveal } from '../utils.js';
 // ── EmailJS config ──
 const EMAILJS_PUBLIC_KEY = 'H7AKLKPz6lEp56fQ1';
 const EMAILJS_SERVICE_ID = 'service_akbp2jn';
-const EMAILJS_TEMPLATE_ID = 'template_66w78wf';
+const EMAILJS_TEMPLATE_ID = 'template_vbh0ho2';
 
 export const Contact = {
   render: () => {
