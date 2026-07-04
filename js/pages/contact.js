@@ -2,9 +2,9 @@ import { categories } from '../data.js';
 import { setupScrollReveal } from '../utils.js';
 
 // ── EmailJS config ──
-const EMAILJS_PUBLIC_KEY  = 'OJ6anVfhwH-_67vFG';
-const EMAILJS_SERVICE_ID  = 'service_5ptgjdb';
-const EMAILJS_TEMPLATE_ID = 'template_mirw5m8';
+const EMAILJS_PUBLIC_KEY = 'H7AKLKPz6lEp56fQ1';
+const EMAILJS_SERVICE_ID = 'service_akbp2jn';
+const EMAILJS_TEMPLATE_ID = 'template_66w78wf';
 
 export const Contact = {
   render: () => {
